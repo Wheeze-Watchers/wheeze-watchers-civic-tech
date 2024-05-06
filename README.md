@@ -4,9 +4,9 @@
 
 ## Team
 
-- **Product Owner**: Aaron Castillo
+- **Product Owner**: Aaron Castillo, Maya Ramkishun, Dominic Tuzo
 - **Scrum Master**: Aaron Castillo
-- **Development Team Members**: Maya Ramkishun, Dominic Tuzo
+- **Development Team Members**: Maya Ramkishun, Dominic Tuzo, Aaron Castillo
 
 ## Table of Contents
 
