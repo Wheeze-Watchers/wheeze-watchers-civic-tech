@@ -86,11 +86,11 @@ We serve individuals in the NYC area who suffer from asthma and parents or guard
 
 ## 🏋🏽 Extension Opportunities 
 <!-- content goes below -->
-User Questionnaire: Based on the questions answered by the user, we can tailor the information or resources the user needs to suit their needs best.
-Find Experts: Users can find experts and schedule appointments in their area. (Requires an API)
-Review System: You can leave a rating for doctors on the website.
-Direct Messaging: Users will be able to message each other directly.
-Frequently Asked Questions: A page dedicated to frequently asked questions regarding asthma.
+- User Questionnaire: Based on the questions answered by the user, we can tailor the information or resources the user needs to suit their needs best.
+- Find Experts: Users can find experts and schedule appointments in their area. (Requires an API)
+- Review System: You can leave a rating for doctors on the website.
+- Direct Messaging: Users will be able to message each other directly.
+- Frequently Asked Questions: A page dedicated to frequently asked questions regarding asthma.
 <!-- content goes above --> 
 
 ## 📒 Sources
