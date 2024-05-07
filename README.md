@@ -21,6 +21,7 @@
 ## Usage
 
 > Some usage instructions for getting the app up and running locally
+> Who is using the app, what is it for?
 
 ## Requirements
 
