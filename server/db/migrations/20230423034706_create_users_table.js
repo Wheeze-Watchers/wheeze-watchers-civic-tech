@@ -27,29 +27,29 @@ exports.up = (knex) => {
 		.createTable('user_post', (table) => {
 			table.increments('id').primary();
 			// table.foreign('user_id').references('user.id');
-			table.integer('user_id').references('user.id')
+			table.integer('user_id').unique().references('user.id')
 			// table.foreign('post_id').references('post.id');
-			table.integer('post_id').references('post.id')
+			table.integer('post_id').unique().references('post.id')
 		})
 		.createTable('resource', (table) => {
 			table.increments('id').primary();
-			table.integer('user_id').references('user.id');
+			table.integer('user_id').unique().references('user.id');
 			table.string('title');
 			table.string('body');
 			table.string('URL');
 		})
 		.createTable('comment', (table) => {
 			table.increments('id').primary();
-			table.integer('resource_id').references('resource.id');
-			table.integer('user_id').references('user.id');
+			table.integer('resource_id').unique().references('resource.id');
+			table.integer('user_id').unique().references('user.id');
 			table.string('body');
 			table.timestamp(true, true);
 		})
 		.createTable('resource_comment', (table) => {
 			table.increments('id').primary();
-			table.integer('user_id').references('resource.user_id');
-			table.integer('resource_id').references('resource.id');
-			table.integer('comment_id').references('comment.id');
+			table.integer('user_id').unique().references('resource.user_id');
+			table.integer('resource_id').unique().references('resource.id');
+			table.integer('comment_id').unique().references('comment.id');
 		});
 };
 
