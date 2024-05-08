@@ -9,6 +9,16 @@ class Post {
         this.timeStamp = timeStamp
     }
 
+    static async createPost(title, body) {
+        const query = `
+        INSERT INTO post (title, body)
+        VALUES (?, ?) 
+        RETURNING *`
+        const { rows } = await knex.raw(query, [title, body])
+        const post = rows[0]
+        return new Post(post)
+    }
+
     //update post
     static async updateBody(id, body) {
         const query = `
@@ -37,7 +47,7 @@ class Post {
         DELETE FROM post
         WHERE id=?`
         const { rows } = await knex.raw(query, [id])
-        // return 
+        // return something
     }
 
 }
