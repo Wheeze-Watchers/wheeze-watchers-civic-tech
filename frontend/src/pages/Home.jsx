@@ -1,6 +1,24 @@
+import { useNavigate, NavLink } from "react-router-dom";
+
 export default function HomePage() {
-  return <>
-    <h1>Home</h1>
-    <p>Put something interesting here!</p>
-  </>;
+  return (
+    <>
+      {/* Mission Statement */}
+      <div>
+        <h1>
+          Wheeze Watchers is a forum for users in NYC suffering from asthma,
+          parents of asthmatic children, and asthma healthcare professionals to
+          interact with one another, provide vital resources in order to help
+          better manage the effects of asthma.
+        </h1>
+      </div>
+      <div>
+        <h2>Resource Page</h2>
+        <NavLink to="/">Res</NavLink>
+      </div>
+      <div>
+        <h2>Discussion Board</h2>
+      </div>
+    </>
+  );
 }
