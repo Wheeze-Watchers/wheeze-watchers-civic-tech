@@ -7,7 +7,7 @@
     "build": "npm i && npm run migrate:rollback && npm run migrate && npm run seed",
     "start": "node ./index.js",
     "dev": "nodemon ./index.js",
-    "connect": "psql -U postgres -d react_auth_example",
+    "connect": "psql -U postgres -d wheeze-watchers",
     "migrate": "knex migrate:latest",
     "migrate:make": "knex migrate:make",
     "migrate:rollback": "knex migrate:rollback",
@@ -36,6 +36,6 @@
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.3.4",
-    "nodemon": "^2.0.22"
+    "nodemon": "^3.1.0"
   }
 }
