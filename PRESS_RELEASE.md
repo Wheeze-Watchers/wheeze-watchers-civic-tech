@@ -1,5 +1,5 @@
 <!-- Replace with your project name and delete me -->
-# Project Name 
+# Wheeze Watchers
 
 Authors: 
 <!-- Replace Name with your names -->
@@ -16,30 +16,29 @@ Asthma, a persistent lung condition, causes wheezing, shortness of breath, tight
 
 ## 📝 Summary
 <!-- content goes below -->
-According to research from the CDC, 1 in 13 people have asthma, which is the leading chronic disease amongst children. Asthma can lead to frequent wheezing, shortness of breath, chest tightness, and coughing, often interfering with daily activities, sleep, and exercise. This persistent illness can negatively impact the quality of life of: 
-- Blacks and Hispanics are the leading races for asthma in NYC. 
-- Children 5-14 experience the most asthma attacks
-- Black people experienced the most asthma-related deaths in the year 2020 (about 29 million)
+According to research from the CDC, 1 in 13 people have asthma, which is the leading chronic disease amongst children. Asthma can lead to frequent wheezing, shortness of breath, chest tightness, and coughing, often interfering with daily activities, sleep, and exercise. This persistent illness can negatively impact the quality of life for: 
+Blacks and Hispanics are the groups for which rates of asthma in NYC are the highest. 
+Children 5-14, who experience the most asthma attacks
 <!-- content goes above -->
 
 ## 🤔 Our Hypothesis
 <!-- content goes below -->
-If people had better access to doctors and resources for treating asthma, then people who suffer from those chronic health conditions would have a better quality of life, thus reducing the prevalence of these conditions within the communities affected.
+If people in NYC had better access to online resources for treating asthma and an online community that provides support and health education, then people who suffer from chronic health conditions would be able to discover the resources that help them have a better quality of life, thus reducing the prevalence of these conditions within the affected communities.
 <!-- content goes above -->
 
 ## 📱 Product Overview
 <!-- content goes below -->
-The product will give users accurate contact information and resources from asthma specialists to easily find solutions to their chronic health conditions.
+This product provides a forum for users in NYC to discuss asthma symptoms with experts and non-experts and a page for experts to provide helpful resources regarding ways to minimize asthma symptoms in their daily lives.
 <!-- content goes above -->
 
 ## 🏙️  Mission Statement 
 <!-- content goes below -->
-Our website provides a forum for people with asthma and parents of asthmatic children to give user experiences, breakthroughs, struggles, and emotional support and allows users to find a pulmonologist within the NYC area.
+Wheeze Watchers provides a forum for users in NYC suffering from asthma, parents of asthmatic children, and asthma healthcare professionals to interact with one another and help manage the effects of asthma better.
 <!-- content goes above -->
 
 ## 🫂 Who do we serve?
 <!-- content goes below -->
-We serve individuals in the NYC Area who suffer from asthma and parents or guardians of asthmatic children.
+We serve individuals in the NYC area who suffer from asthma and parents or guardians of asthmatic children.
 <!-- content goes above -->
 
 ## 🧳 User Journey Map
@@ -47,7 +46,7 @@ We serve individuals in the NYC Area who suffer from asthma and parents or guard
 <img width="2528" alt="Civic Tech Hackathon" src="https://github.com/Wheeze-Watchers/wheeze-watchers-civic-tech/assets/68202891/55664ff1-494a-486c-bb37-eb7349575220">
 <!-- content goes above -->
 
-## 👥 User-stories
+## 👥 User-Stories
 <!-- content goes below -->
 **User Story 1:** As a user who struggles with asthma, a parent of a child who struggles with asthma, or a health professional specializing in asthma and its effects, I can register as a member of the site or as an expert.
 - A user can see the login/register button on the home page of our site
@@ -81,16 +80,17 @@ We serve individuals in the NYC Area who suffer from asthma and parents or guard
 ## 🧗‍♂️ Key Technical Challenge
 <!-- content goes below -->
 - Finding the appropriate and valid resources for this application.
-  - Collecting all the resources and managing the information.
-- Creating the “Finding Specialist” feature: Find asthma doctors (pulmonologists) in the NYC area.
+  - Collect all the resources and manage the information.
+- Creating the “Finding Specialist” feature: Find asthma doctors (pulmonologists) in NYC.
 <!-- content goes above -->
 
 ## 🏋🏽 Extension Opportunities 
 <!-- content goes below -->
-- About Page
-- FAQ Page
-- Direct Messaging
-- Users can find doctors near them
+- User Questionnaire: Based on the questions answered by the user, we can tailor the information or resources the user needs to suit their needs best.
+- Find Experts: Users can find experts and schedule appointments in their area. (Requires an API)
+- Review System: You can leave a rating for doctors on the website.
+- Direct Messaging: Users will be able to message each other directly.
+- Frequently Asked Questions: A page dedicated to frequently asked questions regarding asthma.
 <!-- content goes above --> 
 
 ## 📒 Sources

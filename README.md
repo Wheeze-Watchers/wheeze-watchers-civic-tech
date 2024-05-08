@@ -1,6 +1,6 @@
-# Project Name
+# Wheeze Watchers
 
-> [Insert Project Name Here] aims to aid young people of color, who are afflicted with asthma, in finding and connecting with users that have asthma as well, users that are taking care of people with asthma and/or medically licensed asthma specialists. In our forum based web application, users will be able to connect through posts and interact with each other by sharing their own experiences and testimonies while dealing with this disease. Users will also be able to connect with asthma specialists, or what we call "experts". These experts will be able to provide medical advice and helpful resources to our users in need.
+> Wheeze Watchers aims to aid young people of color within NYC who are afflicted with asthma in finding and connecting with users who have asthma, as well as users who care for people with asthma and/or medically licensed asthma specialists. In our forum-based web application, users can connect through posts and interact with each other by sharing their own experiences and testimonies while dealing with this disease. Users can also connect with asthma specialists or "experts." These experts will be able to provide medical advice and helpful resources to our users in need.
 
 ## Team
 
