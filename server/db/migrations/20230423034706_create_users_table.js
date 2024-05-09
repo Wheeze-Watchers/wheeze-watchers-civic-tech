@@ -3,17 +3,17 @@
  * @returns { Promise<void> }
  */
 exports.up = (knex) => {
-	return knex.schema.dropTableIfExists('user')
-	.dropTableIfExists('post')
-	.dropTableIfExists('user_post')
-	.dropTableIfExists('resource')
-	.dropTableIfExists('comment')
+	return knex.schema.dropTableIfExists('user_post')
 	.dropTableIfExists('resource_comment')
+	.dropTableIfExists('comment')
+	.dropTableIfExists('resource')
+	.dropTableIfExists('post')
+	.dropTableIfExists('user')
 		.createTable('user', (table) => {
 			table.increments('id').primary();
 			table.string('first_name');
 			table.string('last_name');
-			table.string('email');
+			table.string('email').unique();
 			table.string('username').notNullable().unique();
 			table.string('password_hash').notNullable();
 			table.boolean('expert');
@@ -22,7 +22,7 @@ exports.up = (knex) => {
 			table.increments('id').primary();
 			table.string('title');
 			table.string('body');
-			table.timestamp(true, true);
+			table.timestamp('created_at').defaultTo(knex.fn.now());
 		})
 		.createTable('user_post', (table) => {
 			table.increments('id').primary();
