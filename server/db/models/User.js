@@ -6,7 +6,7 @@ class User {
 
   // This constructor is NOT how a controller creates a new user in the database.
   // Instead, it is used by each of the User static methods to hide the hashed
-  // password of users before sending user data to the client. Since #passwordHash
+  // password of user before sending user data to the client. Since #passwordHash
   // is private, only the isValidPassword instance method can access that value.
   constructor({ id, firstName, lastName, username, password_hash, expert }) {
     this.id = id;
@@ -24,21 +24,21 @@ class User {
     authUtils.isValidPassword(password, this.#passwordHash);
 
   static async list() {
-    const query = `SELECT * FROM users`;
+    const query = `SELECT * FROM user`;
     const { rows } = await knex.raw(query);
     // use the constructor to hide each user's passwordHash
     return rows.map((user) => new User(user));
   }
 
   static async find(id) {
-    const query = `SELECT * FROM users WHERE id = ?`;
+    const query = `SELECT * FROM user WHERE id = ?`;
     const { rows } = await knex.raw(query, [id]);
     const user = rows[0];
     return user ? new User(user) : null;
   }
 
   static async findByUsername(username) {
-    const query = `SELECT * FROM users WHERE username = ?`;
+    const query = `SELECT * FROM user WHERE username = ?`;
     const { rows } = await knex.raw(query, [username]);
     const user = rows[0];
     return user ? new User(user) : null;
@@ -66,7 +66,7 @@ class User {
   static async update(id, username) {
     // dynamic queries are easier if you add more properties
     const query = `
-      UPDATE users
+      UPDATE user
       SET username=?
       WHERE id=?
       RETURNING *
