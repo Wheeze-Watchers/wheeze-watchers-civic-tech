@@ -17,7 +17,7 @@ export default function () {
   return (
     <>
     <div className="topic-container">
-        <h1>{/*title of discussion from DB*/}For now its just a title</h1>
+        <h1>{/*title of discussion from DB*/}Let's Discuss!</h1>
         <h3>{/*bio of discussion from DB body column*/}</h3>
     </div>
 

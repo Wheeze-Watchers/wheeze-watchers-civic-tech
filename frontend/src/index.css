@@ -8,7 +8,14 @@ input, label {
 }
 
 input {
-  margin-bottom: 1rem;
+  border: 1px solid #CCC;
+  margin-bottom: 10px;
+
+}
+
+input #comment {
+  overflow: auto; /* Enable scrollbars if content overflows */
+  /* width: 50%; */
 }
 
 header {
@@ -40,10 +47,37 @@ nav a {
 }
 
 form {
-  padding: 1rem;
+  padding: 15px;
   border: 1px solid #CCC;
-  width: 15rem;
-  margin: 1rem auto;
+  margin: 1px auto;
+  min-width: 100px; /* Minimum width */
+  max-width: 400px; /* Maximum width */
+  min-height: 100px; /* Minimum height */
+  max-height: 400px; /* Maximum height */
+}
+
+form #comment {
+  padding: 15px;
+  border: 1px solid #CCC;
+  margin: 1px auto;
+  resize: both; /* Allow resizing */
+  overflow: auto; /* Enable scrollbars if content overflows */
+  min-width: 100px; /* Minimum width */
+  max-width: 400px; /* Maximum width */
+  min-height: 100px; /* Minimum height */
+  max-height: 400px; /* Maximum height */
+}
+
+form #login-heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form #login-box {
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
 }
 
 /* automatically added by NavLink component */
@@ -51,4 +85,19 @@ form {
   color: #EEBC32;
   font-weight: bold;
   font-style: italic;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
 }
