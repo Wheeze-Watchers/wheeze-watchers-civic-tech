@@ -14,7 +14,7 @@ export default function HomePage() {
       </div>
       <div>
         <h2>Resource Page</h2>
-        <NavLink to="/">Res</NavLink>
+        <NavLink to="/">Resources</NavLink>
       </div>
       <div>
         <h2>Discussion Board</h2>

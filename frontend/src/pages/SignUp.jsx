@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { useNavigate, Navigate, Link } from "react-router-dom";
+import { useNavigate, Navigate, NavLink } from "react-router-dom";
 import CurrentUserContext from "../contexts/current-user-context";
 import { createUser } from "../adapters/user-adapter";
 
@@ -131,7 +131,7 @@ export default function SignUpPage() {
       </form>
       {!!errorText && <p>{errorText}</p>}
       <p>
-        Already have an account with us? <Link to="/login">Log in!</Link>
+        Already have an account with us? <NavLink to="/login">Log in!</NavLink>
       </p>
     </>
   );
