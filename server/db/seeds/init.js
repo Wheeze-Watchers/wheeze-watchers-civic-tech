@@ -1,4 +1,4 @@
-const User = require('../models/User');
+const User = require("../models/User");
 /**
  * @param { import("knex").Knex } knex
  * @returns { Promise<void> }
@@ -14,14 +14,15 @@ const User = require('../models/User');
 //   await User.create('wowow', '1234');
 // };
 
-exports.seed = function(knex) {
+exports.seed = function (knex) {
   // Deletes ALL existing entries
-  return knex('user').del()
+  return knex("user")
+    .del()
     .then(() => {
       // Inserts seed entries
-      return knex('user').insert([
-        {username: 'john_doe', password_hash: 'hashed_password_1'},
-        {username: 'jane_doe', password_hash: 'hashed_password_2'}
+      return knex("user").insert([
+        { username: "john_doe", password_hash: "hashed_password_1" },
+        { username: "jane_doe", password_hash: "hashed_password_2" },
       ]);
     });
 };
