@@ -8,16 +8,17 @@ export default function SiteHeadingAndNav() {
   return (
     <header>
       <a id="logo" href="/">
-        Wheeze Watchers
+        React/Express Auth
       </a>
       <nav>
         <ul>
-          <li>
-            <NavLink to="/">Home</NavLink>
-          </li>
+          {/* <li><NavLink to='/'>Home</NavLink></li> */}
 
           {currentUser ? (
             <>
+              <li>
+                <NavLink to={"/discussion"}>Discussions</NavLink>
+              </li>
               <li>
                 <NavLink to="/users" end={true}>
                   Users
@@ -31,6 +32,9 @@ export default function SiteHeadingAndNav() {
             </>
           ) : (
             <>
+              <li>
+                <NavLink to={"/discussion"}>Discussions</NavLink>
+              </li>
               <li>
                 <NavLink to="/login">Login</NavLink>
               </li>
