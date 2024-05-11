@@ -1,55 +1,68 @@
-const knex = require('../knex')
+const knex = require('../knex');
 
 class Post {
-    //add defualt time for timestamp, a user cannot enter the time of the post
-    constructor({ id, title, body, timeStamp }) {
-        this.id = id;
-        this.title = title;
-        this. body = body;
-        this.timeStamp = timeStamp
-    }
+  constructor({ id, title, body, timeStamp }) {
+    this.id = id;
+    this.title = title;
+    this.body = body;
+    this.timeStamp = timeStamp;
+  }
 
-    static async createPost(title, body) {
-        const query = `
+  static async getAllPost() {
+    const query = `SELECT * FROM post`;
+    const { rows } = await knex.raw(query);
+    // use the constructor to hide each user's passwordHash
+    return rows.map((post) => new Post(post));
+  }
+
+  static async findPost(id) {
+    const query = `SELECT * FROM post WHERE id = ?`;
+    const { rows } = await knex.raw(query, [id]);
+    const post = rows[0];
+    return post ? new Post(post) : null;
+  }
+
+  static async createPost(title, body) {
+    const query = `
         INSERT INTO post (title, body)
         VALUES (?, ?) 
-        RETURNING *`
-        const { rows } = await knex.raw(query, [title, body])
-        const post = rows[0]
-        return new Post(post)
-    }
+        RETURNING *`;
+    const { rows } = await knex.raw(query, [title, body]);
+    const post = rows[0];
+    return new Post(post);
+  }
 
-    //update post
-    static async updateBody(id, body) {
-        const query = `
+  static async updateBody(id, body) {
+    const query = `
         UPDATE post
         SET body=?
         WHERE id=?
-        RETURNING *`
-        const { rows } = await knex.raw(query, [body, id])
-        const updatetdPost = rows[0];
-        return updatetdPost ? new Post(updatetdPost) : null;
-    }
+        RETURNING *`;
+    const { rows } = await knex.raw(query, [body, id]);
+    const updatetdPost = rows[0];
+    return updatetdPost ? new Post(updatetdPost) : null;
+  }
 
-    static async updateTitle(id, title) {
-        const query = `
+  static async updateTitle(id, title) {
+    const query = `
         UPDATE post
         SET title=?
         WHERE id=?
-        RETURNING *`
-        const { rows } = await knex.raw(query, [title, id])
-        const updatetdTitle = rows[0];
-        return updatetdTitle ? new Post(updatetdTitle) : null;
-    }
+        RETURNING *`;
+    const { rows } = await knex.raw(query, [title, id]);
+    const updatetdTitle = rows[0];
+    return updatetdTitle ? new Post(updatetdTitle) : null;
+  }
 
-    static async deletePost(id) {
-        const query = `
+  static async deletePost(id) {
+    const query = `
         DELETE FROM post
-        WHERE id=?`
-        const { rows } = await knex.raw(query, [id])
-        // return something
-    }
-
+        WHERE id=?
+        RETURNING *`;
+    const { rows } = await knex.raw(query, [id]);
+    const post = rows[0];
+    return post ? new Post(post) : null;
+  }
 }
 
 module.exports = Post;
