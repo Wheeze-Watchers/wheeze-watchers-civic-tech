@@ -3,8 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { fetchHandler } from "../utils";
 
 export default function () {
-    const data = fetchHandler("https://www.uchicagomedicine.org/forefront/pediatrics-articles/2024/january/improving-asthma-outcomes-and-reducing-health-disparities")
-    console.log(data.json)
     return (
         <>
         <div className="topic-container">
