@@ -49,7 +49,7 @@ class User {
     const passwordHash = await authUtils.hashPassword(password);
 
     const query = `INSERT INTO user (first_name, last_name, email, username, password_hash, expert)
-      VALUES (?, ?, ?, ?, ?) RETURNING *`;
+    VALUES (?, ?, ?, ?, ?, ?) RETURNING *`;
     const { rows } = await knex.raw(query, [
       firstName,
       lastName,
