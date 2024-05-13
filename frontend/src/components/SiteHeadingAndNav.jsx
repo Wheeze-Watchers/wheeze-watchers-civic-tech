@@ -22,6 +22,7 @@ export default function SiteHeadingAndNav() {
               <li><NavLink to={'/discussion'}>Discussions</NavLink></li>
               <li><NavLink to='/login'>Login</NavLink></li>
               <li><NavLink to='/sign-up'>Sign Up</NavLink></li>
+              <li><NavLink to='/resources'>Resources</NavLink></li>
             </>
         }
       </ul>
