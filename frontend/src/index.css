@@ -14,14 +14,15 @@ input, label {
 input {
   border: 1px solid #CCC;
   margin-bottom: 10px;
-
 }
 
 input #comment {
+  /* display: flex; */
+  justify-content: flex-start;
   overflow: auto;
 }
 
-header {
+#nav-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -60,7 +61,8 @@ form {
 }
 
 form #comment {
-  padding: 15px;
+  overflow: auto;
+  /* padding: 15px;
   border: 1px solid #CCC;
   margin: 1px auto;
   resize: both;
@@ -68,7 +70,7 @@ form #comment {
   min-width: 100px;
   max-width: 400px;
   min-height: 100px;
-  max-height: 400px;
+  max-height: 400px; */
 }
 
 form #login-heading {
@@ -123,3 +125,4 @@ footer {
   align-items: center;
   flex-direction: column;
 }
+

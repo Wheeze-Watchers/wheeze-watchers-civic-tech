@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { fetchHandler } from "../utils";
+import Microlink from '@microlink/react'
 
 export default function () {
     return (
@@ -11,21 +12,15 @@ export default function () {
 
         <div className="info-box-container">
             <div className="info-box">
-                <h3><a href="https://www.uchicagomedicine.org/forefront/pediatrics-articles/2024/january/improving-asthma-outcomes-and-reducing-health-disparities">Link to article</a> </h3>
-                <img src="../../dummyImg.png" alt="" />
-                <p>Blah blah blah...</p>
+                <Microlink url="https://www.uchicagomedicine.org/forefront/pediatrics-articles/2024/january/improving-asthma-outcomes-and-reducing-health-disparities"/>
             </div>
 
             <div className="info-box">
-                <h3><a href="https://www.medicalnewstoday.com/articles/running-with-asthma">Link to article</a> </h3>
-                <img src="../../dummyImg.png" alt="" />
-                <p>Blah blah blah...</p>
+                <Microlink url="https://www.medicalnewstoday.com/articles/running-with-asthma"/>
             </div>
 
             <div className="info-box">
-                <h3><a href="https://www.who.int/news-room/fact-sheets/detail/asthma">Link to article</a> </h3>
-                <img src="../../dummyImg.png" alt="" />
-                <p>Blah blah blah...</p>
+                <Microlink url="https://www.who.int/news-room/fact-sheets/detail/asthma"/>
             </div>
         </div>
         <footer>
