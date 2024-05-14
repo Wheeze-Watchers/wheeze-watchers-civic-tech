@@ -1,39 +1,35 @@
-/* @import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities'; */
-
 body {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   margin: 0;
 }
 
-input,
-label {
+input, label {
   display: block;
 }
 
 input {
-  border: 1px solid #ccc;
+  border: 1px solid #CCC;
   margin-bottom: 10px;
+
 }
 
 input #comment {
   overflow: auto;
 }
 
- #nav-header {
+header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 1rem;
-  background: #1088c0;
+  background: #000;
 }
 
 #logo {
   font-size: 1.5rem;
   font-weight: bold;
   text-decoration: none;
-  color: #fff;
+  color: #FFF;
 }
 
 nav ul {
@@ -46,12 +42,12 @@ nav ul {
 
 nav a {
   display: block;
-  color: #fff;
+  color: #FFF;
 }
 
 form {
   padding: 15px;
-  border: 1px solid #ccc;
+  border: 1px solid #CCC;
   margin: 1px auto;
   min-width: 100px;
   max-width: 400px;
@@ -61,12 +57,12 @@ form {
 
 form #comment {
   padding: 15px;
-  border: 1px solid #ccc;
+  border: 1px solid #CCC;
   margin: 1px auto;
   resize: both;
   overflow: auto;
-  min-width: 370px;
-  max-width: 370px;
+  min-width: 100px;
+  max-width: 400px;
   min-height: 100px;
   max-height: 400px;
 }
@@ -85,7 +81,7 @@ form #login-box {
 
 /* automatically added by NavLink component */
 .active {
-  color: #eebc32;
+  color: #EEBC32;
   font-weight: bold;
   font-style: italic;
 }
@@ -122,34 +118,4 @@ footer {
   display: flex;
   align-items: center;
   flex-direction: column;
-}
-
-span, p {
-  display: flex;
-  justify-content: center;
-}
-
-.topic-container {
-  border: 1px solid black;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 20rem;
-  text-align: center;
-  margin: 3rem auto;
-  padding: 2rem 5rem;
-}
-
-.topic-container h3 {
-  align-self: flex-start;
-}
-
-:modal {
-  background-color: white;
-  border: 2px solid darkGray;
-  border-radius: 5px;
-}
-
-::backdrop {
-  background-color: purple;
 }
