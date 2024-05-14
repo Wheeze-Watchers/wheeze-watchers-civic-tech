@@ -1,14 +1,9 @@
-/* @import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities'; */
-
 body {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   margin: 0;
 }
 
-input,
-label {
+input, label {
   display: block;
 }
 
@@ -27,14 +22,14 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 1rem;
-  background: #1088c0;
+  background: #000;
 }
 
 #logo {
   font-size: 1.5rem;
   font-weight: bold;
   text-decoration: none;
-  color: #fff;
+  color: #FFF;
 }
 
 nav ul {
@@ -47,18 +42,7 @@ nav ul {
 
 nav a {
   display: block;
-  color: #fff;
-}
-
-form-div {
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 1rem;
-  align-items: center;
-  background-color: #5adbff;
+  color: #FFF;
 }
 
 form {
@@ -97,7 +81,7 @@ form #login-box {
 
 /* automatically added by NavLink component */
 .active {
-  color: #eebc32;
+  color: #EEBC32;
   font-weight: bold;
   font-style: italic;
 }

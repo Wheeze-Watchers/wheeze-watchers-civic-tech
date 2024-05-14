@@ -22,30 +22,30 @@ export default function LoginPage() {
 
   return (
     <>
+      <h1>Login</h1>
       <form onSubmit={handleSubmit} aria-labelledby="login-heading">
-        <h2 id="login-heading">Welcome Back!</h2>
-        <label htmlFor="username">Username</label>
-        <input
-          type="text"
-          autoComplete="username"
-          id="username"
-          name="username"
-        />
+        <div id="login-box">
+          <h2 id="login-heading">Log back in!</h2>
+          <label htmlFor="username">Username</label>
+          <input
+            type="text"
+            autoComplete="username"
+            id="username"
+            name="username"
+          />
 
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          autoComplete="current-password"
-          id="password"
-          name="password"
-        />
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            autoComplete="current-password"
+            id="password"
+            name="password"
+          />
 
-        <button>Log in!</button>
+          <button>Log in!</button>
+        </div>
       </form>
       {!!errorText && <p>{errorText}</p>}
-      <span>
-        Don't have an account with us? <Link to="/sign-up">Sign Up!</Link>
-      </span>
     </>
   );
 }
