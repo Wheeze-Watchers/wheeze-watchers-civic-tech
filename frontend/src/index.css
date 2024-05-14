@@ -1,14 +1,9 @@
-/* @import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities'; */
-
 body {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   margin: 0;
 }
 
-input,
-label {
+input, label {
   display: block;
 }
 
@@ -134,7 +129,6 @@ p {
   justify-content: flex-start;
 }
 
-/* Doesn't work */
 #resource {
   display: flex;
   align-items: center;

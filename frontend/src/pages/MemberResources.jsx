@@ -12,22 +12,27 @@ export default function () {
       username: "john_doe",
       expert: true,
     }
-    const onClick = () => {
-        // code for pop up
-        console.log('function works')
-        
-    }
-    // console.log(currentUser)
+    // const onClick = () => {
+    //     // code for pop up
+    //     console.log('function works')
+    // }
     return (
         <>
         <div className="topic-container">
             <h1>Member Resources</h1>
         </div>
 
-        {currentUserDummy.expert &&<div id='resource'>
-            <button onClick={onClick}>Add Resource</button>
+        {currentUserDummy.expert &&
+        <div id='resource'>
+            <button>Add Resource</button>
+            <dialog id="favDialog">
+            <form method="dialog">
+                <p>Lucky number is: <strong id="number"></strong></p>
+                <button>Close dialog</button>
+            </form>
+            </dialog>
          </div>
-         }
+        }
 
         <div className="info-box-container">
             <div className="info-box">
