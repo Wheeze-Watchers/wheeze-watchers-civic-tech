@@ -24,7 +24,7 @@ export default function () {
     {/* Input a comment */}
     <form onSubmit={handleSubmit} aria-labelledby="comment-heading">
         <label htmlFor="comment">Comment</label>
-        <input type="text" id="comment" name="comment" />
+        <textarea rows="4" cols="50" type="text" id="comment" name="comment" />
         <button>Add</button>
     </form>
 
