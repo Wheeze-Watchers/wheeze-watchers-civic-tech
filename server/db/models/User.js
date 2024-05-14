@@ -1,5 +1,5 @@
-const knex = require('../knex');
-const authUtils = require('../../utils/auth-utils');
+const knex = require("../knex");
+const authUtils = require("../../utils/auth-utils");
 
 class User {
   #passwordHash = null; // a private property
@@ -8,17 +8,20 @@ class User {
   // Instead, it is used by each of the User static methods to hide the hashed
   // password of user before sending user data to the client. Since #passwordHash
   // is private, only the isValidPassword instance method can access that value.
-  constructor({ id, username, password_hash }) {
+  constructor({ id, firstName, lastName, username, password_hash, expert }) {
     this.id = id;
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.email = email;
     this.username = username;
     this.#passwordHash = password_hash;
+    this.expert = false;
   }
 
   // This instance method takes in a plain-text password and returns true if it matches
   // the User instance's hashed password.
-  isValidPassword = async (password) => (
-    authUtils.isValidPassword(password, this.#passwordHash)
-  );
+  isValidPassword = async (password) =>
+    authUtils.isValidPassword(password, this.#passwordHash);
 
   static async list() {
     const query = `SELECT * FROM user`;
@@ -41,19 +44,27 @@ class User {
     return user ? new User(user) : null;
   }
 
-  static async create(username, password) {
+  static async create(firstName, lastName, email, username, password, expert) {
     // hash the plain-text password using bcrypt before storing it in the database
     const passwordHash = await authUtils.hashPassword(password);
 
-    const query = `INSERT INTO user (username, password_hash)
-      VALUES (?, ?) RETURNING *`;
-    const { rows } = await knex.raw(query, [username, passwordHash]);
+    const query = `INSERT INTO user (first_name, last_name, email, username, password_hash, expert)
+    VALUES (?, ?, ?, ?, ?, ?) RETURNING *`;
+    const { rows } = await knex.raw(query, [
+      firstName,
+      lastName,
+      email,
+      username,
+      passwordHash,
+      expert,
+    ]);
     const user = rows[0];
     return new User(user);
   }
 
   // this is an instance method that we can use to update
-  static async update(id, username) { // dynamic queries are easier if you add more properties
+  static async update(id, username) {
+    // dynamic queries are easier if you add more properties
     const query = `
       UPDATE user
       SET username=?
@@ -66,7 +77,7 @@ class User {
   }
 
   static async deleteAll() {
-    return knex('user').del();
+    return knex("user").del();
   }
 }
 

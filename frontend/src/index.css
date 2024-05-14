@@ -7,12 +7,13 @@ body {
   margin: 0;
 }
 
-input, label {
+input,
+label {
   display: block;
 }
 
 input {
-  border: 1px solid #CCC;
+  border: 1px solid #ccc;
   margin-bottom: 10px;
 }
 
@@ -27,14 +28,14 @@ textarea #comment {
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 1rem;
-  background: #000;
+  background: #1088c0;
 }
 
 #logo {
   font-size: 1.5rem;
   font-weight: bold;
   text-decoration: none;
-  color: #FFF;
+  color: #fff;
 }
 
 nav ul {
@@ -47,12 +48,12 @@ nav ul {
 
 nav a {
   display: block;
-  color: #FFF;
+  color: #fff;
 }
 
 form {
   padding: 15px;
-  border: 1px solid #CCC;
+  border: 1px solid #ccc;
   margin: 1px auto;
   resize: both;
   min-width: 100px;
@@ -62,6 +63,10 @@ form {
 }
 
 form #comment {
+  padding: 15px;
+  border: 1px solid #ccc;
+  margin: 1px auto;
+  resize: both;
   overflow: auto;
   resize: both;
 }
@@ -80,7 +85,7 @@ form #login-box {
 
 /* automatically added by NavLink component */
 .active {
-  color: #EEBC32;
+  color: #eebc32;
   font-weight: bold;
   font-style: italic;
 }

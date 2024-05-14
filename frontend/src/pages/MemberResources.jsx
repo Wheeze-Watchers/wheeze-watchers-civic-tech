@@ -1,14 +1,21 @@
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { fetchHandler } from "../utils";
+import CurrentUserContext from "../contexts/current-user-context";
 import Microlink from '@microlink/react'
 
 export default function () {
+    const { currentUser } = useContext(CurrentUserContext)
+    console.log(currentUser)
+    // if (currentUser.expert === true) {
+    //     console.log(currentUser)
+    //    return <Button>Add</Button>
+    // }
     return (
         <>
         <div className="topic-container">
             <h1>Member Resources</h1>
         </div>
+
 
         <div className="info-box-container">
             <div className="info-box">
