@@ -14,7 +14,7 @@ export default function SignUpPage() {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [expertCheck, setExpertCheck] = useState(null);
+  const [expert, setExpert] = useState(false);
   // We could also use a single state variable for the form data:
   // const [formData, setFormData] = useState({ username: '', password: '' });
   // What would be the pros and cons of that?
@@ -34,12 +34,12 @@ export default function SignUpPage() {
       return setErrorText("Missing username or password");
 
     const [user, error] = await createUser({
-      firstName,
-      lastName,
+      first_name: firstName,
+      last_name: lastName,
       email,
       username,
       password,
-      expertCheck,
+      expert,
     });
     if (error) return setErrorText(error.message);
 
@@ -57,7 +57,7 @@ export default function SignUpPage() {
   };
 
   const handleCheck = (event) => {
-    setExpertCheck(event.target.value);
+    setExpert(event.target.value);
   };
 
   const Checkbox = ({ label, value, onChange }) => {
@@ -131,7 +131,7 @@ export default function SignUpPage() {
         <label htmlFor="expert">
           <Checkbox
             label="Are you an Expert? (Check if yes)"
-            value={expertCheck}
+            value={expert}
             onChange={handleCheck}
           />
         </label>
