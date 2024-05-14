@@ -21,7 +21,7 @@ input #comment {
   overflow: auto;
 }
 
-header {
+#nav-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -65,8 +65,8 @@ form #comment {
   margin: 1px auto;
   resize: both;
   overflow: auto;
-  min-width: 100px;
-  max-width: 400px;
+  min-width: 370px;
+  max-width: 370px;
   min-height: 100px;
   max-height: 400px;
 }
@@ -124,19 +124,8 @@ footer {
   flex-direction: column;
 }
 
-.home-container {
-  display: inline-block;
-  justify-content: center;
-  align-items: center;
-}
-
-.mission-statement {
-  justify-content: center;
-  align-items: center;
-}
-
-.home-card {
+span,
+p {
   display: flex;
   justify-content: center;
-  align-items: center;
 }
