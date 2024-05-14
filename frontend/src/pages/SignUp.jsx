@@ -24,10 +24,23 @@ export default function SignUpPage() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     setErrorText("");
+    if (!firstName) return setErrorText("Missing first name");
+
+    if (!lastName) return setErrorText("Missing last name");
+
+    if (!email) return setErrorText("Missing email");
+
     if (!username || !password)
       return setErrorText("Missing username or password");
 
-    const [user, error] = await createUser({ username, password });
+    const [user, error] = await createUser({
+      firstName,
+      lastName,
+      email,
+      username,
+      password,
+      expertCheck,
+    });
     if (error) return setErrorText(error.message);
 
     setCurrentUser(user);
@@ -57,7 +70,7 @@ export default function SignUpPage() {
   };
 
   return (
-    <>
+    <div id="form-div">
       <form
         onSubmit={handleSubmit}
         onChange={handleChange}
@@ -114,6 +127,7 @@ export default function SignUpPage() {
           onChange={handleChange}
           value={password}
         />
+
         <label htmlFor="expert">
           <Checkbox
             label="Are you an Expert? (Check if yes)"
@@ -127,12 +141,12 @@ export default function SignUpPage() {
         <input autoComplete="off" type="password" id="password-confirm" name="passwordConfirm" />
         */}
 
-        <button>Sign Up Now!</button>
+        <button type="submit">Sign Up Now!</button>
       </form>
       {!!errorText && <p>{errorText}</p>}
-      <p>
+      <span>
         Already have an account with us? <NavLink to="/login">Log in!</NavLink>
-      </p>
-    </>
+      </span>
+    </div>
   );
 }

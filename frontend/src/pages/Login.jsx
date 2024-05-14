@@ -43,9 +43,9 @@ export default function LoginPage() {
         <button>Log in!</button>
       </form>
       {!!errorText && <p>{errorText}</p>}
-      <p>
+      <span>
         Don't have an account with us? <Link to="/sign-up">Sign Up!</Link>
-      </p>
+      </span>
     </>
   );
 }
