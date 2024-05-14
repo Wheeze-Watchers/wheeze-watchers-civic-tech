@@ -6,7 +6,7 @@ export default function SiteHeadingAndNav() {
   const { currentUser } = useContext(CurrentUserContext);
 
   return (
-    <header>
+    <header id="nav-header">
       <a id="logo" href="/">
         EAZE
       </a>

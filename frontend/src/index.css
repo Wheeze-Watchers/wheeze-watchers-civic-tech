@@ -17,13 +17,11 @@ input {
   margin-bottom: 10px;
 }
 
-textarea #comment {
-  max-width: 50px;
-  min-height: 75px;
-  max-height: 400px;
+input #comment {
+  overflow: auto;
 }
 
-#nav-header {
+ #nav-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -55,10 +53,9 @@ form {
   padding: 15px;
   border: 1px solid #ccc;
   margin: 1px auto;
-  resize: both;
   min-width: 100px;
-  max-width: 425px;
-  min-height: 75px;
+  max-width: 400px;
+  min-height: 100px;
   max-height: 400px;
 }
 
@@ -68,7 +65,10 @@ form #comment {
   margin: 1px auto;
   resize: both;
   overflow: auto;
-  resize: both;
+  min-width: 370px;
+  max-width: 370px;
+  min-height: 100px;
+  max-height: 400px;
 }
 
 form #login-heading {
@@ -124,7 +124,7 @@ footer {
   flex-direction: column;
 }
 
-p {
+span, p {
   display: flex;
   justify-content: center;
 }
