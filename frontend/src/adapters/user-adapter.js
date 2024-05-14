@@ -10,7 +10,7 @@ export const createUser = async ({
   email,
   username,
   password,
-  expertCheck,
+  expert,
 }) =>
   fetchHandler(
     baseUrl,
@@ -20,7 +20,7 @@ export const createUser = async ({
       email,
       username,
       password,
-      expertCheck,
+      expert,
     })
   );
 
