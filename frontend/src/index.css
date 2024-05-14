@@ -128,3 +128,15 @@ span, p {
   display: flex;
   justify-content: center;
 }
+
+p {
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Doesn't work */
+#resource {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
