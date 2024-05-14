@@ -13,9 +13,8 @@ label {
 }
 
 input {
-  border: 1px solid #CCC;
+  border: 1px solid #ccc;
   margin-bottom: 10px;
-
 }
 
 input #comment {
@@ -50,20 +49,9 @@ nav a {
   color: #fff;
 }
 
-form-div {
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 1rem;
-  align-items: center;
-  background-color: #5adbff;
-}
-
 form {
   padding: 15px;
-  border: 1px solid #CCC;
+  border: 1px solid #ccc;
   margin: 1px auto;
   min-width: 100px;
   max-width: 400px;
@@ -73,7 +61,7 @@ form {
 
 form #comment {
   padding: 15px;
-  border: 1px solid #CCC;
+  border: 1px solid #ccc;
   margin: 1px auto;
   resize: both;
   overflow: auto;
