@@ -54,24 +54,36 @@ form {
 }
 
 .topic-container {
+  border: 1px solid black;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 20rem;
   text-align: center;
   margin: 3rem auto;
+  padding: 2rem 5rem;
 }
 
 .topic-container h3 {
   align-self: flex-start;
 }
 
-.comment-container {
-  border: 1px solid black;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 50rem;
-  text-align: center;
-  margin: 3rem auto;
+.edit-modal {
+  /* position: relative;
+  background-color: grey;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19); */
+}
+
+:modal {
+  background-color: white;
+  border: 2px solid darkGray;
+  border-radius: 5px;
+}
+
+::backdrop {
+  background-color: purple;
 }
