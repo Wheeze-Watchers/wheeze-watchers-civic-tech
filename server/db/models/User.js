@@ -15,7 +15,7 @@ class User {
     this.email = email;
     this.username = username;
     this.#passwordHash = password_hash;
-    this.expert = false;
+    this.expert = expert;
   }
 
   // This instance method takes in a plain-text password and returns true if it matches
