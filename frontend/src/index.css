@@ -125,3 +125,8 @@ p,
   align-items: center;
   flex-direction: column;
 }
+
+#logout-div {
+  align-items: center;
+  flex-direction: column;
+}
