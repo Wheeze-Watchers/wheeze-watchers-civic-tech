@@ -32,21 +32,21 @@ class User {
     authUtils.isValidPassword(password, this.#passwordHash);
 
   static async list() {
-    const query = `SELECT * FROM user`;
+    const query = `SELECT * FROM "user"`;
     const { rows } = await knex.raw(query);
     // use the constructor to hide each user's passwordHash
     return rows.map((user) => new User(user));
   }
 
   static async find(id) {
-    const query = `SELECT * FROM user WHERE id = ?`;
+    const query = `SELECT * FROM "user" WHERE id = ?`;
     const { rows } = await knex.raw(query, [id]);
     const user = rows[0];
     return user ? new User(user) : null;
   }
 
   static async findByUsername(username) {
-    const query = `SELECT * FROM user WHERE username = ?`;
+    const query = `SELECT * FROM "user" WHERE username = ?`;
     const { rows } = await knex.raw(query, [username]);
     const user = rows[0];
     return user ? new User(user) : null;
@@ -81,7 +81,7 @@ class User {
   static async update(id, username) {
     // dynamic queries are easier if you add more properties
     const query = `
-      UPDATE user
+      UPDATE "user"
       SET username=?
       WHERE id=?
       RETURNING *

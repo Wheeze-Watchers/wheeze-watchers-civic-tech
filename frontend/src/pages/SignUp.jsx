@@ -145,7 +145,7 @@ export default function SignUpPage() {
       </form>
       {!!errorText && <p>{errorText}</p>}
       <span>
-        Already have an account with us? <NavLink to="/login">Log in!</NavLink>
+        Already have an account with us? <NavLink to="/login"> Log in!</NavLink>
       </span>
     </div>
   );
