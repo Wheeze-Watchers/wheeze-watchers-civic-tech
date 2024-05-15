@@ -1,14 +1,11 @@
-/* @import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities'; */
+@import "https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css";
 
 body {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   margin: 0;
 }
 
-input,
-label {
+input, label {
   display: block;
 }
 
@@ -155,4 +152,10 @@ p {
 
 ::backdrop {
   background-color: purple;
+}
+
+.is-half{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
