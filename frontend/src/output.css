@@ -20,7 +20,7 @@ input #comment {
   overflow: auto;
 }
 
- #nav-header {
+#nav-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -83,6 +83,7 @@ form #login-box {
 }
 
 /* automatically added by NavLink component */
+
 .active {
   color: #eebc32;
   font-weight: bold;

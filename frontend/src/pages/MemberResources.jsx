@@ -19,7 +19,7 @@ export default function () {
     return (
         <>
         <div className="topic-container">
-            <h1>Member Resources</h1>
+            <h1 className="text-3xl font-bold underline">Member Resources</h1>
         </div>
 
         {currentUserDummy.expert &&
