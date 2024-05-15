@@ -1,3 +1,5 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css";
+
 body {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   margin: 0;
@@ -124,13 +126,33 @@ span, p {
   justify-content: center;
 }
 
-p {
+.topic-container {
+  border: 1px solid black;
   display: flex;
-  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  width: 20rem;
+  text-align: center;
+  margin: 3rem auto;
+  padding: 2rem 5rem;
 }
 
-#resource {
+.topic-container h3 {
+  align-self: flex-start;
+}
+
+:modal {
+  background-color: white;
+  border: 2px solid darkGray;
+  border-radius: 5px;
+}
+
+::backdrop {
+  background-color: purple;
+}
+
+.is-half{
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }

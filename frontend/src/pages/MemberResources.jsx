@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Form, useNavigate } from "react-router-dom";
 import CurrentUserContext from "../contexts/current-user-context";
 import Microlink from '@microlink/react'
@@ -12,10 +12,11 @@ export default function () {
       username: "john_doe",
       expert: true,
     }
-    // const onClick = () => {
-    //     // code for pop up
-    //     console.log('function works')
-    // }
+    const [isActive, setIsActive] = useState(false);
+
+    const toggleModal = () => {
+      setIsActive(!isActive);
+    };
     return (
         <>
         <div className="topic-container">
@@ -23,15 +24,20 @@ export default function () {
         </div>
 
         {currentUserDummy.expert &&
-        <div id='resource'>
-            <button>Add Resource</button>
-            <dialog id="favDialog">
-            <form method="dialog">
-                <p>Lucky number is: <strong id="number"></strong></p>
-                <button>Close dialog</button>
-            </form>
-            </dialog>
-         </div>
+        <div className="columns is-centered">
+        <div className="column is-half">
+          <button className="button is-info" onClick={toggleModal}>Open Modal</button>
+        </div>
+        <div className={`modal ${isActive ? 'is-active' : ''}`}>
+         <div className="modal-background"></div>
+            <div className="modal-content">
+                <div className="box">
+                <p>This is the content of the modal.</p>
+                </div>
+            </div>
+                <button className="modal-close is-large" aria-label="close" onClick={toggleModal}></button>
+            </div>
+        </div>
         }
 
         <div className="info-box-container">
