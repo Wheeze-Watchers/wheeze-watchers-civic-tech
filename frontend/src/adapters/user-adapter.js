@@ -5,22 +5,22 @@ import { fetchHandler, getPostOptions, getPatchOptions } from "../utils";
 const baseUrl = "/api/users";
 
 export const createUser = async ({
-  firstName,
-  lastName,
+  first_name,
+  last_name,
   email,
   username,
   password,
-  expertCheck,
+  expert,
 }) =>
   fetchHandler(
     baseUrl,
     getPostOptions({
-      firstName,
-      lastName,
+      first_name,
+      last_name,
       email,
       username,
       password,
-      expertCheck,
+      expert,
     })
   );
 
