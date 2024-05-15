@@ -2,12 +2,15 @@ import { useContext, useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import CurrentUserContext from "../contexts/current-user-context";
 import SignUpPage from "./SignUp";
-import { fetchHandler, getPatchOptions } from "../utils";
+import { fetchHandler, getPatchOptions, getPostOptions } from "../utils";
 
 export default function () {
+    const [postTitle, setPostTitle] = useState('')
+    const [postBody, setPostBody] = useState('')
     const [post, setPost] = useState([]);
     const [editPostId, setEditPostId] = useState(null);
-    const [editText, setEditText] = useState("");
+    const [editTitle, setEditTitle] = useState("");
+    const [editBody, setEditBody] = useState("");
     const editModalRef = useRef(null);
     const [postToggle, setPostToggle] = useState(false);
     
@@ -24,11 +27,20 @@ export default function () {
         fetchData();
     }, [postToggle]);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        currentUser
-        ? console.log('add comment')
-        : navigate('/sign-up');
+        if (currentUser) {
+            const response = await fetch(`/api/posts/discussion`, getPostOptions({ title: postTitle, body: postBody}));
+            if (!response.ok) {
+                throw new Error("Network response was not ok");
+            }
+            setPostToggle(!postToggle)
+            setPostTitle('');
+            setPostBody('');
+
+        } else {
+            navigate('/sign-up');
+        }
     };
 
     const handleDelete = async (id) => {
@@ -45,18 +57,20 @@ export default function () {
         }
     };
 
-    const openEditModal = (id, text) => {
+    const openEditModal = (id, text, body) => {
         setEditPostId(id);
-        setEditText(text);
+        setEditTitle(text);
+        setEditBody(body);
         editModalRef.current.showModal();
     };
 
     const closeEditModal = () => {
+        setEditPostId(null)
         editModalRef.current.close();
     }
 
     const handleEdit = async () => {
-      fetchHandler(`api/posts/discussion/${editPostId}`, getPatchOptions({ id: editPostId, body: editText }));
+        await fetchHandler(`api/posts/discussion/${editPostId}`, getPatchOptions({ id: editPostId, title: editTitle, body: editBody }));
         closeEditModal();
         setPostToggle(!postToggle)
     };
@@ -65,28 +79,37 @@ export default function () {
         <>
             <form onSubmit={handleSubmit} aria-labelledby="comment-heading">
                 <label htmlFor="comment">Add post</label>
-                <input type="text" id="comment" name="comment" />
+                <input type="text" id="title" name="title" placeholder="Add Title" value={postTitle} onChange={(e) => setPostTitle(e.target.value)} />
+                <input type="text" id="comment" name="comment" placeholder="Add Text" value={postBody} onChange={(e) => setPostBody(e.target.value)} />
                 <button>Add</button>
             </form>
 
             <div className="topic-container">
-                {post.map((val) => (
+                {post && post.map((val) => (
                     <div key={val.id}>
                         <h1>{val.title}</h1>
                         <h3>{val.body}</h3>
                         <button type='button' onClick={() => handleDelete(val.id)}>delete</button>
-                        <button type='button' onClick={() => openEditModal(val.id, val.body)}>edit</button>
+                        <button type='button' onClick={() => openEditModal(val.id, val.title, val.body)}>edit</button>
                     </div>
                 ))}
             </div>
 
             <dialog className="edit-modal" ref={editModalRef}>
-                <textarea
-                    value={editText}
-                    onChange={(e) => setEditText(e.target.value)}
+                <h3>Title</h3>
+                <input
+                    type="text"
+                    value={editTitle}
+                    onChange={(e) => setEditTitle(e.target.value)}
                 />
-                <button onClick={handleEdit}>Save</button>
-                <button onClick={closeEditModal}>Cancel</button>
+                <h3>Text</h3>
+                <input
+                    type="text"
+                    value={editBody}
+                    onChange={(e) => setEditBody(e.target.value)}
+                />
+                <button type="button" onClick={handleEdit}>Save</button>
+                <button type="button" onClick={closeEditModal}>Cancel</button>
             </dialog>
         </>
     );
