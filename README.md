@@ -1,6 +1,6 @@
-# Wheeze Watchers
+# Eaze
 
-> Wheeze Watchers aims to aid young people of color within NYC who are afflicted with asthma in finding and connecting with users who have asthma, as well as users who care for people with asthma and/or medically licensed asthma specialists. In our forum-based web application, users can connect through posts and interact with each other by sharing their own experiences and testimonies while dealing with this disease. Users can also connect with asthma specialists or "experts." These experts will be able to provide medical advice and helpful resources to our users in need.
+> Eaze aims to aid young people of color within NYC who are afflicted with asthma in finding and connecting with users who have asthma, as well as users who care for people with asthma and/or medically licensed asthma specialists. In our forum-based web application, users can connect through posts and interact with each other by sharing their own experiences and testimonies while dealing with this disease. Users can also connect with asthma specialists or "experts." These experts will be able to provide medical advice and helpful resources to our users in need.
 
 ## Team
 

@@ -2,12 +2,12 @@ const { isAuthorized } = require("../utils/auth-utils");
 const User = require("../db/models/User");
 
 exports.createUser = async (req, res) => {
-  const { firstName, lastName, email, username, password, expert } = req.body;
+  const { first_name, last_name, email, username, password, expert } = req.body;
 
   // TODO: check if username is taken, and if it is what should you return?
   const user = await User.create(
-    firstName,
-    lastName,
+    first_name,
+    last_name,
     email,
     username,
     password,
