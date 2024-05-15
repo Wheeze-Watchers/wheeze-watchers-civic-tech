@@ -19,17 +19,17 @@ export default function () {
     return (
         <>
         <div className="topic-container">
-            <h1 className="text-3xl font-bold underline">Member Resources</h1>
+            <h1>Member Resources</h1>
         </div>
 
         {currentUserDummy.expert &&
         <div id='resource'>
-            <button>Add Resource</button>
+            <button className="button is-danger">Add Resource</button>
             <dialog id="favDialog">
-            <form method="dialog">
-                <p>Lucky number is: <strong id="number"></strong></p>
-                <button>Close dialog</button>
-            </form>
+                <form method="dialog">
+                    <p>Lucky number is: <strong id="number"></strong></p>
+                    <button>Close dialog</button>
+                </form>
             </dialog>
          </div>
         }
