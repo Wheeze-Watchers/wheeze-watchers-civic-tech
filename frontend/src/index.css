@@ -5,7 +5,8 @@ body {
   margin: 0;
 }
 
-input, label {
+input,
+label {
   display: block;
 }
 
@@ -87,30 +88,29 @@ form #login-box {
   font-style: italic;
 }
 
-h1,
+/* h1,
 footer,
 span,
-p,
-#mission-statement {
+p {
   display: flex;
   align-items: center;
   flex-direction: column;
-}
+} */
 
-#description {
+/* #description {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
+} */
 
-.info-box-container {
+/* .info-box-container {
   margin: 10px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-}
+} */
 
 .info-box {
   border: 1px solid #ccc;
@@ -123,11 +123,15 @@ p,
   flex-direction: column;
 }
 
-span,
+#sign-up-color {
+  color: #1088c0;
+}
+
+/* span,
 p {
   display: flex;
   justify-content: center;
-}
+} */
 
 .topic-container {
   border: 1px solid black;
@@ -154,8 +158,14 @@ p {
   background-color: purple;
 }
 
-.is-half{
+.is-half {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+/* #discussion-home-card,
+#resources-home-card {
+  display: grid;
+  align-items: center;
+} */

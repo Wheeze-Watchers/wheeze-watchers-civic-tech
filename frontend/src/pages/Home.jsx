@@ -2,31 +2,41 @@ import { useNavigate, NavLink } from "react-router-dom";
 
 export default function HomePage() {
   return (
-    <div className="home-container">
-      <div id="mission-statement">
-        <h1>Community, Connections & Change.</h1>
-        <div id="description">
-          <h2>
+    <>
+      <section class="hero is-info ">
+        <div class="hero-body">
+          <p class="title">Community, Connections & Change.</p>
+          <p class="subtitle">
             EAZE is a forum for users in NYC suffering from asthma, parents of
             asthmatic children, and asthma healthcare professionals to interact
             with one another, provide vital resources in order to help better
             manage the effects of asthma.
-          </h2>
+          </p>
         </div>
-      </div>
-      <div className="info-box-container">
-        <div className="info-box">
-          <NavLink to="/resources">
+      </section>
+      <section class="section" id="resources-home-card">
+        <NavLink to="/resources">
+          <div class="title">
             <h2>Resource Page</h2>
-          </NavLink>
-        </div>
-        <div className="info-box">
-          <NavLink to="/discussion">
+          </div>
+        </NavLink>
+      </section>
+      <section class="section" id="discussion-home-card">
+        <NavLink to="/discussion">
+          <div class="title">
             <h2>Discussion Board</h2>
-          </NavLink>
+          </div>
+        </NavLink>
+      </section>
+      <section class></section>
+      <footer class="footer">
+        <div class="content has-text-centered">
+          <p>
+            <strong>EAZE</strong> was developed by Aaron Castillo, Dominic Tuzo
+            & Maya Ramkishun.
+          </p>
         </div>
-      </div>
-      <footer></footer>
-    </div>
+      </footer>
+    </>
   );
 }
