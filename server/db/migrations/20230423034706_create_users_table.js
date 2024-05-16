@@ -28,10 +28,9 @@ exports.up = (knex) => knex.schema.dropTableIfExists('user_post')
   })
   .createTable('resource', (table) => {
     table.increments('id').primary();
-    table.integer('user_id').unique().references('user.id');
-    table.string('title');
-    table.string('body');
-    table.string('URL');
+    table.string('url');
+    table.integer('user_id').unique()
+    table.foreign('user_id').references('id').inTable('user');
   })
   .createTable('comment', (table) => {
     table.increments('id').primary();
