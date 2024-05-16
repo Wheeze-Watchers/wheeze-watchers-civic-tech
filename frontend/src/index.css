@@ -146,13 +146,19 @@ p {
 }
 
 :modal {
-	background-color: white;
-	border: 2px solid darkGray;
-	border-radius: 5px;
+  height: 50vh;
+  width: 50vw;
+  background-color: white;
+  border: 2px solid darkGray;
+  border-radius: 5px;
+}
+
+:modal input {
+  width: 50%;
 }
 
 ::backdrop {
-	background-color: purple;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .is-half{

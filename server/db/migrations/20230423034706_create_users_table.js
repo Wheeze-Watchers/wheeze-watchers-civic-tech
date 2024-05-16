@@ -16,24 +16,21 @@ exports.up = (knex) => knex.schema.dropTableIfExists('user_post')
     table.string('username').notNullable().unique();
     table.string('password_hash').notNullable();
     table.boolean('expert');
+    table.string('profile_picture').defaultTo('https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png');
   })
   .createTable('post', (table) => {
     table.increments('id').primary();
     table.string('title');
     table.string('body');
     table.timestamp('created_at').defaultTo(knex.fn.now());
-  })
-  .createTable('user_post', (table) => {
-    table.increments('id').primary();
-    // table.foreign('user_id').references('user.id');
-    table.integer('user_id').unique().references('user.id');
-    // table.foreign('post_id').references('post.id');
-    table.integer('post_id').unique().references('post.id');
+    table.integer('user_id');
+    table.foreign('user_id').references('id').inTable('user');
   })
   .createTable('resource', (table) => {
     table.increments('id').primary();
-    table.integer('user_id').unique().references('user.id');
-    table.string('URL');
+    table.string('url');
+    table.integer('user_id').unique()
+    table.foreign('user_id').references('id').inTable('user');
   })
   .createTable('comment', (table) => {
     table.increments('id').primary();

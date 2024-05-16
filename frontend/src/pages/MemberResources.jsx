@@ -37,7 +37,7 @@ export default function () {
 							className="button is-info"
 							onClick={toggleModal}
 						>
-							Open Modal
+							Add Link
 						</button>
 					</div>
 					<div className={`modal ${isActive ? 'is-active' : ''}`}>

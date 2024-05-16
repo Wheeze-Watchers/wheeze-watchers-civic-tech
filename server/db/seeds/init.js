@@ -9,6 +9,7 @@ exports.seed = async function (knex) {
   // Deletes ALL existing entries
   await knex("user").del();
   await knex("post").del();
+  await knex("resource").del();
 
   // Inserts seed entries
   await knex("user").insert([
@@ -43,18 +44,29 @@ exports.seed = async function (knex) {
     {
       title: "a title about something",
       body: "body body body kajbfjasfgsfbal",
+      user_id: 1
     },
     {
       title: "a title about something",
       body: "body body body kajbfjasfgsfbal",
+      user_id: 2
     },
     {
       title: "a title about something",
       body: "body body body kajbfjasfgsfbal",
+      user_id: 3
     },
     {
       title: "a title about something",
       body: "body body body kajbfjasfgsfbal",
+      user_id: 4
     },
   ]);
+
+    await knex("resource").insert([
+      {
+        user_id: 1,
+        url: "google.com"
+      },
+    ]);
 };
