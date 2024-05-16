@@ -2,31 +2,44 @@ import { useNavigate, NavLink } from "react-router-dom";
 
 export default function HomePage() {
   return (
-    <div className="home-container">
-      <div id="mission-statement">
-        <h1>Community, Connections & Change.</h1>
-        <div id="description">
-          <h2>
-            EAZE is a forum for users in NYC suffering from asthma, parents of
-            asthmatic children, and asthma healthcare professionals to interact
-            with one another, provide vital resources in order to help better
-            manage the effects of asthma.
-          </h2>
+    <>
+      <section className="hero is-info is-medium">
+        <div className="hero-body">
+          <p className="title has-text-light">
+            Community, Connections & Change.
+          </p>
+          <p className="subtitle has-text-light">
+            <strong className="has-text-light">EAZE</strong> is a forum for
+            users in NYC suffering from asthma, parents of asthmatic children,
+            and asthma healthcare professionals to interact with one another,
+            provide vital resources in order to help better manage the effects
+            of asthma.
+          </p>
         </div>
-      </div>
-      <div className="info-box-container">
-        <div className="info-box">
-          <NavLink to="/resources">
+      </section>
+      <section className="section" id="resources-home-card">
+        <NavLink to="/resources">
+          <div className="title">
             <h2>Resource Page</h2>
-          </NavLink>
-        </div>
-        <div className="info-box">
-          <NavLink to="/discussion">
+          </div>
+        </NavLink>
+      </section>
+      <section className="section" id="discussion-home-card">
+        <NavLink to="/discussion">
+          <div className="title">
             <h2>Discussion Board</h2>
-          </NavLink>
+          </div>
+        </NavLink>
+      </section>
+      <section className></section>
+      <footer className="footer">
+        <div className="content has-text-centered">
+          <p>
+            <strong>EAZE</strong> was developed by Aaron Castillo, Dominic Tuzo
+            & Maya Ramkishun.
+          </p>
         </div>
-      </div>
-      <footer></footer>
-    </div>
+      </footer>
+    </>
   );
 }

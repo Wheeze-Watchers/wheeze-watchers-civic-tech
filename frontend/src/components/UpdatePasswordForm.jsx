@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { updateUsername } from "../adapters/user-adapter";
 
-export default function UpdateUsernameForm({ currentUser, setCurrentUser }) {
+export default function UpdatePasswordForm({ currentUser, setCurrentUser }) {
   const navigate = useNavigate();
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -20,13 +20,13 @@ export default function UpdateUsernameForm({ currentUser, setCurrentUser }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} aria-labelledby="update-heading">
-      <h2 id="update-heading">Update Username: {currentUser.username}</h2>
-      <label htmlFor="username">New Username</label>
-      <input type="text" id="username" name="username" />
+    <form onSubmit={handleSubmit} aria-labelledby="update-password-heading">
+      <h2 id="update-password-heading">Update Password</h2>
+      <label htmlFor="password">New Password</label>
+      <input type="text" id="password" name="password" />
       <input type="hidden" name="id" value={currentUser.id} />
 
-      <button>Update Username</button>
+      <button>Update Password</button>
     </form>
   );
 }
