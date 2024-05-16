@@ -129,7 +129,7 @@ export default function SignUpPage() {
         />
 
         <label htmlFor="expert">
-          <Checkbox
+          <Checkbox 
             label="Are you an Expert? (Check if yes)"
             value={expert}
             onChange={handleCheck}

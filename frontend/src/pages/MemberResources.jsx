@@ -44,11 +44,10 @@ export default function () {
 						<div className="modal-background"></div>
 						<div className="modal-content">
 							<div className="box">
-								<p>This is the content of the modal.</p>
 								<form onSubmit={handleSubmit} aria-labelledby="resource-form">
-                                    <label htmlFor="comment">Add Link Below:</label>
+                                    <label htmlFor="link">Add Link Below:</label>
                                     <input type="text" id="resource-link" name="resource-link" />
-                                    <button>Add</button>
+                                    <button className="button is-primary">Add</button>
                                 </form>
 							</div>
 						</div>
