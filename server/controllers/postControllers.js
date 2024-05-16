@@ -2,9 +2,9 @@ const Post = require('../db/models/Post');
 const { isAuthorized } = require('../utils/auth-utils');
 
 exports.createPost = async (req, res) => {
-  const { title, body } = req.body;
+  const { title, body, user_id } = req.body;
 
-  const post = await Post.createPost(title, body);
+  const post = await Post.createPost(title, body, user_id);
 
   res.send(post);
 };

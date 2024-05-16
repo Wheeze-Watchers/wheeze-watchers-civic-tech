@@ -30,7 +30,7 @@ export default function () {
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (currentUser) {
-            const response = await fetch(`/api/posts/discussion`, getPostOptions({ title: postTitle, body: postBody}));
+            const response = await fetch(`/api/posts/discussion`, getPostOptions({ title: postTitle, body: postBody, user_id: currentUser.id}));
             if (!response.ok) {
                 throw new Error("Network response was not ok");
             }
@@ -39,7 +39,7 @@ export default function () {
             setPostBody('');
 
         } else {
-            navigate('/sign-up');
+            navigate('/login');
         }
     };
 
@@ -87,6 +87,7 @@ export default function () {
             <div className="topic-container">
                 {post && post.map((val) => (
                     <div key={val.id}>
+                        <img src={val.user.profile_picture} width='100'/>
                         <h1>{val.title}</h1>
                         <h3>{val.body}</h3>
                         <button type='button' onClick={() => handleDelete(val.id)}>delete</button>
