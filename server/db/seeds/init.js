@@ -43,18 +43,22 @@ exports.seed = async function (knex) {
     {
       title: "a title about something",
       body: "body body body kajbfjasfgsfbal",
+      user_id: 1
     },
     {
       title: "a title about something",
       body: "body body body kajbfjasfgsfbal",
+      user_id: 2
     },
     {
       title: "a title about something",
       body: "body body body kajbfjasfgsfbal",
+      user_id: 3
     },
     {
       title: "a title about something",
       body: "body body body kajbfjasfgsfbal",
+      user_id: 4
     },
   ]);
 };

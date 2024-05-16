@@ -16,6 +16,7 @@ class User {
     username,
     password_hash,
     expert,
+    profile_picture
   }) {
     this.id = id;
     this.firstName = firstName;
@@ -24,6 +25,7 @@ class User {
     this.username = username;
     this.#passwordHash = password_hash;
     this.expert = expert;
+    this.profile_picture = profile_picture;
   }
 
   // This instance method takes in a plain-text password and returns true if it matches
@@ -71,7 +73,7 @@ class User {
       email,
       username,
       password_hash,
-      expert,
+      expert
     ]);
     const user = rows[0];
     return new User(user);
