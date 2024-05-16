@@ -8,50 +8,52 @@ export default function SiteHeadingAndNav() {
   return (
     <header
       id="nav-header"
-      class="navbar"
+      className="navbar"
       role="navigation"
       aria-label="main navigation"
     >
-      <div class="navbar-brand">
-        <div class="navbar-item" id="logo">
+      <div className="navbar-brand">
+        <div className="navbar-item" id="logo">
           <NavLink to="/">
-            <div>EAZE</div>
+            <div>
+              <p>EAZE</p>
+            </div>
           </NavLink>
         </div>
       </div>
       <nav>
         <div>
           {currentUser ? (
-            <ul class="navbar-start">
-              <li class="navbar-item">
+            <ul className="navbar-start">
+              <li className="navbar-item">
                 <NavLink to={"/discussion"}>Discussions</NavLink>
               </li>
-              <li class="navbar-item">
+              <li className="navbar-item">
                 <NavLink to="/resources">Resources</NavLink>
               </li>
-              <li class="navbar-item">
+              <li className="navbar-item">
                 <NavLink to={`/users/${currentUser.id}`}>
                   {currentUser.username}
                 </NavLink>
               </li>
             </ul>
           ) : (
-            <ul class="navbar-start">
-              <li class="navbar-item">
+            <ul className="navbar-start">
+              <li className="navbar-item">
                 <NavLink to={"/discussion"}>Discussions</NavLink>
               </li>
-              <li class="navbar-item">
+              <li className="navbar-item">
                 <NavLink to="/resources">Resources</NavLink>
               </li>
-              <li class="navbar-end">
-                <div class="buttons">
-                  <div class="navbar-item">
-                    <div class="button is-primary">
+              <li className="navbar-end">
+                <div className="buttons">
+                  <div className="navbar-item">
+                    <div className="button is-primary">
                       <NavLink to="/login">Login</NavLink>
                     </div>
                   </div>
-                  <div class="navbar-item">
-                    <div class="button is-light">
+                  <div className="navbar-item">
+                    <div className="button is-light">
                       <NavLink to="/sign-up">
                         <strong className="active" id="sign-up-color">
                           Sign Up
