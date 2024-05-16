@@ -1,8 +1,7 @@
 import { useContext, useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import CurrentUserContext from "../contexts/current-user-context";
-import SignUpPage from "./SignUp";
 import { fetchHandler, getPatchOptions, getPostOptions } from "../utils";
+import CurrentUserContext from "../contexts/current-user-context";
 
 export default function () {
     const [postTitle, setPostTitle] = useState('')
@@ -90,8 +89,11 @@ export default function () {
                         <img src={val.user.profile_picture} width='100'/>
                         <h1>{val.title}</h1>
                         <h3>{val.body}</h3>
-                        <button type='button' onClick={() => handleDelete(val.id)}>delete</button>
-                        <button type='button' onClick={() => openEditModal(val.id, val.title, val.body)}>edit</button>
+                        {(currentUser && currentUser.id === val.user_id) && <>
+                            <button type='button' onClick={() => handleDelete(val.id)}>delete</button>
+                            <button type='button' onClick={() => openEditModal(val.id, val.title, val.body)}>edit</button>
+                            </>
+                        }
                     </div>
                 ))}
             </div>
