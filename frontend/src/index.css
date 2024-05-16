@@ -20,11 +20,11 @@ input #comment {
 }
 
 #nav-header {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 0.5rem 1rem;
-	background: #1088c0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: #1088c0;
 }
 
 #logo {
@@ -83,24 +83,26 @@ form #login-box {
 
 /* automatically added by NavLink component */
 .active {
-	color: #eebc32;
-	font-weight: bold;
-	font-style: italic;
+  color: #ff8d09;
+  font-weight: bold;
+  font-style: italic;
 }
 
-h1 {
-	display: flex;
-	justify-content: center;
+h1,
+footer,
+span,
+p,
+#mission-statement {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
-ul {
-	display: flex;
-	justify-content: center;
-}
-
-footer {
-	display: flex;
-	justify-content: center;
+#description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .info-box-container {
@@ -153,8 +155,8 @@ p {
 	background-color: purple;
 }
 
-.is-half {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.is-half{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

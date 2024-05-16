@@ -20,9 +20,7 @@ export default function SiteHeadingAndNav() {
                 <NavLink to={"/discussion"}>Discussions</NavLink>
               </li>
               <li>
-                <NavLink to="/users" end={true}>
-                  Users
-                </NavLink>
+                <NavLink to="/resources">Resources</NavLink>
               </li>
               <li>
                 <NavLink to={`/users/${currentUser.id}`}>
