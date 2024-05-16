@@ -40,12 +40,16 @@ export default function UserPage() {
 
   return (
     <>
-      <h1>{profileUsername}</h1>
-      {!!isCurrentUserProfile && (
-        <button onClick={handleLogout}>Log Out</button>
-      )}
-      <p>If the user had any data, here it would be</p>
-      <p>Fake Bio or something</p>
+      <h1>{profileUsername}'s profile</h1>
+      <div id="logout-div">
+        {!!isCurrentUserProfile && (
+          <button onClick={handleLogout}>Log Out</button>
+        )}
+      </div>
+      <p>First Name: {currentUser.firstName}</p>
+      <p>Last Name: {currentUser.lastName}</p>
+      <p>Email: {currentUser.email}</p>
+      <p>Bio:</p>
       {!!isCurrentUserProfile && (
         <UpdateUsernameForm
           currentUser={currentUser}
