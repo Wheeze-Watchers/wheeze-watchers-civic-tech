@@ -1,158 +1,160 @@
-@import "https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css";
+@import 'https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css';
 
 body {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  margin: 0;
+	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	margin: 0;
 }
 
-input, label {
-  display: block;
+input,
+label {
+	display: block;
 }
 
 input {
-  border: 1px solid #ccc;
-  margin-bottom: 10px;
+	border: 1px solid #ccc;
+	margin-bottom: 10px;
 }
 
 input #comment {
-  overflow: auto;
+	overflow: auto;
 }
 
- #nav-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5rem 1rem;
-  background: #1088c0;
+#nav-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.5rem 1rem;
+	background: #1088c0;
 }
 
 #logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-decoration: none;
-  color: #fff;
+	font-size: 1.5rem;
+	font-weight: bold;
+	text-decoration: none;
+	color: #fff;
 }
 
 nav ul {
-  display: flex;
-  gap: 1rem;
-  padding: 0;
-  margin: 0;
-  list-style: none;
+	display: flex;
+	gap: 1rem;
+	padding: 0;
+	margin: 0;
+	list-style: none;
 }
 
 nav a {
-  display: block;
-  color: #fff;
+	display: block;
+	color: #fff;
 }
 
 form {
-  padding: 15px;
-  border: 1px solid #ccc;
-  margin: 1px auto;
-  min-width: 100px;
-  max-width: 400px;
-  min-height: 100px;
-  max-height: 400px;
+	padding: 15px;
+	border: 1px solid #ccc;
+	margin: 1px auto;
+	min-width: 100px;
+	max-width: 400px;
+	min-height: 100px;
+	max-height: 400px;
 }
 
 form #comment {
-  padding: 15px;
-  border: 1px solid #ccc;
-  margin: 1px auto;
-  resize: both;
-  overflow: auto;
-  min-width: 370px;
-  max-width: 370px;
-  min-height: 100px;
-  max-height: 400px;
+	padding: 15px;
+	border: 1px solid #ccc;
+	margin: 1px auto;
+	resize: both;
+	overflow: auto;
+	min-width: 370px;
+	max-width: 370px;
+	min-height: 100px;
+	max-height: 400px;
 }
 
 form #login-heading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 form #login-box {
-  /* display: flex; */
-  justify-content: center;
-  align-items: center;
+	/* display: flex; */
+	justify-content: center;
+	align-items: center;
 }
 
 /* automatically added by NavLink component */
 .active {
-  color: #eebc32;
-  font-weight: bold;
-  font-style: italic;
+	color: #eebc32;
+	font-weight: bold;
+	font-style: italic;
 }
 
 h1 {
-  display: flex;
-  justify-content: center;
+	display: flex;
+	justify-content: center;
 }
 
 ul {
-  display: flex;
-  justify-content: center;
+	display: flex;
+	justify-content: center;
 }
 
 footer {
-  display: flex;
-  justify-content: center;
+	display: flex;
+	justify-content: center;
 }
 
 .info-box-container {
-  margin: 10px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+	margin: 10px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
 }
 
 .info-box {
-  border: 1px solid #ccc;
-  padding: 10px;
-  margin: 10px;
-  background-color: #f9f9f9;
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+	border: 1px solid #ccc;
+	padding: 10px;
+	margin: 10px;
+	background-color: #f9f9f9;
+	border-radius: 5px;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
 }
 
-span, p {
-  display: flex;
-  justify-content: center;
+span,
+p {
+	display: flex;
+	justify-content: center;
 }
 
 .topic-container {
-  border: 1px solid black;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 20rem;
-  text-align: center;
-  margin: 3rem auto;
-  padding: 2rem 5rem;
+	border: 1px solid black;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 20rem;
+	text-align: center;
+	margin: 3rem auto;
+	padding: 2rem 5rem;
 }
 
 .topic-container h3 {
-  align-self: flex-start;
+	align-self: flex-start;
 }
 
 :modal {
-  background-color: white;
-  border: 2px solid darkGray;
-  border-radius: 5px;
+	background-color: white;
+	border: 2px solid darkGray;
+	border-radius: 5px;
 }
 
 ::backdrop {
-  background-color: purple;
+	background-color: purple;
 }
 
-.is-half{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.is-half {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
