@@ -8,6 +8,7 @@ const logRoutes = require("./middleware/logRoutes");
 const authRouter = require("./routers/authRouter");
 const userRouter = require("./routers/userRouter");
 const postRouter = require("./routers/postRouter");
+const resourceRouter = require("./routers/resourceRouter")
 
 const app = express();
 
@@ -20,6 +21,7 @@ app.use(express.static(path.join(__dirname, "../frontend/dist"))); // Serve stat
 app.use("/api", authRouter);
 app.use("/api/users", userRouter);
 app.use("/api/posts", postRouter);
+app.use("/api/resources", resourceRouter);
 
 // Requests meant for the API will be sent along to the router.
 // For all other requests, send back the index.html file in the dist folder.
