@@ -23,14 +23,14 @@ class Resource {
   static async createResource(url) {
     const query = `
         INSERT INTO resource (url)
-        VALUES (?, ?) 
+        VALUES (?) 
         RETURNING *`;
     const { rows } = await knex.raw(query, [url]);
     const resource = rows[0];
     return new Resource(resource);
   }
 
-  static async updateBody(id, url) {
+  static async updateResource(id, url) {
     const query = `
         UPDATE resource
         SET url=?
