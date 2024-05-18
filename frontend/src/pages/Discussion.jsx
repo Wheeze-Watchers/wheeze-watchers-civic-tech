@@ -84,19 +84,24 @@ export default function () {
             </form>
 
             <div className="topic-container">
-                {post && post.map((val) => (
-                    <div key={val.id}>
-                        <img src={val.user.profile_picture} width='100'/>
-                        <h1>{val.title}</h1>
-                        <h3>{val.body}</h3>
-                        {(currentUser && currentUser.id === val.user_id) && <>
-                            <button type='button' onClick={() => handleDelete(val.id)}>delete</button>
-                            <button type='button' onClick={() => openEditModal(val.id, val.title, val.body)}>edit</button>
-                            </>
-                        }
-                    </div>
-                ))}
+    {post && post.map((val) => (
+        <div key={val.id} className="card">
+            <div className="card-content">
+                <img src={val.user.profile_picture} width='100' />
+                <div className="title-body">
+                    <h1 className="title is-3">{val.title}</h1>
+                    <h3>{val.body}</h3>
+                </div>
             </div>
+            {(currentUser && currentUser.id === val.user_id) && 
+                <div className="button-container">
+                    <button type='button' className="button is-danger" onClick={() => handleDelete(val.id)}>delete</button>
+                    <button type='button' className="button is-info" onClick={() => openEditModal(val.id, val.title, val.body)}>edit</button>
+                </div>
+            }
+        </div>
+    ))}
+</div>
 
             <dialog className="edit-modal" ref={editModalRef}>
                 <h3>Title</h3>
