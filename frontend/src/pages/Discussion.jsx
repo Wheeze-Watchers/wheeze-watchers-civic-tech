@@ -76,11 +76,11 @@ export default function () {
 
     return (
         <>
-            <form onSubmit={handleSubmit} aria-labelledby="comment-heading">
-                <label htmlFor="comment">Add post</label>
-                <input type="text" id="title" name="title" placeholder="Add Title" value={postTitle} onChange={(e) => setPostTitle(e.target.value)} />
-                <input type="text" id="comment" name="comment" placeholder="Add Text" value={postBody} onChange={(e) => setPostBody(e.target.value)} />
-                <button>Add</button>
+            <form className="box" onSubmit={handleSubmit} aria-labelledby="comment-heading">
+                <label className="label" htmlFor="comment">Add post</label>
+                <input className="input" type="text" id="title" name="title" placeholder="Add Title" value={postTitle} onChange={(e) => setPostTitle(e.target.value)} />
+                <textarea className="input" type="text" id="comment" name="comment" placeholder="Add Text" value={postBody} onChange={(e) => setPostBody(e.target.value)} />
+                <button className="button is-info">Add</button>
             </form>
 
             <div className="topic-container">

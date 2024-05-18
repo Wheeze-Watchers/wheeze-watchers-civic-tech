@@ -14,7 +14,7 @@ export default function SiteHeadingAndNav() {
     >
       <div className="navbar-brand">
         <div className="navbar-item" id="logo">
-          <NavLink to="/">
+          <NavLink to="/" style={{ color: "#ff8d09" }}>
             <div>
               <p>EAZE</p>
             </div>
