@@ -1,10 +1,13 @@
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { Form, useNavigate } from 'react-router-dom';
 import CurrentUserContext from '../contexts/current-user-context';
 import Microlink from '@microlink/react';
+import { fetchHandler } from '../utils';
 
 export default function () {
 	const { currentUser } = useContext(CurrentUserContext);
+	const [url, setUrl] = useState('')
+	const [resource, setResource] = useState([])
 	const currentUserDummy = {
 		first_name: 'bob',
 		last_name: 'dylan',
@@ -12,6 +15,16 @@ export default function () {
 		username: 'john_doe',
 		expert: true,
 	};
+
+	useEffect(() => {
+		const fetchResources = async() => {
+			const response = await fetchHandler('/api/resources/')
+			// setResource(response)
+			console.log(response)
+		}
+		fetchResources()
+	}, [])
+
 	const [isActive, setIsActive] = useState(false);
 
 	const toggleModal = () => {
@@ -20,8 +33,8 @@ export default function () {
 
 	const handleSubmit = (e) => {
 	    e.preventDefault();
-	    <Microlink url={e} />
-        console.log('handleSubmit')
+	    <Microlink url={url} />
+        console.log(url)
 	};
 
 	return (
@@ -30,7 +43,7 @@ export default function () {
 				<h1>Member Resources</h1>
 			</div>
 
-			{currentUserDummy.expert && (
+			{currentUserDummy.expert && ( // changed currentUserDummy to currentUser
 				<div className="columns is-centered">
 					<div className="column is-half">
 						<button
@@ -47,7 +60,7 @@ export default function () {
 								<p>This is the content of the modal.</p>
 								<form onSubmit={handleSubmit} aria-labelledby="resource-form">
                                     <label htmlFor="comment">Add Link Below:</label>
-                                    <input type="text" id="resource-link" name="resource-link" />
+                                    <input type="text" id="resource-link" name="resource-link" value={url} onChange={(e) => setUrl(e.target.value)} />
                                     <button>Add</button>
                                 </form>
 							</div>
@@ -62,26 +75,7 @@ export default function () {
 			)}
 
 			<div className="info-box-container">
-				<div className="info-box">
-					<Microlink
-						id="article-header"
-						url="https://www.uchicagomedicine.org/forefront/pediatrics-articles/2024/january/improving-asthma-outcomes-and-reducing-health-disparities"
-					/>
-				</div>
-
-				<div className="info-box">
-					<Microlink
-						id="article-header"
-						url="https://www.medicalnewstoday.com/articles/running-with-asthma"
-					/>
-				</div>
-
-				<div className="info-box">
-					<Microlink
-						id="article-header"
-						url="https://www.who.int/news-room/fact-sheets/detail/asthma"
-					/>
-				</div>
+				
 			</div>
 			<footer>random stuff in the footer</footer>
 		</>
