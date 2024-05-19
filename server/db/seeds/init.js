@@ -66,7 +66,19 @@ exports.seed = async function (knex) {
     await knex("resource").insert([
       {
         user_id: 1,
-        url: "google.com"
+        url: "https://dribbble.com/search/palette-picker"
+      },
+      {
+        user_id: 2,
+        url: "https://www.uchicagomedicine.org/forefront/pediatrics-articles/2024/january/improving-asthma-outcomes-and-reducing-health-disparities"
+      },
+      {
+        user_id: 3,
+        url: "https://www.medicalnewstoday.com/articles/running-with-asthma"
+      },
+      {
+        user_id: 4,
+        url: "https://www.who.int/news-room/fact-sheets/detail/asthma"
       },
     ]);
 };

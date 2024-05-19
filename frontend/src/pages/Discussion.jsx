@@ -1,8 +1,7 @@
 import { useContext, useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import CurrentUserContext from "../contexts/current-user-context";
-import SignUpPage from "./SignUp";
 import { fetchHandler, getPatchOptions, getPostOptions } from "../utils";
+import CurrentUserContext from "../contexts/current-user-context";
 
 export default function () {
     const [postTitle, setPostTitle] = useState('')
@@ -77,24 +76,32 @@ export default function () {
 
     return (
         <>
-            <form onSubmit={handleSubmit} aria-labelledby="comment-heading">
-                <label htmlFor="comment">Add post</label>
-                <input type="text" id="title" name="title" placeholder="Add Title" value={postTitle} onChange={(e) => setPostTitle(e.target.value)} />
-                <input type="text" id="comment" name="comment" placeholder="Add Text" value={postBody} onChange={(e) => setPostBody(e.target.value)} />
-                <button>Add</button>
+            <form className="box" onSubmit={handleSubmit} aria-labelledby="comment-heading">
+                <label className="label" htmlFor="comment">Add post</label>
+                <input className="input" type="text" id="title" name="title" placeholder="Add Title" value={postTitle} onChange={(e) => setPostTitle(e.target.value)} />
+                <textarea className="input" type="text" id="comment" name="comment" placeholder="Add Text" value={postBody} onChange={(e) => setPostBody(e.target.value)} />
+                <button className="button is-info">Add</button>
             </form>
 
             <div className="topic-container">
-                {post && post.map((val) => (
-                    <div key={val.id}>
-                        <img src={val.user.profile_picture} width='100'/>
-                        <h1>{val.title}</h1>
-                        <h3>{val.body}</h3>
-                        <button type='button' onClick={() => handleDelete(val.id)}>delete</button>
-                        <button type='button' onClick={() => openEditModal(val.id, val.title, val.body)}>edit</button>
-                    </div>
-                ))}
+    {post && post.map((val) => (
+        <div key={val.id} className="card">
+            <div className="card-content">
+                <img src={val.user.profile_picture} width='100' />
+                <div className="title-body">
+                    <h1 className="title is-3">{val.title}</h1>
+                    <h3>{val.body}</h3>
+                </div>
             </div>
+            {(currentUser && currentUser.id === val.user_id) && 
+                <div className="button-container">
+                    <button type='button' className="button is-danger" onClick={() => handleDelete(val.id)}>delete</button>
+                    <button type='button' className="button is-info" onClick={() => openEditModal(val.id, val.title, val.body)}>edit</button>
+                </div>
+            }
+        </div>
+    ))}
+</div>
 
             <dialog className="edit-modal" ref={editModalRef}>
                 <h3>Title</h3>
