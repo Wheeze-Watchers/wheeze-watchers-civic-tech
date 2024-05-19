@@ -13,10 +13,10 @@ export default function SiteHeadingAndNav() {
       aria-label="main navigation"
     >
       <div className="navbar-brand">
-        <div className="navbar-item">
-          <NavLink to="/">
-            <div className="is-light">
-              <p id="logo">EAZE</p>
+        <div className="navbar-item" id="logo">
+          <NavLink to="/" style={{ color: "#ff8d09" }}>
+            <div>
+              <p>EAZE</p>
             </div>
           </NavLink>
         </div>
