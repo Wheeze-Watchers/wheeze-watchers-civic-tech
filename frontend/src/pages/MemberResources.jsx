@@ -2,13 +2,14 @@ import { useContext, useState, useEffect } from 'react';
 import { Form, useNavigate } from 'react-router-dom';
 import CurrentUserContext from '../contexts/current-user-context';
 import Microlink from '@microlink/react';
-import { fetchHandler } from '../utils';
+import { fetchHandler, getPostOptions } from '../utils';
 
 export default function () {
 	const { currentUser } = useContext(CurrentUserContext);
-	const [url, setUrl] = useState('')
+	const [newUrl, setNewUrl] = useState('')
 	const [resource, setResource] = useState([])
 	const currentUserDummy = {
+		id: 7,
 		first_name: 'bob',
 		last_name: 'dylan',
 		email: 'bobdylan@mail.com',
@@ -17,11 +18,11 @@ export default function () {
 	};
 
 	useEffect(() => {
-		const fetchResources = async() => {
-			const response = await fetchHandler('/api/resources/')
-			// setResource(response)
-			console.log(response)
-		}
+		const fetchResources = async () => {
+			const response = await fetchHandler('/api/resources/');
+			const validResources = response.filter(resource => resource !== null && resource !== undefined);
+			setResource(validResources[0]);
+		};
 		fetchResources()
 	}, [])
 
@@ -31,10 +32,14 @@ export default function () {
 		setIsActive(!isActive);
 	};
 
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
 	    e.preventDefault();
-	    <Microlink url={url} />
-        console.log(url)
+	    if (currentUserDummy) {
+			const response = await fetchHandler('/api/resources/', getPostOptions({ user_id: currentUserDummy.id, url: newUrl }));
+			if (!response.ok) {
+                throw new Error("Network response was not ok");
+            }
+		}
 	};
 
 	return (
@@ -43,7 +48,8 @@ export default function () {
 				<h1>Member Resources</h1>
 			</div>
 
-			{currentUserDummy.expert && ( // changed currentUserDummy to currentUser
+			{currentUserDummy.expert && (
+				<>
 				<div className="columns is-centered">
 					<div className="column is-half">
 						<button
@@ -53,6 +59,23 @@ export default function () {
 							Add Link
 						</button>
 					</div>
+				</div>
+				</>
+			)}
+
+			<div className='info-box-container'>
+				{resource && resource.map((val) => (
+					<div className='info-box' key={val.id}>
+						{val.url && typeof val.url === 'string' && (
+							<Microlink
+								id={val.id}
+								url={val.url}
+							/>
+						)}
+					</div>
+				))}
+			</div>
+
 					<div className={`modal ${isActive ? 'is-active' : ''}`}>
 						<div className="modal-background"></div>
 						<div className="modal-content">
@@ -60,7 +83,7 @@ export default function () {
 								<p>This is the content of the modal.</p>
 								<form onSubmit={handleSubmit} aria-labelledby="resource-form">
                                     <label htmlFor="comment">Add Link Below:</label>
-                                    <input type="text" id="resource-link" name="resource-link" value={url} onChange={(e) => setUrl(e.target.value)} />
+                                    <input type="text" id="resource-link" name="resource-link" value={newUrl} onChange={(e) => setNewUrl(e.target.value)} />
                                     <button>Add</button>
                                 </form>
 							</div>
@@ -71,12 +94,6 @@ export default function () {
 							onClick={toggleModal}
 						></button>
 					</div>
-				</div>
-			)}
-
-			<div className="info-box-container">
-				
-			</div>
 			<footer>random stuff in the footer</footer>
 		</>
 	);
