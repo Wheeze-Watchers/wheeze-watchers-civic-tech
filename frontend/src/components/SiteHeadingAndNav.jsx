@@ -13,10 +13,10 @@ export default function SiteHeadingAndNav() {
       aria-label="main navigation"
     >
       <div className="navbar-brand">
-        <div className="navbar-item" id="logo">
+        <div className="navbar-item">
           <NavLink to="/">
-            <div>
-              <p>EAZE</p>
+            <div className="is-light">
+              <p id="logo">EAZE</p>
             </div>
           </NavLink>
         </div>
@@ -46,20 +46,14 @@ export default function SiteHeadingAndNav() {
                 <NavLink to="/resources">Resources</NavLink>
               </li>
               <li className="navbar-end">
-                <div className="buttons">
-                  <div className="navbar-item">
-                    <div className="button is-primary">
-                      <NavLink to="/login">Login</NavLink>
-                    </div>
-                  </div>
-                  <div className="navbar-item">
-                    <div className="button is-light">
-                      <NavLink to="/sign-up">
-                        <strong className="active" id="sign-up-color">
-                          Sign Up
-                        </strong>
-                      </NavLink>
-                    </div>
+                <div className="navbar-item">
+                  <NavLink to="/login">Login</NavLink>
+                </div>
+                <div className="navbar-item">
+                  <div className="button is-light">
+                    <NavLink to="/sign-up">
+                      <strong id="sign-up-color">Sign Up</strong>
+                    </NavLink>
                   </div>
                 </div>
               </li>
