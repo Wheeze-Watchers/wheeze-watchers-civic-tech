@@ -24,7 +24,7 @@ export default function LoginPage() {
     <>
       <form onSubmit={handleSubmit} aria-labelledby="login-heading">
         <div id="login-box">
-          <h2 id="login-heading">Welcome Back!</h2>
+          <h2 id="login-heading">Login</h2>
           <label htmlFor="username">Username</label>
           <input
             type="text"
