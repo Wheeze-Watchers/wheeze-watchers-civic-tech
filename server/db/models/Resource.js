@@ -20,12 +20,12 @@ class Resource {
     return resource ? new Resource(resource) : null;
   }
 
-  static async createResource(url) {
+  static async createResource(url, user_id) {
     const query = `
-        INSERT INTO resource (url)
-        VALUES (?) 
+        INSERT INTO resource (url, user_id)
+        VALUES (?, ?) 
         RETURNING *`;
-    const { rows } = await knex.raw(query, [url]);
+    const { rows } = await knex.raw(query, [url, user_id]);
     const resource = rows[0];
     return new Resource(resource);
   }
