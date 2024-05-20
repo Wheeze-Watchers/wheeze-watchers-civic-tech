@@ -87,7 +87,10 @@ export default function () {
     {post && post.map((val) => (
         <div key={val.id} className="card">
             <div className="card-content">
+                <div className="title-body center">
                 <img src={val.user.profile_picture} width='100' />
+                <p className="title is-5">{val.user.username}</p>
+                </div>
                 <div className="title-body">
                     <h1 className="title is-3">{val.title}</h1>
                     <h3>{val.body}</h3>
@@ -103,21 +106,28 @@ export default function () {
     ))}
 </div>
 
-            <dialog className="edit-modal" ref={editModalRef}>
+            <dialog className="edit" ref={editModalRef}>
+                <div>
                 <h3>Title</h3>
                 <input
+                    className="input"
                     type="text"
                     value={editTitle}
                     onChange={(e) => setEditTitle(e.target.value)}
                 />
                 <h3>Text</h3>
-                <input
+                <textarea
+                    // id="comment"
+                    className="input"
                     type="text"
                     value={editBody}
                     onChange={(e) => setEditBody(e.target.value)}
                 />
-                <button type="button" onClick={handleEdit}>Save</button>
-                <button type="button" onClick={closeEditModal}>Cancel</button>
+                </div>
+                <div className="button-container">
+                <button className="button is-info" type="button" onClick={handleEdit}>Save</button>
+                <button className="button is-danger" type="button" onClick={closeEditModal}>Cancel</button>
+                </div>
             </dialog>
         </>
     );
