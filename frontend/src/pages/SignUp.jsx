@@ -64,7 +64,7 @@ export default function SignUpPage() {
     return (
       <label>
         {label}
-        <input type="checkbox" value={value} onChange={onChange} />
+        <input id="checkbox" type="checkbox" value={value} onChange={onChange} />
       </label>
     );
   };

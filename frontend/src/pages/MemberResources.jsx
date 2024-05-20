@@ -81,7 +81,7 @@ export default function () {
 						<div className="modal-content">
 							<div className="box">
 								<form onSubmit={handleSubmit} aria-labelledby="resource-form">
-                                    <label htmlFor="comment">Add Link Below:</label>
+                                    <label htmlFor="resource">Add Link Below:</label>
                                     <input type="text" id="resource-link" name="resource-link" value={newUrl} onChange={(e) => setNewUrl(e.target.value)} />
                                     <button>Add</button>
                                 </form>

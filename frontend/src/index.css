@@ -9,14 +9,15 @@ header {
   margin-bottom: 2rem;
 }
 
-input,
-label {
-  display: block;
+input{
+  width: 100%;
 }
 
-/* input {
-  margin-bottom: 10px;
-} */
+/* Can't anchor it to the left, even after assigning an id */
+#checkbox{
+  display: flex;
+  justify-content: flex-start;
+}
 
 .navbar-item:hover {
   transition: 0.3s;
