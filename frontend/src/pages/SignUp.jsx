@@ -14,7 +14,7 @@ export default function SignUpPage() {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [expert, setExpert] = useState(true);
+  const [expert, setExpert] = useState(false);
   // We could also use a single state variable for the form data:
   // const [formData, setFormData] = useState({ username: '', password: '' });
   // What would be the pros and cons of that?
@@ -57,13 +57,13 @@ export default function SignUpPage() {
     if (name === "password") setPassword(value);
   };
 
-  const handleCheck = () => {
-    setExpert(!expert);
-    console.log(expert);
-  };
+  // const handleCheck = () => {
+  //   setExpert(!expert);
+  //   console.log(expert);
+  // };
 
   return (
-    <div id="form-div">
+    <div className="form-div">
       <form
         className="box field"
         onSubmit={handleSubmit}
@@ -146,9 +146,10 @@ export default function SignUpPage() {
             id="expert"
             name="expert"
             value={expert}
-            onClick={handleCheck}
+            onChange={() => setExpert(!expert)}
           />
         </label>
+        {console.log(expert)}
 
         {/* In reality, we'd want a LOT more validation on signup, so add more things if you have time
         <label htmlFor="password-confirm">Password Confirm</label>

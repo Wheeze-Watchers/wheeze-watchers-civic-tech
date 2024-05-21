@@ -21,7 +21,7 @@ export default function LoginPage() {
   if (currentUser) return <Navigate to="/" />;
 
   return (
-    <>
+    <div className="form-div">
       <form
         className="box field"
         onSubmit={handleSubmit}
@@ -66,6 +66,6 @@ export default function LoginPage() {
           Sign Up!
         </Link>
       </span>
-    </>
+    </div>
   );
 }

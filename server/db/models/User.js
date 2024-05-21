@@ -93,18 +93,18 @@ class User {
     return updatedUser ? new User(updatedUser) : null;
   }
 
-  static async update(id, password_hash) {
-    // dynamic queries are easier if you add more properties
-    const query = `
-      UPDATE "user"
-      SET password_hash=?
-      WHERE id=?
-      RETURNING *
-    `;
-    const { rows } = await knex.raw(query, [password_hash, id]);
-    const updatedPass = rows[0];
-    return updatedPass ? new User(updatedPass) : null;
-  }
+  // static async update(id, password_hash) {
+  //   // dynamic queries are easier if you add more properties
+  //   const query = `
+  //     UPDATE "user"
+  //     SET password_hash=?
+  //     WHERE id=?
+  //     RETURNING *
+  //   `;
+  //   const { rows } = await knex.raw(query, [password_hash, id]);
+  //   const updatedPass = rows[0];
+  //   return updatedPass ? new User(updatedPass) : null;
+  // }
 
   static async deleteAll() {
     return knex("user").del();

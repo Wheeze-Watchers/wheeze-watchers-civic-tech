@@ -1,4 +1,5 @@
 import { fetchHandler, getPostOptions, deleteOptions } from "../utils";
+import { useParams } from "react-router-dom";
 
 const baseUrl = "/api";
 

@@ -87,7 +87,7 @@ export default function () {
   };
 
   return (
-    <>
+    <div className="form-div">
       <form
         className="box"
         onSubmit={handleSubmit}
@@ -176,6 +176,6 @@ export default function () {
           Cancel
         </button>
       </dialog>
-    </>
+    </div>
   );
 }

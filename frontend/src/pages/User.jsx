@@ -7,7 +7,7 @@ import UpdateUsernameForm from "../components/UpdateUsernameForm";
 import UpdatePasswordForm from "../components/UpdatePasswordForm";
 import UpdateProfilePictureForm from "../components/UpdateProfilePictureForm";
 import UpdateEmailForm from "../components/UpdateEmailForm";
-// import UserProfile from "../components/UserProfile";
+import UserProfile from "../components/UserProfile";
 
 export default function UserPage() {
   // const navigate = useNavigate();
@@ -58,26 +58,26 @@ export default function UserPage() {
       </div> */}
       {!!isCurrentUserProfile && (
         <>
-          {/* <UserProfile
+          <UserProfile
+            currentUser={currentUser}
+            setCurrentUser={setCurrentUser}
+          />
+          {/* <UpdateProfilePictureForm
             currentUser={currentUser}
             setCurrentUser={setCurrentUser}
           /> */}
-          <UpdateProfilePictureForm
+          {/* <UpdateEmailForm
             currentUser={currentUser}
             setCurrentUser={setCurrentUser}
-          />
-          <UpdateEmailForm
-            currentUser={currentUser}
-            setCurrentUser={setCurrentUser}
-          />
+          /> */}
           <UpdateUsernameForm
             currentUser={currentUser}
             setCurrentUser={setCurrentUser}
           />
-          <UpdatePasswordForm
+          {/* <UpdatePasswordForm
             currentUser={currentUser}
             setCurrentUser={setCurrentUser}
-          />
+          /> */}
         </>
       )}
     </>
