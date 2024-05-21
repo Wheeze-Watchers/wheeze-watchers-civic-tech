@@ -2,8 +2,7 @@
  * @param { import("knex").Knex } knex
  * @returns { Promise<void> }
  */
-exports.up = (knex) => knex.schema.dropTableIfExists('resource_comment')
-  .dropTableIfExists('comment')
+exports.up = (knex) => knex.schema.dropTableIfExists('comment')
   .dropTableIfExists('resource')
   .dropTableIfExists('post')
   .dropTableIfExists('user')
@@ -38,12 +37,6 @@ exports.up = (knex) => knex.schema.dropTableIfExists('resource_comment')
     table.string('body');
     table.timestamp(true, true);
   })
-  .createTable('resource_comment', (table) => {
-    table.increments('id').primary();
-    table.integer('user_id').references('resource.user_id');
-    table.integer('resource_id').references('resource.id');
-    table.integer('comment_id').references('comment.id');
-  });
 
 /**
  * @param { import("knex").Knex } knex
@@ -51,6 +44,5 @@ exports.up = (knex) => knex.schema.dropTableIfExists('resource_comment')
  */
 exports.down = (knex) => {
   knex.schema.dropTable('user').dropTable('post').dropTable('resource')
-    .dropTable('comment')
-    .dropTable('resource_comment');
+    .dropTable('comment');
 };
