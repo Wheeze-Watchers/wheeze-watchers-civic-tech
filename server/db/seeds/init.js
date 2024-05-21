@@ -63,10 +63,10 @@ exports.seed = async function (knex) {
         user_id: 1,
         url: "https://www.uchicagomedicine.org/forefront/pediatrics-articles/2024/january/improving-asthma-outcomes-and-reducing-health-disparities"
       },
-      // {
-      //   user_id: 2,
-      //   url: "https://www.medicalnewstoday.com/articles/running-with-asthma"
-      // },
+      {
+        user_id: 2,
+        url: "https://news.weill.cornell.edu/news/2013/05/researchers-find-common-childhood-asthma-unconnected-to-allergens-or-inflammation"
+      },
       // {
       //   user_id: 3,
       //   url: "https://www.who.int/news-room/fact-sheets/detail/asthma"
