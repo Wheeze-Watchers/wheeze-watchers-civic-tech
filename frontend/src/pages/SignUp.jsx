@@ -30,8 +30,9 @@ export default function SignUpPage() {
 
     if (!email) return setErrorText("Missing email");
 
-    if (!username || !password)
-      return setErrorText("Missing username or password");
+    if (!username) return setErrorText("Missing username");
+
+    if (!password) return setErrorText("Missing password");
 
     const [user, error] = await createUser({
       first_name: firstName,
@@ -70,16 +71,22 @@ export default function SignUpPage() {
   };
 
   return (
-    <div id="form-div">
+    <div className="form-div">
       <form
+        className="box field"
         onSubmit={handleSubmit}
         onChange={handleChange}
         aria-labelledby="create-heading"
       >
-        <h2 id="create-heading">Sign Up</h2>
+        <h2 className="title" id="create-heading">
+          Sign Up
+        </h2>
 
-        <label htmlFor="firstName">First Name</label>
+        <label className="label" htmlFor="firstName">
+          First Name
+        </label>
         <input
+          className="input"
           autoComplete="off"
           type="text"
           id="firstName"
@@ -88,8 +95,11 @@ export default function SignUpPage() {
           value={firstName}
         />
 
-        <label htmlFor="lastName">Last Name</label>
+        <label className="label" htmlFor="lastName">
+          Last Name
+        </label>
         <input
+          className="input"
           autoComplete="off"
           type="text"
           id="lastName"
@@ -98,8 +108,11 @@ export default function SignUpPage() {
           value={lastName}
         />
 
-        <label htmlFor="email">Email</label>
+        <label className="label" htmlFor="email">
+          Email
+        </label>
         <input
+          className="input"
           autoComplete="off"
           type="text"
           id="email"
@@ -108,8 +121,11 @@ export default function SignUpPage() {
           value={email}
         />
 
-        <label htmlFor="username">Username</label>
+        <label className="label" htmlFor="username">
+          Username
+        </label>
         <input
+          className="input"
           autoComplete="off"
           type="text"
           id="username"
@@ -118,8 +134,11 @@ export default function SignUpPage() {
           value={username}
         />
 
-        <label htmlFor="password">Password</label>
+        <label className="label" htmlFor="password">
+          Password
+        </label>
         <input
+          className="input"
           autoComplete="off"
           type="password"
           id="password"
@@ -127,25 +146,36 @@ export default function SignUpPage() {
           onChange={handleChange}
           value={password}
         />
-
+//         <label className="label checkbox" htmlFor="expert">
+//           Are you an Expert? (Check if yes)
+//           <input
+//             type="checkbox"
+//             id="expert"
+//             name="expert"
         <label htmlFor="expert">
           <Checkbox 
             label="Are you an Expert? (Check if yes)"
             value={expert}
-            onChange={handleCheck}
+            onChange={() => setExpert(!expert)}
           />
         </label>
+        {console.log(expert)}
 
         {/* In reality, we'd want a LOT more validation on signup, so add more things if you have time
         <label htmlFor="password-confirm">Password Confirm</label>
         <input autoComplete="off" type="password" id="password-confirm" name="passwordConfirm" />
         */}
 
-        <button type="submit">Sign Up Now!</button>
+        <button className="button is-info" type="submit">
+          Sign Up Now!
+        </button>
       </form>
       {!!errorText && <p>{errorText}</p>}
       <span>
-        Already have an account with us? <NavLink to="/login"> Log in!</NavLink>
+        Already have an account with us?{" "}
+        <NavLink to="/login" style={{ marginLeft: "4px" }}>
+          Log in!
+        </NavLink>
       </span>
     </div>
   );

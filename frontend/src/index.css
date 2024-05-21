@@ -5,8 +5,12 @@ body {
 	margin: 0;
 }
 
-header {
+/* header {
   margin-bottom: 2rem;
+} */
+
+.form-div {
+  margin-top: 2rem;
 }
 
 input{
@@ -14,15 +18,19 @@ input{
 }
 
 /* Can't anchor it to the left, even after assigning an id */
-#checkbox{
+/* #checkbox{
   display: flex;
   justify-content: flex-start;
 }
-
+ */
 .navbar-item:hover {
   transition: 0.3s;
   background-color: #30a1d5;
   border-radius: 5px;
+}
+
+.navbar-end {
+  display: flex;
 }
 
 input #comment {
@@ -35,6 +43,10 @@ input #comment {
 	align-items: center;
 	padding: 0.5rem 1rem;
 	background: #1088c0;
+}
+
+#sign-up-color {
+  color: #1088c0;
 }
 
 #logo {
@@ -144,12 +156,11 @@ p {
 .card img {
   height: 100px;
   border-radius: 100px;
-  /* margin-right: 1rem;  */
 }
 
 .title-body {
-  flex-grow: 1; 
-  text-align: start;
+  flex-grow: 1;
+  text-align: left;
   overflow: hidden;
 }
 
@@ -213,14 +224,3 @@ p {
 	align-items: center;
 }
 
-/* .add-post {
-  position: sticky;
-  bottom: 0;
-  z-index: 1;
-} */
-
-/* #discussion-home-card,
-#resources-home-card {
-  display: grid;
-  align-items: center;
-} */

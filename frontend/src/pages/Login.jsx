@@ -21,33 +21,59 @@ export default function LoginPage() {
   if (currentUser) return <Navigate to="/" />;
 
   return (
-    <>
-      <form onSubmit={handleSubmit} aria-labelledby="login-heading">
+    <div className="form-div">
+      <form
+        className="box field"
+        onSubmit={handleSubmit}
+        aria-labelledby="login-heading"
+      >
         <div id="login-box">
-          <h2 id="login-heading">Login</h2>
-          <label htmlFor="username">Username</label>
-          <input
-            type="text"
-            autoComplete="username"
-            id="username"
-            name="username"
-          />
+          <h2 className="title" id="login-heading">
+            Welcome Back!
+          </h2>
 
-          <label htmlFor="password">Password</label>
+          <label class="label">Username</label>
+          <div class="control">
+            <input
+              class="input"
+              type="text"
+              autoComplete="username"
+              id="username"
+              name="username"
+            />
+          </div>
+//           <h2 id="login-heading">Login</h2>
+//           <label htmlFor="username">Username</label>
+//           <input
+//             type="text"
+//             autoComplete="username"
+//             id="username"
+//             name="username"
+//           />
+
+          <label className="label" htmlFor="password">
+            Password
+          </label>
           <input
+            class="input"
             type="password"
             autoComplete="current-password"
             id="password"
             name="password"
           />
 
-          <button>Log in!</button>
+          <button className="button is-info" style={{ marginTop: "4px" }}>
+            Log in!
+          </button>
         </div>
       </form>
       {!!errorText && <p>{errorText}</p>}
       <span>
-        Don't have an account with us? <Link to="/sign-up">Sign Up!</Link>
+        Don't have an account with us?{" "}
+        <Link to="/sign-up" style={{ marginLeft: "4px" }}>
+          Sign Up!
+        </Link>
       </span>
-    </>
+    </div>
   );
 }
