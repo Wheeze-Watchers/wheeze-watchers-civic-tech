@@ -11,7 +11,7 @@ exports.up = (knex) => knex.schema.dropTableIfExists('comment')
     table.string('first_name');
     table.string('last_name');
     table.string('email');
-    table.string('username').notNullable();
+    table.string('username').notNullable().unique();
     table.string('password_hash').notNullable();
     table.boolean('expert');
     table.string('profile_picture').defaultTo('https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png');
@@ -26,14 +26,15 @@ exports.up = (knex) => knex.schema.dropTableIfExists('comment')
   })
   .createTable('resource', (table) => {
     table.increments('id').primary();
-    table.string('url');
-    table.integer('user_id')
+    table.string('url').unique();
+    table.integer('user_id');
     table.foreign('user_id').references('id').inTable('user');
   })
   .createTable('comment', (table) => {
     table.increments('id').primary();
     table.integer('resource_id').references('resource.id');
-    table.integer('user_id').references('user.id');
+    table.integer('user_id');
+    table.foreign('user_id').references('user.id');
     table.string('body');
     table.timestamp(true, true);
   })

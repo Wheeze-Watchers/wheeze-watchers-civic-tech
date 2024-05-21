@@ -8,14 +8,6 @@ export default function () {
 	const { currentUser } = useContext(CurrentUserContext);
 	const [newUrl, setNewUrl] = useState('')
 	const [resource, setResource] = useState([])
-	// const currentUserDummy = {
-	// 	id: 7,
-	// 	first_name: 'bob',
-	// 	last_name: 'dylan',
-	// 	email: 'bobdylan@mail.com',
-	// 	username: 'john_doe',
-	// 	expert: true,
-	// };
 
 	useEffect(() => {
 		const fetchResources = async () => {
@@ -41,15 +33,15 @@ export default function () {
             }
 		}
 	};
+	console.log(currentUser)
 
 	return (
 		<>
-		{console.log(currentUser)}
 			<div className="topic-container">
 				<h1>Member Resources</h1>
 			</div>
 
-			{currentUser.expert && (
+			{currentUser && currentUser.expert && (
 				<>
 				<div className="columns is-centered">
 					<div className="column is-half">

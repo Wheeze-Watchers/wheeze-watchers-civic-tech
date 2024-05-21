@@ -10,6 +10,7 @@ exports.seed = async function (knex) {
   await knex("user").del();
   await knex("post").del();
   await knex("resource").del();
+  await knex("comment").del();
 
   // Inserts seed entries
   await knex("user").insert([
@@ -27,7 +28,7 @@ exports.seed = async function (knex) {
       email: "bobdylan2@mail.com",
       username: "john_doe2",
       password_hash: "hashed_password_1",
-      expert: true,
+      expert: false,
     },
     {
       first_name: "bob",
@@ -37,7 +38,6 @@ exports.seed = async function (knex) {
       password_hash: "hashed_password_1",
       expert: true,
     },
-    { username: "jane_doe", password_hash: "hashed_password_2" },
   ]);
 
   await knex("post").insert([
@@ -55,11 +55,6 @@ exports.seed = async function (knex) {
       title: "a title about something",
       body: "body body body kajbfjasfgsfbal",
       user_id: 3
-    },
-    {
-      title: "a title about something",
-      body: "body body body kajbfjasfgsfbal",
-      user_id: 4
     },
   ]);
 
