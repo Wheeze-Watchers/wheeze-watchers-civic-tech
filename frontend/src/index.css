@@ -124,7 +124,7 @@ p {
 }
 
 .card {
-  width: 40rem;
+  width: 50rem;
   min-height: 10rem;
   display: flex;
   flex-direction: column;
@@ -154,6 +154,7 @@ p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 60vw;
 }
 
 .title-body h3 {
