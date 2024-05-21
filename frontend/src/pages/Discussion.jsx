@@ -77,59 +77,53 @@ export default function () {
     editModalRef.current.close();
   };
 
-//   const handleEdit = async () => {
-//     await fetchHandler(
-//       `api/posts/discussion/${editPostId}`,
-//       getPatchOptions({ id: editPostId, title: editTitle, body: editBody })
-//     );
-//     closeEditModal();
-//     setPostToggle(!postToggle);
-//   };
+  const handleEdit = async () => {
+    await fetchHandler(
+      `api/posts/discussion/${editPostId}`,
+      getPatchOptions({ id: editPostId, title: editTitle, body: editBody })
+    );
+    closeEditModal();
+    setPostToggle(!postToggle);
+  };
 
-//   return (
-//     <div className="form-div">
-//       <form
-//         className="box"
-//         onSubmit={handleSubmit}
-//         aria-labelledby="comment-heading"
-//       >
-//         <label className="label" htmlFor="comment">
-//           Add post
-//         </label>
-//         <input
-//           className="input"
-//           type="text"
-//           id="title"
-//           name="title"
-//           placeholder="Add Title"
-//           value={postTitle}
-//           onChange={(e) => setPostTitle(e.target.value)}
-//         />
-//         <textarea
-//           className="input"
-//           type="text"
-//           id="comment"
-//           name="comment"
-//           placeholder="Add Text"
-//           value={postBody}
-//           onChange={(e) => setPostBody(e.target.value)}
-//         />
-//         <button className="button is-info">Add</button>
-//       </form>
-
-//       <div className="topic-container">
-//         {post &&
-//           post.map((val) => (
-//             <div key={val.id} className="card">
-//               <div className="card-content">
-//                 <img src={val.user.profile_picture} width="100" />
-            <div className="topic-container">
-    {post && post.map((val) => (
-        <div key={val.id} className="card">
-            <div className="card-content">
+  return (
+    <>
+      <form
+        className="box"
+        onSubmit={handleSubmit}
+        aria-labelledby="comment-heading"
+      >
+        <label className="label" htmlFor="comment">
+          Add post
+        </label>
+        <input
+          className="input"
+          type="text"
+          id="title"
+          name="title"
+          placeholder="Add Title"
+          value={postTitle}
+          onChange={(e) => setPostTitle(e.target.value)}
+        />
+        <textarea
+          className="input"
+          type="text"
+          id="comment"
+          name="comment"
+          placeholder="Add Text"
+          value={postBody}
+          onChange={(e) => setPostBody(e.target.value)}
+        />
+        <button className="button is-info">Add</button>
+      </form>
+      <div className="topic-container">
+        {post &&
+          post.map((val) => (
+            <div key={val.id} className="card">
+              <div className="card-content">
                 <div className="title-body center">
-                <img src={val.user.profile_picture} width='100' />
-                <p className="title is-5">{val.user.username}</p>
+                  <img src={val.user.profile_picture} width="100" />
+                  <p className="title is-5">{val.user.username}</p>
                 </div>
                 <div className="title-body">
                   <h1 className="title is-3">{val.title}</h1>
@@ -158,57 +152,63 @@ export default function () {
           ))}
       </div>
 
-//       <dialog className="edit-modal" ref={editModalRef}>
-//         <h3 className="label">Title</h3>
-//         <input
-//           className="input"
-//           type="text"
-//           value={editTitle}
-//           onChange={(e) => setEditTitle(e.target.value)}
-//         />
-//         <h3 className="label">Text</h3>
-//         <input
-//           className="input"
-//           type="text"
-//           value={editBody}
-//           onChange={(e) => setEditBody(e.target.value)}
-//         />
-//         <button className="button is-info" type="button" onClick={handleEdit}>
-//           Save
-//         </button>
-//         <button
-//           className="button is-danger"
-//           type="button"
-//           onClick={closeEditModal}
-//         >
-//           Cancel
-//         </button>
-//       </dialog>
-//     </div>
-//   );
-            <dialog className="edit" ref={editModalRef}>
-                <div>
-                <h3>Title</h3>
-                <input
-                    className="input"
-                    type="text"
-                    value={editTitle}
-                    onChange={(e) => setEditTitle(e.target.value)}
-                />
-                <h3>Text</h3>
-                <textarea
-                    // id="comment"
-                    className="input"
-                    type="text"
-                    value={editBody}
-                    onChange={(e) => setEditBody(e.target.value)}
-                />
-                </div>
-                <div className="button-container">
-                <button className="button is-info" type="button" onClick={handleEdit}>Save</button>
-                <button className="button is-danger" type="button" onClick={closeEditModal}>Cancel</button>
-                </div>
-            </dialog>
-        </>
-    );
+      <dialog className="edit-modal" ref={editModalRef}>
+        <h3 className="label">Title</h3>
+        <input
+          className="input"
+          type="text"
+          value={editTitle}
+          onChange={(e) => setEditTitle(e.target.value)}
+        />
+        <h3 className="label">Text</h3>
+        <input
+          className="input"
+          type="text"
+          value={editBody}
+          onChange={(e) => setEditBody(e.target.value)}
+        />
+        <button className="button is-info" type="button" onClick={handleEdit}>
+          Save
+        </button>
+        <button
+          className="button is-danger"
+          type="button"
+          onClick={closeEditModal}
+        >
+          Cancel
+        </button>
+      </dialog>
+      <dialog className="edit" ref={editModalRef}>
+        <div>
+          <h3>Title</h3>
+          <input
+            className="input"
+            type="text"
+            value={editTitle}
+            onChange={(e) => setEditTitle(e.target.value)}
+          />
+          <h3>Text</h3>
+          <textarea
+            // id="comment"
+            className="input"
+            type="text"
+            value={editBody}
+            onChange={(e) => setEditBody(e.target.value)}
+          />
+        </div>
+        <div className="button-container">
+          <button className="button is-info" type="button" onClick={handleEdit}>
+            Save
+          </button>
+          <button
+            className="button is-danger"
+            type="button"
+            onClick={closeEditModal}
+          >
+            Cancel
+          </button>
+        </div>
+      </dialog>
+    </>
+  );
 }

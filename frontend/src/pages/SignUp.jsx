@@ -65,7 +65,12 @@ export default function SignUpPage() {
     return (
       <label>
         {label}
-        <input id="checkbox" type="checkbox" value={value} onChange={onChange} />
+        <input
+          id="checkbox"
+          type="checkbox"
+          value={value}
+          onChange={onChange}
+        />
       </label>
     );
   };
@@ -146,14 +151,9 @@ export default function SignUpPage() {
           onChange={handleChange}
           value={password}
         />
-//         <label className="label checkbox" htmlFor="expert">
-//           Are you an Expert? (Check if yes)
-//           <input
-//             type="checkbox"
-//             id="expert"
-//             name="expert"
-        <label htmlFor="expert">
-          <Checkbox 
+
+        <label className="label checkbox" htmlFor="expert">
+          <Checkbox
             label="Are you an Expert? (Check if yes)"
             value={expert}
             onChange={() => setExpert(!expert)}
