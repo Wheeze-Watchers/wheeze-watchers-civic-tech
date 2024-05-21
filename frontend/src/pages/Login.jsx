@@ -33,9 +33,9 @@ export default function LoginPage() {
           </h2>
 
           <label class="label">Username</label>
-          <div class="control">
+          <div className="control">
             <input
-              class="input"
+              className="input"
               type="text"
               autoComplete="username"
               id="username"
@@ -47,7 +47,7 @@ export default function LoginPage() {
             Password
           </label>
           <input
-            class="input"
+            className="input"
             type="password"
             autoComplete="current-password"
             id="password"
@@ -58,14 +58,11 @@ export default function LoginPage() {
             Log in!
           </button>
         </div>
+        <span className="label">
+          Don't have an account with us? <Link to="/sign-up">Sign Up!</Link>
+        </span>
       </form>
       {!!errorText && <p>{errorText}</p>}
-      <span>
-        Don't have an account with us?{" "}
-        <Link to="/sign-up" style={{ marginLeft: "4px" }}>
-          Sign Up!
-        </Link>
-      </span>
     </div>
   );
 }

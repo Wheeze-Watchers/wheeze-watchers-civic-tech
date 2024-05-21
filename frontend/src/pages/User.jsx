@@ -3,10 +3,10 @@ import { useNavigate, useParams } from "react-router-dom";
 import CurrentUserContext from "../contexts/current-user-context";
 import { getUser } from "../adapters/user-adapter";
 import UpdateUsernameForm from "../components/UpdateUsernameForm";
+import UserProfile from "../components/UserProfile";
 import UpdatePasswordForm from "../components/UpdatePasswordForm";
 import UpdateProfilePictureForm from "../components/UpdateProfilePictureForm";
 import UpdateEmailForm from "../components/UpdateEmailForm";
-import UserProfile from "../components/UserProfile";
 
 export default function UserPage() {
   const { currentUser, setCurrentUser } = useContext(CurrentUserContext);
@@ -29,9 +29,6 @@ export default function UserPage() {
 
   console.log(currentUser);
 
-  // What parts of state would change if we altered our currentUser context?
-  // Ideally, this would update if we mutated it
-  // But we also have to consider that we may NOT be on the current users page
   const profileUsername = isCurrentUserProfile
     ? currentUser.username
     : userProfile.username;

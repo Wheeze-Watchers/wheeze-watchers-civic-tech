@@ -153,14 +153,14 @@ export default function SignUpPage() {
         <button className="button is-info" type="submit">
           Sign Up Now!
         </button>
+        <div>
+          <span className="label">
+            Already have an account with us?{" "}
+            <NavLink to="/login">Log in!</NavLink>
+          </span>
+        </div>
       </form>
       {!!errorText && <p>{errorText}</p>}
-      <span>
-        Already have an account with us?{" "}
-        <NavLink to="/login" style={{ marginLeft: "4px" }}>
-          Log in!
-        </NavLink>
-      </span>
     </div>
   );
 }

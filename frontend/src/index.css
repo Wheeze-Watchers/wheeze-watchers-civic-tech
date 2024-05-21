@@ -26,9 +26,13 @@ input {
   width: 100%;
 }
 
-/* Can't anchor it to the left, even after assigning an id */
 .checkbox {
   display: flex;
+}
+
+span {
+  justify-content: center;
+  align-items: center;
 }
 
 .navbar-item:hover {

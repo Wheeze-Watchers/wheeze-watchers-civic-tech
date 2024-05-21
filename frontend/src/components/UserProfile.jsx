@@ -20,12 +20,12 @@ export default function UserProfile({ currentUser, setCurrentUser }) {
     event.target.reset();
   };
 
-  const handleFileChange = (event) => {
-    if (event.target.files.length > 0) {
-      setFileName(event.target.files[0].name);
-      currentUser.profile_picture = fileName;
-    }
-  };
+  // const handleFileChange = (event) => {
+  //   if (event.target.files.length > 0) {
+  //     setFileName(event.target.files[0].name);
+  //     currentUser.profile_picture = fileName;
+  //   }
+  // };
 
   const handleURLChange = (event) => {
     if (event.target.files.length > 0) {
