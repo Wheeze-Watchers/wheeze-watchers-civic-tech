@@ -10,17 +10,17 @@ class User {
   // is private, only the isValidPassword instance method can access that value.
   constructor({
     id,
-    firstName,
-    lastName,
+    first_name,
+    last_name,
     email,
     username,
     password_hash,
-    expert,
-    profile_picture
+    expert = false,
+    profile_picture,
   }) {
     this.id = id;
-    this.firstName = firstName;
-    this.lastName = lastName;
+    this.first_name = first_name;
+    this.last_name = last_name;
     this.email = email;
     this.username = username;
     this.#passwordHash = password_hash;
@@ -73,7 +73,7 @@ class User {
       email,
       username,
       password_hash,
-      expert
+      expert,
     ]);
     const user = rows[0];
     return new User(user);
@@ -91,6 +91,19 @@ class User {
     const { rows } = await knex.raw(query, [username, id]);
     const updatedUser = rows[0];
     return updatedUser ? new User(updatedUser) : null;
+  }
+
+  static async update(id, password_hash) {
+    // dynamic queries are easier if you add more properties
+    const query = `
+      UPDATE "user"
+      SET password_hash=?
+      WHERE id=?
+      RETURNING *
+    `;
+    const { rows } = await knex.raw(query, [password_hash, id]);
+    const updatedPass = rows[0];
+    return updatedPass ? new User(updatedPass) : null;
   }
 
   static async deleteAll() {

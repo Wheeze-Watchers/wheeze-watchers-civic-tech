@@ -14,7 +14,7 @@ export default function SignUpPage() {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [expert, setExpert] = useState(false);
+  const [expert, setExpert] = useState(true);
   // We could also use a single state variable for the form data:
   // const [formData, setFormData] = useState({ username: '', password: '' });
   // What would be the pros and cons of that?
@@ -30,8 +30,9 @@ export default function SignUpPage() {
 
     if (!email) return setErrorText("Missing email");
 
-    if (!username || !password)
-      return setErrorText("Missing username or password");
+    if (!username) return setErrorText("Missing username");
+
+    if (!password) return setErrorText("Missing password");
 
     const [user, error] = await createUser({
       first_name: firstName,
@@ -56,30 +57,28 @@ export default function SignUpPage() {
     if (name === "password") setPassword(value);
   };
 
-  const handleCheck = (event) => {
-    setExpert(event.target.value);
-  };
-
-  const Checkbox = ({ label, value, onChange }) => {
-    return (
-      <label>
-        {label}
-        <input type="checkbox" value={value} onChange={onChange} />
-      </label>
-    );
+  const handleCheck = () => {
+    setExpert(!expert);
+    console.log(expert);
   };
 
   return (
     <div id="form-div">
       <form
+        className="box field"
         onSubmit={handleSubmit}
         onChange={handleChange}
         aria-labelledby="create-heading"
       >
-        <h2 id="create-heading">Sign Up</h2>
+        <h2 className="title" id="create-heading">
+          Sign Up
+        </h2>
 
-        <label htmlFor="firstName">First Name</label>
+        <label className="label" htmlFor="firstName">
+          First Name
+        </label>
         <input
+          className="input"
           autoComplete="off"
           type="text"
           id="firstName"
@@ -88,8 +87,11 @@ export default function SignUpPage() {
           value={firstName}
         />
 
-        <label htmlFor="lastName">Last Name</label>
+        <label className="label" htmlFor="lastName">
+          Last Name
+        </label>
         <input
+          className="input"
           autoComplete="off"
           type="text"
           id="lastName"
@@ -98,8 +100,11 @@ export default function SignUpPage() {
           value={lastName}
         />
 
-        <label htmlFor="email">Email</label>
+        <label className="label" htmlFor="email">
+          Email
+        </label>
         <input
+          className="input"
           autoComplete="off"
           type="text"
           id="email"
@@ -108,8 +113,11 @@ export default function SignUpPage() {
           value={email}
         />
 
-        <label htmlFor="username">Username</label>
+        <label className="label" htmlFor="username">
+          Username
+        </label>
         <input
+          className="input"
           autoComplete="off"
           type="text"
           id="username"
@@ -118,8 +126,11 @@ export default function SignUpPage() {
           value={username}
         />
 
-        <label htmlFor="password">Password</label>
+        <label className="label" htmlFor="password">
+          Password
+        </label>
         <input
+          className="input"
           autoComplete="off"
           type="password"
           id="password"
@@ -128,11 +139,14 @@ export default function SignUpPage() {
           value={password}
         />
 
-        <label htmlFor="expert">
-          <Checkbox
-            label="Are you an Expert? (Check if yes)"
+        <label className="label checkbox" htmlFor="expert">
+          Are you an Expert? (Check if yes)
+          <input
+            type="checkbox"
+            id="expert"
+            name="expert"
             value={expert}
-            onChange={handleCheck}
+            onClick={handleCheck}
           />
         </label>
 
@@ -141,11 +155,16 @@ export default function SignUpPage() {
         <input autoComplete="off" type="password" id="password-confirm" name="passwordConfirm" />
         */}
 
-        <button type="submit">Sign Up Now!</button>
+        <button className="button is-info" type="submit">
+          Sign Up Now!
+        </button>
       </form>
       {!!errorText && <p>{errorText}</p>}
       <span>
-        Already have an account with us? <NavLink to="/login"> Log in!</NavLink>
+        Already have an account with us?{" "}
+        <NavLink to="/login" style={{ marginLeft: "4px" }}>
+          Log in!
+        </NavLink>
       </span>
     </div>
   );

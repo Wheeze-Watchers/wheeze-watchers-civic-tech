@@ -14,10 +14,6 @@ label {
   display: block;
 }
 
-/* input {
-  margin-bottom: 10px;
-} */
-
 .navbar-item:hover {
   transition: 0.3s;
   background-color: #30a1d5;
@@ -147,11 +143,11 @@ p {
 .card img {
   height: 100px;
   border-radius: 100px;
-  margin-right: 1rem; 
+  margin-right: 1rem;
 }
 
 .title-body {
-  flex-grow: 1; 
+  flex-grow: 1;
   text-align: left;
   overflow: hidden;
 }

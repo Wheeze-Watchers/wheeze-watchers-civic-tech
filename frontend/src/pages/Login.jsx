@@ -22,43 +22,30 @@ export default function LoginPage() {
 
   return (
     <>
-      <form onSubmit={handleSubmit} aria-labelledby="login-heading">
+      <form
+        className="box field"
+        onSubmit={handleSubmit}
+        aria-labelledby="login-heading"
+      >
         <div id="login-box">
-          <h2 id="login-heading">Welcome Back!</h2>
+          <h2 className="title" id="login-heading">
+            Welcome Back!
+          </h2>
 
-          <div class="field">
-            <label class="label">Username</label>
-            <div class="control has-icons-left has-icons-right">
-              <input
-                class="input"
-                type="text"
-                autoComplete="username"
-                id="username"
-                name="username"
-              />
-              {/* <span class="icon is-small is-left">
-                <i class="fas fa-user"></i>
-              </span>
-              <span class="icon is-small is-right">
-                <i class="fas fa-check"></i>
-              </span> */}
-            </div>
-            {/* <p class="help is-success">This username is available</p> */}
-          </div>
-
-          {/* <div className="field">
-            <label className="label" htmlFor="username">
-              Username
-            </label>
+          <label class="label">Username</label>
+          <div class="control">
             <input
+              class="input"
               type="text"
               autoComplete="username"
               id="username"
               name="username"
             />
-          </div> */}
+          </div>
 
-          <label htmlFor="password">Password</label>
+          <label className="label" htmlFor="password">
+            Password
+          </label>
           <input
             class="input"
             type="password"
@@ -67,12 +54,17 @@ export default function LoginPage() {
             name="password"
           />
 
-          <button>Log in!</button>
+          <button className="button is-info" style={{ marginTop: "4px" }}>
+            Log in!
+          </button>
         </div>
       </form>
       {!!errorText && <p>{errorText}</p>}
       <span>
-        Don't have an account with us? <Link to="/sign-up">Sign Up!</Link>
+        Don't have an account with us?{" "}
+        <Link to="/sign-up" style={{ marginLeft: "4px" }}>
+          Sign Up!
+        </Link>
       </span>
     </>
   );
