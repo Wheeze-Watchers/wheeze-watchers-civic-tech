@@ -18,7 +18,7 @@ exports.seed = async function (knex) {
       first_name: "bob",
       last_name: "dylan",
       email: "bobdylan@mail.com",
-      username: "john_doe",
+      username: "john",
       password_hash: "hashed_password_1",
       expert: true,
     },
@@ -26,7 +26,7 @@ exports.seed = async function (knex) {
       first_name: "bob",
       last_name: "dylan",
       email: "bobdylan2@mail.com",
-      username: "john_doe2",
+      username: "jose",
       password_hash: "hashed_password_1",
       expert: false,
     },
@@ -34,7 +34,7 @@ exports.seed = async function (knex) {
       first_name: "bob",
       last_name: "dylan",
       email: "bobdylan3@mail.com",
-      username: "john_doe3",
+      username: "timmy",
       password_hash: "hashed_password_1",
       expert: true,
     },
@@ -63,10 +63,10 @@ exports.seed = async function (knex) {
         user_id: 1,
         url: "https://www.uchicagomedicine.org/forefront/pediatrics-articles/2024/january/improving-asthma-outcomes-and-reducing-health-disparities"
       },
-      // {
-      //   user_id: 2,
-      //   url: "https://www.medicalnewstoday.com/articles/running-with-asthma"
-      // },
+      {
+        user_id: 2,
+        url: "https://news.weill.cornell.edu/news/2013/05/researchers-find-common-childhood-asthma-unconnected-to-allergens-or-inflammation"
+      },
       // {
       //   user_id: 3,
       //   url: "https://www.who.int/news-room/fact-sheets/detail/asthma"
