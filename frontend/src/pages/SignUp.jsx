@@ -57,10 +57,18 @@ export default function SignUpPage() {
     if (name === "password") setPassword(value);
   };
 
-  // const handleCheck = () => {
-  //   setExpert(!expert);
-  //   console.log(expert);
-  // };
+  const handleCheck = (event) => {
+    setExpert(event.target.value);
+  };
+
+  const Checkbox = ({ label, value, onChange }) => {
+    return (
+      <label>
+        {label}
+        <input id="checkbox" type="checkbox" value={value} onChange={onChange} />
+      </label>
+    );
+  };
 
   return (
     <div className="form-div">
@@ -138,13 +146,15 @@ export default function SignUpPage() {
           onChange={handleChange}
           value={password}
         />
-
-        <label className="label checkbox" htmlFor="expert">
-          Are you an Expert? (Check if yes)
-          <input
-            type="checkbox"
-            id="expert"
-            name="expert"
+//         <label className="label checkbox" htmlFor="expert">
+//           Are you an Expert? (Check if yes)
+//           <input
+//             type="checkbox"
+//             id="expert"
+//             name="expert"
+        <label htmlFor="expert">
+          <Checkbox 
+            label="Are you an Expert? (Check if yes)"
             value={expert}
             onChange={() => setExpert(!expert)}
           />

@@ -42,6 +42,14 @@ export default function LoginPage() {
               name="username"
             />
           </div>
+//           <h2 id="login-heading">Login</h2>
+//           <label htmlFor="username">Username</label>
+//           <input
+//             type="text"
+//             autoComplete="username"
+//             id="username"
+//             name="username"
+//           />
 
           <label className="label" htmlFor="password">
             Password

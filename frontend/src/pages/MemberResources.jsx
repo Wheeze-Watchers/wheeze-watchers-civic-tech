@@ -8,14 +8,6 @@ export default function () {
 	const { currentUser } = useContext(CurrentUserContext);
 	const [newUrl, setNewUrl] = useState('')
 	const [resource, setResource] = useState([])
-	const currentUserDummy = {
-		id: 7,
-		first_name: 'bob',
-		last_name: 'dylan',
-		email: 'bobdylan@mail.com',
-		username: 'john_doe',
-		expert: true,
-	};
 
 	useEffect(() => {
 		const fetchResources = async () => {
@@ -34,13 +26,14 @@ export default function () {
 
 	const handleSubmit = async (e) => {
 	    e.preventDefault();
-	    if (currentUserDummy) {
-			const response = await fetchHandler('/api/resources/', getPostOptions({ user_id: currentUserDummy.id, url: newUrl }));
+	    if (currentUser) {
+			const response = await fetchHandler('/api/resources/', getPostOptions({ user_id: currentUser.id, url: newUrl }));
 			if (!response.ok) {
                 throw new Error("Network response was not ok");
             }
 		}
 	};
+	console.log(currentUser)
 
 	return (
 		<>
@@ -48,7 +41,7 @@ export default function () {
 				<h1>Member Resources</h1>
 			</div>
 
-			{currentUserDummy.expert && (
+			{currentUser && currentUser.expert && (
 				<>
 				<div className="columns is-centered">
 					<div className="column is-half">
@@ -80,9 +73,8 @@ export default function () {
 						<div className="modal-background"></div>
 						<div className="modal-content">
 							<div className="box">
-								<p>This is the content of the modal.</p>
 								<form onSubmit={handleSubmit} aria-labelledby="resource-form">
-                                    <label htmlFor="comment">Add Link Below:</label>
+                                    <label htmlFor="resource">Add Link Below:</label>
                                     <input type="text" id="resource-link" name="resource-link" value={newUrl} onChange={(e) => setNewUrl(e.target.value)} />
                                     <button>Add</button>
                                 </form>
