@@ -71,6 +71,7 @@ export default function () {
 							Add Link
 						</button>
 					</div>
+					
 				</>
 			)}
 
@@ -83,13 +84,14 @@ export default function () {
 							<Microlink id={val.id} url={val.url} />
 							)}
 						</div>
+						{currentUser && currentUser.expert && 
 						<button
 							type="button"
 							className="button is-danger"
 							onClick={() => handleDelete(val.id)}
 						>
 							Delete
-						</button>
+						</button>}
 					</div>
 				</div>
 			))}

@@ -1,28 +1,38 @@
-@import 'https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css';
+@import "https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css";
 
 body {
-	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-	margin: 0;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  margin: 0;
 }
 
 /* header {
   margin-bottom: 2rem;
 } */
 
+/* .user-profile {
+  padding: 15px;
+  border: 1px solid #ccc;
+  margin: 1px auto;
+  min-width: 100px;
+  max-width: 400px;
+  min-height: 100px;
+} */
+
 .form-div {
   margin-top: 2rem;
 }
 
-input{
+input {
   width: 100%;
 }
 
 /* Can't anchor it to the left, even after assigning an id */
-/* #checkbox{
+.checkbox {
   display: flex;
-  justify-content: flex-start;
+  /* justify-content: flex-start; */
+  /* align-items: flex-start; */
 }
- */
+
 .navbar-item:hover {
   transition: 0.3s;
   background-color: #30a1d5;
@@ -34,15 +44,15 @@ input{
 }
 
 input #comment {
-	overflow: auto;
+  overflow: auto;
 }
 
 #nav-header {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 0.5rem 1rem;
-	background: #1088c0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: #1088c0;
 }
 
 #sign-up-color {
@@ -50,23 +60,23 @@ input #comment {
 }
 
 #logo {
-	font-size: 1.5rem;
-	font-weight: bold;
-	text-decoration: none;
-	color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
 }
 
 nav ul {
-	display: flex;
-	gap: 1rem;
-	padding: 0;
-	margin: 0;
-	list-style: none;
+  display: flex;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
 nav a {
-	display: block;
-	color: #fff;
+  display: block;
+  color: #fff;
 }
 
 form {
@@ -93,9 +103,9 @@ form #comment {
 }
 
 form #login-heading {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 span,
@@ -162,15 +172,15 @@ p {
 }
 
 :modal {
-	height: 50vh;
-	width: 50vw;
-	background-color: white;
-	border: 2px solid darkGray;
-	border-radius: 5px;
+  height: 50vh;
+  width: 50vw;
+  background-color: white;
+  border: 2px solid darkGray;
+  border-radius: 5px;
 }
 
 :modal input {
-	width: 50%;
+  width: 50%;
 }
 
 .edit h3 {

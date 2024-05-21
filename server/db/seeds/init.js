@@ -38,14 +38,6 @@ exports.seed = async function (knex) {
       password_hash: "hashed_password_1",
       expert: true,
     },
-    {
-      first_name: "Maya",
-      last_name: "Ramkishun",
-      email: "maya@mail.com",
-      username: "mayayr115",
-      password_hash: "1234",
-      expert: true,
-    },
   ]);
 
   await knex("post").insert([
@@ -71,13 +63,13 @@ exports.seed = async function (knex) {
         user_id: 1,
         url: "https://www.uchicagomedicine.org/forefront/pediatrics-articles/2024/january/improving-asthma-outcomes-and-reducing-health-disparities"
       },
-      {
-        user_id: 2,
-        url: "https://www.medicalnewstoday.com/articles/running-with-asthma"
-      },
-      {
-        user_id: 3,
-        url: "https://www.who.int/news-room/fact-sheets/detail/asthma"
-      },
+      // {
+      //   user_id: 2,
+      //   url: "https://www.medicalnewstoday.com/articles/running-with-asthma"
+      // },
+      // {
+      //   user_id: 3,
+      //   url: "https://www.who.int/news-room/fact-sheets/detail/asthma"
+      // },
     ]);
 };
