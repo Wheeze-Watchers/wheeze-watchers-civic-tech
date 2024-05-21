@@ -57,24 +57,6 @@ export default function SignUpPage() {
     if (name === "password") setPassword(value);
   };
 
-  const handleCheck = (event) => {
-    setExpert(event.target.value);
-  };
-
-  const Checkbox = ({ label, value, onChange }) => {
-    return (
-      <label>
-        {label}
-        <input
-          id="checkbox"
-          type="checkbox"
-          value={value}
-          onChange={onChange}
-        />
-      </label>
-    );
-  };
-
   return (
     <div className="form-div">
       <form
@@ -152,13 +134,15 @@ export default function SignUpPage() {
           value={password}
         />
 
-        <label className="label checkbox" htmlFor="expert">
-          <Checkbox
-            label="Are you an Expert? (Check if yes)"
-            value={expert}
-            onChange={() => setExpert(!expert)}
-          />
+        <label className="label checkbox">
+          Are you an Expert? (Check if you are)
         </label>
+        <input
+          type="checkbox"
+          value={expert}
+          onChange={() => setExpert(!expert)}
+        />
+
         {console.log(expert)}
 
         {/* In reality, we'd want a LOT more validation on signup, so add more things if you have time
