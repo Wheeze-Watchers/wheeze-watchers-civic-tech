@@ -104,25 +104,6 @@ form #login-box {
 	align-items: center;
 }
 
-.info-box-container {
-	margin: 10px;
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-}
-
-.info-box {
-	border: 1px solid #ccc;
-	padding: 10px;
-	margin: 10px;
-	background-color: #f9f9f9;
-	border-radius: 5px;
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-}
-
 span,
 p {
 	display: flex;

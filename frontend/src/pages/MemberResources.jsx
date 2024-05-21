@@ -8,7 +8,7 @@ export default function () {
 	const { currentUser } = useContext(CurrentUserContext);
 	const [newUrl, setNewUrl] = useState('')
 	const [resource, setResource] = useState([])
-
+	const [toggle, setToggle] = useState(true)
 	useEffect(() => {
 		const fetchResources = async () => {
 			const response = await fetchHandler('/api/resources/');
@@ -16,7 +16,7 @@ export default function () {
 			setResource(validResources[0]);
 		};
 		fetchResources()
-	}, [])
+	}, [toggle])
 
 	const [isActive, setIsActive] = useState(false);
 
@@ -31,13 +31,32 @@ export default function () {
 			if (!response.ok) {
                 throw new Error("Network response was not ok");
             }
+			// setResource(...resource, response)
+			toggleModal()
 		}
 	};
-	console.log(currentUser)
+
+	const handleDelete = async (id) => {
+		try {
+		  const response = await fetch(`/api/resources/${id}`, {
+			method: "DELETE",
+		  });
+		  if (!response.ok) {
+			throw new Error("Network response was not ok");
+		  }
+		  setResource(resource.filter((post) => resource.id !== id));
+		} catch (error) {
+		  console.error(
+			"There has been a problem with your fetch operation:",
+			error
+		  );
+		}
+		setToggle(!toggle)
+	  };
 
 	return (
 		<>
-			<div className="topic-container">
+			<div className="title is-1 has-text-centered mx-*-1 my-*-1 px-*-1 py-*-1">
 				<h1>Member Resources</h1>
 			</div>
 
@@ -56,17 +75,25 @@ export default function () {
 				</>
 			)}
 
-			<div className='info-box-container'>
-				{resource && resource.map((val) => (
-					<div className='info-box' key={val.id}>
-						{val.url && typeof val.url === 'string' && (
-							<Microlink
-								id={val.id}
-								url={val.url}
-							/>
-						)}
+			<div className="columns is-multiline">
+			{resource && resource.map((val) => (
+				<div className="column is-half" key={val.id}>
+					<div className="box">
+						<div className="content has-text-centered">
+							{val.url && typeof val.url === 'string' && (
+							<Microlink id={val.id} url={val.url} />
+							)}
+						</div>
+						<button
+							type="button"
+							className="button is-danger"
+							onClick={() => handleDelete(val.id)}
+						>
+							Delete
+						</button>
 					</div>
-				))}
+				</div>
+			))}
 			</div>
 
 					<div className={`modal ${isActive ? 'is-active' : ''}`}>
@@ -76,7 +103,7 @@ export default function () {
 								<form onSubmit={handleSubmit} aria-labelledby="resource-form">
                                     <label htmlFor="resource">Add Link Below:</label>
                                     <input type="text" id="resource-link" name="resource-link" value={newUrl} onChange={(e) => setNewUrl(e.target.value)} />
-                                    <button>Add</button>
+                                    <button className="button is-info">Add</button>
                                 </form>
 							</div>
 						</div>
@@ -86,7 +113,6 @@ export default function () {
 							onClick={toggleModal}
 						></button>
 					</div>
-			<footer>random stuff in the footer</footer>
 		</>
 	);
 }

@@ -38,6 +38,14 @@ exports.seed = async function (knex) {
       password_hash: "hashed_password_1",
       expert: true,
     },
+    {
+      first_name: "Maya",
+      last_name: "Ramkishun",
+      email: "maya@mail.com",
+      username: "mayayr115",
+      password_hash: "1234",
+      expert: true,
+    },
   ]);
 
   await knex("post").insert([
