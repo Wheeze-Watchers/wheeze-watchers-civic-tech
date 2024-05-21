@@ -198,12 +198,6 @@ p {
 	width: 50%;
 }
 
-.edit-modal {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
 .edit h3 {
   margin-top: 20px;
 }

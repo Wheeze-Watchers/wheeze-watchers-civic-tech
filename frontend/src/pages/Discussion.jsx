@@ -178,6 +178,7 @@ export default function () {
           Cancel
         </button>
       </dialog>
+      
       <dialog className="edit" ref={editModalRef}>
         <div>
           <h3>Title</h3>
@@ -189,7 +190,7 @@ export default function () {
           />
           <h3>Text</h3>
           <textarea
-            // id="comment"
+            id="comment"
             className="input"
             type="text"
             value={editBody}
