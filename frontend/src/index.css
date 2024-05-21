@@ -98,16 +98,10 @@ form #login-heading {
 	align-items: center;
 }
 
-form #login-box {
-	/* display: flex; */
-	justify-content: center;
-	align-items: center;
-}
-
 span,
 p {
 	display: flex;
-	justify-content: center;
+	justify-content: start;
 }
 
 .topic-container {
@@ -192,10 +186,3 @@ p {
 ::backdrop {
 	background-color: rgba(0, 0, 0, 0.3);
 }
-
-.is-half {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-

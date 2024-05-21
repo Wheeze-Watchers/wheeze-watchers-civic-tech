@@ -44,6 +44,7 @@ export default function () {
 		  if (!response.ok) {
 			throw new Error("Network response was not ok");
 		  }
+		  // ???
 		  setResource(resource.filter((post) => resource.id !== id));
 		} catch (error) {
 		  console.error(
@@ -56,14 +57,13 @@ export default function () {
 
 	return (
 		<>
-			<div className="title is-1 has-text-centered mx-*-1 my-*-1 px-*-1 py-*-1">
+			<div className="title is-bold is-1 has-text-centered mx-4 my-4 px-4 py-4">
 				<h1>Member Resources</h1>
 			</div>
 
 			{currentUser && currentUser.expert && (
 				<>
-				<div className="columns is-centered">
-					<div className="column is-half">
+					<div className="buttons is-centered">
 						<button
 							className="button is-info"
 							onClick={toggleModal}
@@ -71,13 +71,12 @@ export default function () {
 							Add Link
 						</button>
 					</div>
-				</div>
 				</>
 			)}
 
 			<div className="columns is-multiline">
 			{resource && resource.map((val) => (
-				<div className="column is-half" key={val.id}>
+				<div className="column is-half is-flex is-justify-content-center is-align-items-center" key={val.id}>
 					<div className="box">
 						<div className="content has-text-centered">
 							{val.url && typeof val.url === 'string' && (
