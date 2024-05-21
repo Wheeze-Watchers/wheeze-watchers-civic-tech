@@ -77,11 +77,16 @@ export default function UserProfile({ currentUser, setCurrentUser }) {
       <div className="field">
         <label className="label" htmlFor="label">
           Choose a URL...
-          <input className="input" type="text" onChange={handleURLChange} />
+          <input
+            className="input"
+            type="text"
+            onChange={handleURLChange}
+            placeholder={currentUser.profile_picture}
+          />
         </label>
       </div>
 
-      <div class="file has-name">
+      {/* <div class="file has-name">
         <label class="file-label">
           <input class="file-input" type="file" onChange={handleFileChange} />
           <span class="file-cta">
@@ -90,7 +95,7 @@ export default function UserProfile({ currentUser, setCurrentUser }) {
           </span>
           <span class="file-name">{currentUser.profile_picture}</span>
         </label>
-      </div>
+      </div> */}
 
       <div className="field">
         <label className="label">

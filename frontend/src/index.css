@@ -29,8 +29,6 @@ input {
 /* Can't anchor it to the left, even after assigning an id */
 .checkbox {
   display: flex;
-  /* justify-content: flex-start; */
-  /* align-items: flex-start; */
 }
 
 .navbar-item:hover {
@@ -110,8 +108,8 @@ form #login-heading {
 
 span,
 p {
-	display: flex;
-	justify-content: start;
+  display: flex;
+  justify-content: start;
 }
 
 .topic-container {
@@ -194,5 +192,5 @@ p {
 }
 
 ::backdrop {
-	background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.3);
 }

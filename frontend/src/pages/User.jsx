@@ -37,33 +37,21 @@ export default function UserPage() {
     : userProfile.username;
 
   return (
-    <>
+    <div className="box">
       <h1 className="title is-1">Account</h1>
       <div className="subtitle">Update your account information here</div>
       {!!isCurrentUserProfile && (
-        <div id="">
+        <div>
           <UserProfile
             currentUser={currentUser}
             setCurrentUser={setCurrentUser}
           />
-          {/* <UpdateProfilePictureForm
-            currentUser={currentUser}
-            setCurrentUser={setCurrentUser}
-          /> */}
-          {/* <UpdateEmailForm
-            currentUser={currentUser}
-            setCurrentUser={setCurrentUser}
-          /> */}
           <UpdateUsernameForm
             currentUser={currentUser}
             setCurrentUser={setCurrentUser}
           />
-          {/* <UpdatePasswordForm
-            currentUser={currentUser}
-            setCurrentUser={setCurrentUser}
-          /> */}
         </div>
       )}
-    </>
+    </div>
   );
 }
