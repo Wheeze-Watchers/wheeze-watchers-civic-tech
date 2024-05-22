@@ -146,9 +146,9 @@ export default function SignUpPage() {
         {console.log(expert)}
 
         {/* In reality, we'd want a LOT more validation on signup, so add more things if you have time
-        <label htmlFor="password-confirm">Password Confirm</label>
-        <input autoComplete="off" type="password" id="password-confirm" name="passwordConfirm" />
-        */}
+          <label htmlFor="password-confirm">Password Confirm</label>
+          <input autoComplete="off" type="password" id="password-confirm" name="passwordConfirm" />
+          */}
 
         <button className="button is-info" type="submit">
           Sign Up Now!
