@@ -28,7 +28,7 @@ export default function UpdateProfilePictureForm({
     ref.current.click();
   };
 
-  const handleImageChange = async (event) => {
+  const handleImageChange = (event) => {
     if (event.target.files.length > 0) {
       const file = event.target.files[0];
       console.log(file);
@@ -41,9 +41,9 @@ export default function UpdateProfilePictureForm({
       <form
         className="box field"
         onSubmit={handleSubmit}
-        aria-labelledby="update-profile-picture"
+        aria-labelledby="update-profile-picture-heading"
       >
-        <h2 className="title is-4" id="update-profile-picture">
+        <h2 className="title is-4" id="update-profile-picture-heading">
           Change Profile Picture
         </h2>
 
@@ -66,12 +66,23 @@ export default function UpdateProfilePictureForm({
             </figure>
           </div>
           <input
+            className="input"
             type="file"
+            id="profile_picture"
+            name="profile_picture"
             ref={ref}
             onChange={handleImageChange}
             style={{ display: "none" }}
           />
         </div>
+
+        <input
+          className="input"
+          type="hidden"
+          name="id"
+          value={currentUser.id}
+        />
+
         <button className="button is-info">Save</button>
       </form>
     </>
