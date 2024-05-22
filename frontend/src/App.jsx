@@ -10,7 +10,7 @@ import { checkForLoggedInUser } from './adapters/auth-adapter';
 import UsersPage from './pages/Users';
 import UserPage from './pages/User';
 import Discussion from './pages/Discussion';
-import MemberResources from './pages/MemberResources';
+import Resources from './pages/Resources';
 
 export default function App() {
   const { setCurrentUser } = useContext(UserContext);
@@ -28,7 +28,7 @@ export default function App() {
         <Route path='/sign-up' element={<SignUpPage />} />
         <Route path='/users' element={<UsersPage />} />
         <Route path='/users/:id' element={<UserPage />} />
-        <Route path='/resources' element={<MemberResources />} />
+        <Route path='/resources' element={<Resources />} />
         <Route path='*' element={<NotFoundPage />} />
       </Routes>
     </main>
