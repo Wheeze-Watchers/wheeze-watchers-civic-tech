@@ -4,8 +4,6 @@ import CurrentUserContext from "../contexts/current-user-context";
 import { getUser } from "../adapters/user-adapter";
 import UpdateUsernameForm from "../components/UpdateUsernameForm";
 import UserProfile from "../components/UserProfile";
-import UpdatePasswordForm from "../components/UpdatePasswordForm";
-import UpdateProfilePictureForm from "../components/UpdateProfilePictureForm";
 import UpdateEmailForm from "../components/UpdateEmailForm";
 
 export default function UserPage() {
@@ -36,17 +34,23 @@ export default function UserPage() {
   return (
     <div className="box">
       <h1 className="title is-1">Account</h1>
-      <div className="subtitle">Update your account information here</div>
+      <h2 className="subtitle">Update your account information here</h2>
       {!!isCurrentUserProfile && (
         <div>
-          <UserProfile
-            currentUser={currentUser}
-            setCurrentUser={setCurrentUser}
-          />
-          <UpdateUsernameForm
-            currentUser={currentUser}
-            setCurrentUser={setCurrentUser}
-          />
+          <div>
+            <UserProfile
+              currentUser={currentUser}
+              setCurrentUser={setCurrentUser}
+            />
+            <UpdateUsernameForm
+              currentUser={currentUser}
+              setCurrentUser={setCurrentUser}
+            />
+            <UpdateEmailForm
+              currentUser={currentUser}
+              setCurrentUser={setCurrentUser}
+            />
+          </div>
         </div>
       )}
     </div>

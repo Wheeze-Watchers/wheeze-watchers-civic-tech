@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { updatePassword } from "../adapters/user-adapter";
+// import { updatePassword } from "../adapters/user-adapter";
 
 export default function UpdatePasswordForm({ currentUser, setCurrentUser }) {
   const navigate = useNavigate();

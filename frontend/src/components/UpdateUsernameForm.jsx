@@ -14,7 +14,7 @@ export default function UpdateUsernameForm({ currentUser, setCurrentUser }) {
       setCurrentUser(null);
       return navigate("/");
     }
-    console.log(event.target.username);
+    console.log(event.target);
 
     setCurrentUser(user);
     event.target.reset();
