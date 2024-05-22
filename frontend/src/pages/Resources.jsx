@@ -8,16 +8,25 @@ export default function () {
 	const { currentUser } = useContext(CurrentUserContext);
 	const [newUrl, setNewUrl] = useState('')
 	const [resource, setResource] = useState([])
-	const [toggle, setToggle] = useState(true)
+	const [toggle, setToggle] = useState(true);
+	const [renderToggle, setRenderToggle] = useState(0);
+	const [usedUrl, setUsedUrl] = useState(new Set());
 	useEffect(() => {
 		const fetchResources = async () => {
 			const response = await fetchHandler('/api/resources/');
 			const validResources = response.filter(resource => resource !== null && resource !== undefined);
-			setResource(validResources[0]);
+			console.log(validResources[0])
+			const urls = validResources[0].map(resource => resource.url);
+			const uniqueUrls = new Set(urls);
+			setUsedUrl(uniqueUrls);
+			
+			setResource(validResources[0]);		
+			
 		};
 		fetchResources()
-	}, [toggle, resource])
+	}, [toggle, renderToggle])
 
+	
 	const [isActive, setIsActive] = useState(false);
 
 	const toggleModal = () => {
@@ -26,13 +35,18 @@ export default function () {
 
 	const handleSubmit = async (e) => {
 	    e.preventDefault();
-	    if (currentUser) {
+		// console.log(usedUrl)
+		// console.log(usedUrl.has(newUrl))
+		toggleModal()
+	    if (currentUser && !usedUrl.has(newUrl)) {
+			
 			const response = await fetchHandler('/api/resources/', getPostOptions({ user_id: currentUser.id, url: newUrl }));
-			if (!response.ok) {
+			if (response[0] === null) {
                 throw new Error("Network response was not ok");
             }
-			setResource([...resource, response.data])
-			toggleModal()
+			setRenderToggle(renderToggle + 1)
+			
+			
 		}
 	};
 
@@ -78,7 +92,7 @@ export default function () {
 			<div className="columns is-multiline">
 			{resource && resource.map((val) => (
 				<div className="column is-half is-flex is-justify-content-center is-align-items-center" key={val.id}>
-					<div className="box">
+					<div className="box" style={{"width": 540}} >
 						<div className="content has-text-centered">
 							{val.url && typeof val.url === 'string' && (
 							<Microlink id={val.id} url={val.url} />
