@@ -48,39 +48,5 @@ export const updateFirstName = async ({ id, first_name }) =>
 export const updateLastName = async ({ id, last_name }) =>
   fetchHandler(`${baseUrl}/${id}`, getPatchOptions({ id, last_name }));
 
-export const updateProfile = async ({
-  id,
-  first_name,
-  last_name,
-  profile_picture,
-}) => {
-  if ((id, first_name))
-    fetchHandler(`${baseUrl}/${id}`, getPatchOptions({ id, last_name }));
-  if ((id, last_name))
-    fetchHandler(`${baseUrl}/${id}`, getPatchOptions({ id, last_name }));
-  if ((id, profile_picture))
-    fetchHandler(`${baseUrl}/${id}`, getPatchOptions({ id, profile_picture }));
-  if ((id, last_name, profile_picture))
-    fetchHandler(
-      `${baseUrl}/${id}`,
-      getPatchOptions({ id, first_name, last_name, profile_picture })
-    );
-  if ((id, first_name, profile_picture))
-    fetchHandler(
-      `${baseUrl}/${id}`,
-      getPatchOptions({ id, first_name, profile_picture })
-    );
-  if ((id, first_name, last_name))
-    fetchHandler(
-      `${baseUrl}/${id}`,
-      getPatchOptions({ id, first_name, last_name })
-    );
-  if ((id, first_name, last_name, profile_picture))
-    fetchHandler(
-      `${baseUrl}/${id}`,
-      getPatchOptions({ id, first_name, last_name, profile_picture })
-    );
-};
-
 // export const updatePassword = async ({ id, password }) =>
 //   fetchHandler(`${baseUrl}/${id}`, getPatchOptions({ id, password }));

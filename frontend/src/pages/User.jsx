@@ -3,8 +3,10 @@ import { useNavigate, useParams } from "react-router-dom";
 import CurrentUserContext from "../contexts/current-user-context";
 import { getUser } from "../adapters/user-adapter";
 import UpdateUsernameForm from "../components/UpdateUsernameForm";
-import UserProfile from "../components/UserProfile";
 import UpdateEmailForm from "../components/UpdateEmailForm";
+import UpdateProfilePictureForm from "../components/UpdateProfilePictureForm";
+import UpdateFirstNameForm from "../components/UpdateFirstNameForm";
+import UpdateLastNameForm from "../components/UpdateLastName";
 
 export default function UserPage() {
   const { currentUser, setCurrentUser } = useContext(CurrentUserContext);
@@ -38,7 +40,15 @@ export default function UserPage() {
       {!!isCurrentUserProfile && (
         <div>
           <div>
-            <UserProfile
+            <UpdateFirstNameForm
+              currentUser={currentUser}
+              setCurrentUser={setCurrentUser}
+            />
+            <UpdateLastNameForm
+              currentUser={currentUser}
+              setCurrentUser={setCurrentUser}
+            />
+            <UpdateProfilePictureForm
               currentUser={currentUser}
               setCurrentUser={setCurrentUser}
             />

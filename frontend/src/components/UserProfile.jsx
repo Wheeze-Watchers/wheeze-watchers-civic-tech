@@ -8,7 +8,6 @@ import {
 
 export default function UserProfile({ currentUser, setCurrentUser }) {
   const [image, setImage] = useState("");
-  const [urlName, setURLName] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
 
@@ -23,15 +22,9 @@ export default function UserProfile({ currentUser, setCurrentUser }) {
       setCurrentUser(null);
       return navigate("/") && console.warn(error.message);
     }
-
     setCurrentUser(user);
     event.target.reset();
   };
-
-  // if (event.target.files.length > 0) {
-  //   setURLName(event.target.files[0].name);
-  //   currentUser.profile_picture = urlName;
-  // }
 
   const handleImageClick = () => {
     ref.current.click();
@@ -43,15 +36,6 @@ export default function UserProfile({ currentUser, setCurrentUser }) {
       console.log(file);
       setImage(event.target.files[0]);
     }
-
-    const formData = new FormData(event.target);
-    const [user, error] = await updateProfilePic(Object.fromEntries(formData));
-    if (error?.cause > 400 && error?.cause < 500) {
-      setCurrentUser(null);
-      return navigate("/") && console.warn(error.message);
-    }
-    setCurrentUser(user);
-    event.target.reset();
   };
 
   return (
@@ -85,11 +69,19 @@ export default function UserProfile({ currentUser, setCurrentUser }) {
       <div>
         <div className="field" onClick={handleImageClick}>
           <figure className="image is-128x128 ">
-            <img
-              className="is-rounded"
-              src={currentUser.profile_picture}
-              alt="Your Profile Picture"
-            />
+            {image ? (
+              <img
+                className="is-rounded"
+                src={URL.createObjectURL(image)}
+                alt="Your Profile Picture"
+              />
+            ) : (
+              <img
+                className="is-rounded"
+                src={currentUser.profile_picture}
+                alt="Your Profile Picture"
+              />
+            )}
           </figure>
         </div>
         <input
@@ -99,29 +91,6 @@ export default function UserProfile({ currentUser, setCurrentUser }) {
           style={{ display: "none" }}
         />
       </div>
-
-      {/* <div className="field">
-        <label className="label" htmlFor="label">
-          Choose a URL...
-          <input
-            className="input"
-            type="url"
-            onChange={handleURLChange}
-            placeholder={currentUser.profile_picture}
-          />
-        </label>
-      </div> */}
-
-      {/* <div class="file has-name">
-        <label class="file-label">
-          <input class="file-input" type="file" onChange={handleFileChange} />
-          <span class="file-cta">
-            <i class="fas fa-upload"></i>
-            <span class="file-label"> Choose a file… </span>
-          </span>
-          <span class="file-name">{currentUser.profile_picture}</span>
-        </label>
-      </div> */}
 
       <div className="field">
         <label className="label">
