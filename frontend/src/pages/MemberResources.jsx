@@ -16,7 +16,7 @@ export default function () {
 			setResource(validResources[0]);
 		};
 		fetchResources()
-	}, [toggle])
+	}, [toggle, resource])
 
 	const [isActive, setIsActive] = useState(false);
 
@@ -31,7 +31,7 @@ export default function () {
 			if (!response.ok) {
                 throw new Error("Network response was not ok");
             }
-			// setResource(...resource, response)
+			setResource([...resource, response.data])
 			toggleModal()
 		}
 	};
@@ -45,7 +45,7 @@ export default function () {
 			throw new Error("Network response was not ok");
 		  }
 		  // ???
-		  setResource(resource.filter((post) => resource.id !== id));
+		  setResource(resource.filter((resource) => resource.id !== id));
 		} catch (error) {
 		  console.error(
 			"There has been a problem with your fetch operation:",
@@ -57,9 +57,9 @@ export default function () {
 
 	return (
 		<>
-			<div className="title is-bold is-1 has-text-centered mx-4 my-4 px-4 py-4">
-				<h1>Member Resources</h1>
-			</div>
+			<h1 className="title is-1 has-text-weight-bold has-text-centered mx-4 my-4 px-4 py-4">
+				Resources
+			</h1>
 
 			{currentUser && currentUser.expert && (
 				<>
@@ -97,23 +97,23 @@ export default function () {
 			))}
 			</div>
 
-					<div className={`modal ${isActive ? 'is-active' : ''}`}>
-						<div className="modal-background"></div>
-						<div className="modal-content">
-							<div className="box">
-								<form onSubmit={handleSubmit} aria-labelledby="resource-form">
-                                    <label htmlFor="resource">Add Link Below:</label>
-                                    <input type="text" id="resource-link" name="resource-link" value={newUrl} onChange={(e) => setNewUrl(e.target.value)} />
-                                    <button className="button is-info">Add</button>
-                                </form>
-							</div>
-						</div>
-						<button
-							className="modal-close is-large"
-							aria-label="close"
-							onClick={toggleModal}
-						></button>
+			<div className={`modal ${isActive ? 'is-active' : ''}`}>
+				<div className="modal-background"></div>
+				<div className="modal-content">
+					<div className="box">
+						<form aria-labelledby="resource-form">
+							<label htmlFor="resource">Add Link Below:</label>
+							<input type="text" id="resource-link" name="resource-link" value={newUrl} onChange={(e) => setNewUrl(e.target.value)} />
+							<button className="button is-info" onClick={handleSubmit}>Add</button>
+						</form>
 					</div>
+				</div>
+				<button
+					className="modal-close is-large"
+					aria-label="close"
+					onClick={toggleModal}
+				></button>
+			</div>
 		</>
 	);
 }
