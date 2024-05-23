@@ -1,12 +1,13 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css";
 
 html {
-  background-color: #f2dfd7;
+  background-color: #ffff;
 }
 
 body {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   margin: 0;
+  border: 0;
 }
 
 .champagne-pink {
@@ -16,7 +17,18 @@ body {
   background-color: #fef9ff;
 }
 .thisle {
-  background-color: #d4c1ec;
+  background-color: #726ced2a;
+}
+.coloring {
+  background-color: #F9D9B2;
+}
+
+.color-text{
+  color: #fff;
+}
+
+.title-white{
+  color: #fff;
 }
 .tropical-indigo {
   background-color: #9f9fed;
@@ -37,8 +49,13 @@ body {
   align-items: center;
 }
 
+#button:hover {
+  transform: scale(1.1);
+}
+
+
 #hero {
-  background-color: #f2dfd7;
+  background-color: #ffff;
 }
 
 #hero-image,
