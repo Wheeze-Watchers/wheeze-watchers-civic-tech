@@ -16,7 +16,7 @@ export default function HomePage() {
               Struggling with Asthma?
             </div>
             <div className="subtitle is-3 mb-6 ml-6 mr-4 mt-2">
-              Contact healthcare experts in our forum base app with Eaze. Ask
+              Contact healthcare experts in our forum base app with <strong>EAZE</strong>. Ask
               any asthma-related questions. Connect with other people dealing
               with asthma. You are not alone.
             </div>
@@ -24,13 +24,13 @@ export default function HomePage() {
               <NavLink to="sign-up">
                 <button
                   id="home-sign-in-button"
-                  className="button is-rounded has-text-light is-large is-responsive medium-blue-slate mr-2 mt-3"
+                  className="button is-rounded has-text-weight-semibold is-large is-responsive medium-blue-slate mx-2 my-2 has-text-white"
                 >
                   Try Eaze
                 </button>
               </NavLink>
               <NavLink to="login">
-                <button className="button is-rounded is-large is-responsive ml-2 mt-3">
+                <button className="button is-rounded is-large is-responsive mx-2 my-2 has-text-weight-semibold">
                   Already have an Account?
                 </button>
               </NavLink>
@@ -63,7 +63,7 @@ export default function HomePage() {
                 related thoughts on our discussions forum.
               </h3>
               <NavLink to="/discussion">
-                <button className="button is-rounded is-large has-text-white medium-blue-slate">
+                <button className="button is-rounded is-large has-text-white medium-blue-slate has-text-weight-semibold">
                   Start Chatting
                 </button>
               </NavLink>
@@ -80,7 +80,7 @@ export default function HomePage() {
               Here are our expert provided resources selected just for you.
             </h3>
             <NavLink to="/resources">
-              <button className="button is-rounded is-large medium-blue-slate has-text-light">
+              <button className="button is-rounded is-large medium-blue-slate has-text-white has-text-weight-semibold">
                 Check Out Expert Resources
               </button>
             </NavLink>
@@ -97,7 +97,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <footer className="footer medium-blue-slate">
+      <footer className="footer medium-blue-slate has-text-weight-semibold">
         <div className="content has-text-centered">
           <div className="block has-text-light">
             <strong className="has-text-light">EAZE</strong> was developed by

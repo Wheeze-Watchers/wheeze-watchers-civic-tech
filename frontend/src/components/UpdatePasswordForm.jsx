@@ -25,7 +25,7 @@ export default function UpdatePasswordForm({ currentUser, setCurrentUser }) {
       onSubmit={handleSubmit}
       aria-labelledby="update-password-heading"
     >
-      <h2 className="title is-4" id="update-password-heading">
+      <h2 className="title is-4 mb-4" id="update-password-heading">
         Change Password
       </h2>
       <label className="label" htmlFor="password">
@@ -49,7 +49,7 @@ export default function UpdatePasswordForm({ currentUser, setCurrentUser }) {
       />
       <input type="hidden" name="id" value={currentUser.id} />
 
-      <button className="button is-info">Save</button>
+      <button className="button is-info has-text-weight-semibold">Save</button>
     </form>
   );
 }

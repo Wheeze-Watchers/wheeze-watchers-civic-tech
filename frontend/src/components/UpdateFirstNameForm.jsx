@@ -26,7 +26,7 @@ export default function UpdateFirstNameForm({ currentUser, setCurrentUser }) {
       onSubmit={handleSubmit}
       aria-labelledby="update-first-name-heading"
     >
-      <h2 className="title is-4" id="update-first-name-heading">
+      <h2 className="title is-4 mb-4" id="update-first-name-heading">
         Change Your First Name
       </h2>
 
@@ -42,7 +42,7 @@ export default function UpdateFirstNameForm({ currentUser, setCurrentUser }) {
 
       <input className="input" type="hidden" name="id" value={currentUser.id} />
 
-      <button className="button medium-blue-slate mt-4 mb-2 has-text-white">
+      <button className="button medium-blue-slate mt-4 mb-2 has-text-white has-text-weight-semibold">
         Save
       </button>
     </form>

@@ -88,6 +88,9 @@ export default function () {
 
   return (
     <>
+      <h1 className="title is-1 has-text-weight-bold has-text-centered my-6">
+				Discussions
+			</h1>
       <form
         className="box mt-6"
         onSubmit={handleSubmit}
@@ -114,7 +117,7 @@ export default function () {
           value={postBody}
           onChange={(e) => setPostBody(e.target.value)}
         />
-        <button className="button medium-blue-slate has-text-white">Add</button>
+        <button className="button medium-blue-slate has-text-white has-text-weight-semibold">Add</button>
       </form>
       <div className="topic-container">
         {post &&
@@ -123,9 +126,9 @@ export default function () {
               <div className="card-content">
                 <div className="title-body center">
                   <img src={val.user.profile_picture} width="100" />
-                  <p className="title is-5">{val.user.username}</p>
+                  <p className="title is-5 pt-2">{val.user.username}</p>
                 </div>
-                <div className="title-body">
+                <div className="title-body pl-5">
                   <h1 className="title is-3">{val.title}</h1>
                   <h3>{val.body}</h3>
                 </div>
@@ -134,17 +137,17 @@ export default function () {
                 <div className="button-container">
                   <button
                     type="button"
-                    className="button is-danger"
+                    className="button is-danger has-text-weight-semibold"
                     onClick={() => handleDelete(val.id)}
                   >
-                    delete
+                    Delete
                   </button>
                   <button
                     type="button"
-                    className="button is-info"
+                    className="button purple has-text-weight-semibold"
                     onClick={() => openEditModal(val.id, val.title, val.body)}
                   >
-                    edit
+                    Edit
                   </button>
                 </div>
               )}
