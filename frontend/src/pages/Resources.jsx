@@ -96,7 +96,7 @@ export default function () {
 							<Microlink id={val.id} url={val.url} />
 							)}
 						</div>
-						{currentUser && currentUser.expert && 
+						{(currentUser && currentUser.expert && currentUser.id === val.user_id) && 
 						<button
 							type="button"
 							className="button is-danger has-text-weight-semibold"
