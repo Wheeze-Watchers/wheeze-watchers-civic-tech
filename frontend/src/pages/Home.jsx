@@ -30,7 +30,7 @@ export default function HomePage() {
                 </button>
               </NavLink>
               <NavLink to="login">
-                <button className="button is-rounded is-large is-responsive mx-2 my-2 has-text-weight-semibold">
+                <button className="button color-text is-rounded coloring is-large is-responsive mx-2 my-2 has-text-weight-semibold">
                   Already have an Account?
                 </button>
               </NavLink>
