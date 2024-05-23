@@ -80,7 +80,7 @@ class User {
   }
 
   // this is an instance method that we can use to update
-  static async update(id, username) {
+  static async updateUsername(id, username) {
     // dynamic queries are easier if you add more properties
     const query = `
       UPDATE "user"
@@ -93,21 +93,52 @@ class User {
     return updatedUser ? new User(updatedUser) : null;
   }
 
-  // static async update(id, password_hash) {
-  //   // dynamic queries are easier if you add more properties
-  //   const query = `
-  //     UPDATE "user"
-  //     SET password_hash=?
-  //     WHERE id=?
-  //     RETURNING *
-  //   `;
-  //   const { rows } = await knex.raw(query, [password_hash, id]);
-  //   const updatedPass = rows[0];
-  //   return updatedPass ? new User(updatedPass) : null;
-  // }
+  static async updateEmail(id, email) {
+    const query = `
+      UPDATE "user"
+      SET email=?
+      WHERE id=?
+      RETURNING *
+    `;
+    const { rows } = await knex.raw(query, [email, id]);
+    const updatedEmail = rows[0];
+    return updatedEmail ? new User(updatedEmail) : null;
+  }
 
-  static async deleteAll() {
-    return knex("user").del();
+  static async updateProfilePicture(id, profile_picture) {
+    const query = `
+      UPDATE "user"
+      SET profile_picture=?
+      WHERE id=?
+      RETURNING *
+    `;
+    const { rows } = await knex.raw(query, [profile_picture, id]);
+    const updatedProfilePicture = rows[0];
+    return updatedProfilePicture ? new User(updatedProfilePicture) : null;
+  }
+
+  static async updateFirstName(id, first_name) {
+    const query = `
+      UPDATE "user"
+      SET first_name=?
+      WHERE id=?
+      RETURNING *
+    `;
+    const { rows } = await knex.raw(query, [first_name, id]);
+    const updatedFirstName = rows[0];
+    return updatedFirstName ? new User(updatedFirstName) : null;
+  }
+
+  static async updateLastName(id, last_name) {
+    const query = `
+      UPDATE "user"
+      SET last_name=?
+      WHERE id=?
+      RETURNING *
+    `;
+    const { rows } = await knex.raw(query, [last_name, id]);
+    const updatedLastName = rows[0];
+    return updatedLastName ? new User(updatedLastName) : null;
   }
 }
 

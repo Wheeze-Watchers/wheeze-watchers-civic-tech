@@ -1,41 +1,42 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import {
+  updateFirstName,
+  updateLastName,
+  updateProfilePic,
+} from "../adapters/user-adapter";
 
 export default function UserProfile({ currentUser, setCurrentUser }) {
-  const [fileName, setFileName] = useState("");
-  const [urlName, setURLName] = useState("");
+  const [image, setImage] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
 
+  const ref = useRef(null);
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
-    const [user, error] = await updateUsername(Object.fromEntries(formData));
+    const [user, error] = await updateProfilePic(Object.fromEntries(formData));
     if (error?.cause > 400 && error?.cause < 500) {
       setCurrentUser(null);
-      return navigate("/");
+      return navigate("/") && console.warn(error.message);
     }
-
     setCurrentUser(user);
     event.target.reset();
   };
 
-  const handleFileChange = (event) => {
-    if (event.target.files.length > 0) {
-      setFileName(event.target.files[0].name);
-      currentUser.profile_picture = fileName;
-    }
+  const handleImageClick = () => {
+    ref.current.click();
   };
 
-  const handleURLChange = (event) => {
+  const handleImageChange = async (event) => {
     if (event.target.files.length > 0) {
-      setURLName(event.target.files[0].name);
-      currentUser.profile_picture = urlName;
+      const file = event.target.files[0];
+      console.log(file);
+      setImage(event.target.files[0]);
     }
   };
-
-  console.log(currentUser.profile_picture);
-  console.log("fileName", fileName);
 
   return (
     <form className="box" onSubmit={handleSubmit}>
@@ -64,53 +65,38 @@ export default function UserProfile({ currentUser, setCurrentUser }) {
           />
         </label>
       </div>
-      <div className="field">
-        <figure className="image is-128x128">
-          <img
-            className="is-rounded"
-            src={currentUser.profile_picture}
-            alt="Your Profile Picture"
-          />
-        </figure>
+
+      <div>
+        <div className="field" onClick={handleImageClick}>
+          <figure className="image is-128x128 ">
+            {image ? (
+              <img
+                className="is-rounded"
+                src={URL.createObjectURL(image)}
+                alt="Your Profile Picture"
+              />
+            ) : (
+              <img
+                className="is-rounded"
+                src={currentUser.profile_picture}
+                alt="Your Profile Picture"
+              />
+            )}
+          </figure>
+        </div>
+        <input
+          type="file"
+          ref={ref}
+          onChange={handleImageChange}
+          style={{ display: "none" }}
+        />
       </div>
 
-      <div className="field">
-        <label className="label" htmlFor="label">
-          Choose a URL...
-          <input className="input" type="text" onChange={handleURLChange} />
-        </label>
-      </div>
-
-      <div class="file has-name">
-        <label class="file-label">
-          <input class="file-input" type="file" onChange={handleFileChange} />
-          <span class="file-cta">
-            <i class="fas fa-upload"></i>
-            <span class="file-label"> Choose a file… </span>
-          </span>
-          <span class="file-name">{currentUser.profile_picture}</span>
-        </label>
-      </div>
-
-      <div className="field">
-        <label className="label">
-          Email:
-          <input
-            className="input"
-            type="text"
-            placeholder={currentUser.email}
-          />
-        </label>
-      </div>
       <div className="field">
         <label className="label">
           {currentUser.expert ? "You are an Expert" : "You are a User"}
         </label>
       </div>
-
-      <button className="button is-info" type="submit">
-        Save
-      </button>
     </form>
   );
 }

@@ -1,42 +1,82 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css";
 
+html {
+  background-color: #f2dfd7;
+}
+
 body {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   margin: 0;
 }
 
-/* header {
-  margin-bottom: 2rem;
-} */
+.champagne-pink {
+  background-color: #f2dfd7;
+}
+.ghost-white {
+  background-color: #fef9ff;
+}
+.thisle {
+  background-color: #d4c1ec;
+}
+.tropical-indigo {
+  background-color: #9f9fed;
+}
+.medium-blue-slate {
+  background-color: #736ced;
+}
+.white {
+  background-color: white;
+}
 
-/* .user-profile {
-  padding: 15px;
-  border: 1px solid #ccc;
-  margin: 1px auto;
-  min-width: 100px;
-  max-width: 400px;
-  min-height: 100px;
-} */
+.medium-blue-slate-text {
+  color: #736ced;
+}
 
-.form-div {
-  margin-top: 2rem;
+#home-buttons-container {
+  justify-content: center;
+  align-items: center;
+}
+
+#hero {
+  background-color: #f2dfd7;
+}
+
+#hero-image,
+#section-image {
+  width: 100%;
+  height: auto;
+  padding: 0px;
+}
+
+#section-image-2 {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  padding: 0px;
+}
+
+#hero-image-div {
+  padding: 6px;
 }
 
 input {
   width: 100%;
 }
 
-/* Can't anchor it to the left, even after assigning an id */
 .checkbox {
   display: flex;
-  /* justify-content: flex-start; */
-  /* align-items: flex-start; */
+}
+
+span {
+  justify-content: center;
+  align-items: center;
 }
 
 .navbar-item:hover {
   transition: 0.3s;
-  background-color: #30a1d5;
-  border-radius: 5px;
+  background-color: #9f9fed;
+  border-radius: 2.5px;
 }
 
 .navbar-end {
@@ -52,11 +92,11 @@ input #comment {
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 1rem;
-  background: #1088c0;
+  background: #736ced;
 }
 
 #sign-up-color {
-  color: #1088c0;
+  color: #736ced;
 }
 
 #logo {
@@ -79,14 +119,14 @@ nav a {
   color: #fff;
 }
 
-form {
+form,
+.account-type {
   padding: 15px;
   border: 1px solid #ccc;
   margin: 1px auto;
   min-width: 100px;
   max-width: 400px;
   min-height: 100px;
-  /* max-height: 400px; */
 }
 
 form #comment {
@@ -102,16 +142,16 @@ form #comment {
   max-height: 400px;
 }
 
-form #login-heading {
+/* form #login-heading {
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
 span,
 p {
-	display: flex;
-	justify-content: start;
+  display: flex;
+  justify-content: start;
 }
 
 .topic-container {
@@ -162,9 +202,9 @@ p {
   word-wrap: break-word;
 }
 
-.button {
+/* .button {
   margin: 5px;
-}
+} */
 
 .button-container {
   display: flex;
@@ -196,5 +236,5 @@ p {
 }
 
 ::backdrop {
-	background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.3);
 }

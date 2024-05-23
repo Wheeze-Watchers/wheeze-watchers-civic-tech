@@ -3,8 +3,6 @@ import { useNavigate, Navigate, NavLink } from "react-router-dom";
 import CurrentUserContext from "../contexts/current-user-context";
 import { createUser } from "../adapters/user-adapter";
 
-// Controlling the sign up form is a good idea because we want to add (eventually)
-// more validation and provide real time feedback to the user about usernames and passwords
 export default function SignUpPage() {
   const navigate = useNavigate();
   const { currentUser, setCurrentUser } = useContext(CurrentUserContext);
@@ -58,109 +56,102 @@ export default function SignUpPage() {
   };
 
   return (
-    <div className="form-div">
+    <>
       <form
-        className="box field"
+        className="box field mt-6"
         onSubmit={handleSubmit}
         onChange={handleChange}
         aria-labelledby="create-heading"
       >
-        <h2 className="title" id="create-heading">
-          Sign Up
-        </h2>
+        <h2 className="title has-text-centered mt-4 mb-4">Sign Up</h2>
 
-        <label className="label" htmlFor="firstName">
-          First Name
-        </label>
+        <div className="">
+          <label className="label has-text-centered">
+            Are you an Expert? (Check if you are)
+          </label>
+          <input
+            type="checkbox"
+            value={expert}
+            onChange={() => setExpert(!expert)}
+          />
+        </div>
+
         <input
-          className="input"
+          className="input mt-4"
           autoComplete="off"
           type="text"
           id="firstName"
           name="firstName"
           onChange={handleChange}
           value={firstName}
+          placeholder="First Name"
         />
 
-        <label className="label" htmlFor="lastName">
-          Last Name
-        </label>
         <input
-          className="input"
+          className="input mt-4"
           autoComplete="off"
           type="text"
           id="lastName"
           name="lastName"
           onChange={handleChange}
           value={lastName}
+          placeholder="Last Name"
         />
 
-        <label className="label" htmlFor="email">
-          Email
-        </label>
         <input
-          className="input"
+          className="input mt-4"
           autoComplete="off"
           type="text"
           id="email"
           name="email"
           onChange={handleChange}
           value={email}
+          placeholder="Email"
         />
 
-        <label className="label" htmlFor="username">
-          Username
-        </label>
         <input
-          className="input"
+          className="input mt-4"
           autoComplete="off"
           type="text"
           id="username"
           name="username"
           onChange={handleChange}
           value={username}
+          placeholder="Username"
         />
 
-        <label className="label" htmlFor="password">
-          Password
-        </label>
         <input
-          className="input"
+          className="input mt-4 mb-4"
           autoComplete="off"
           type="password"
           id="password"
           name="password"
           onChange={handleChange}
           value={password}
-        />
-
-        <label className="label checkbox">
-          Are you an Expert? (Check if you are)
-        </label>
-        <input
-          type="checkbox"
-          value={expert}
-          onChange={() => setExpert(!expert)}
+          placeholder="Password"
         />
 
         {console.log(expert)}
 
         {/* In reality, we'd want a LOT more validation on signup, so add more things if you have time
-        <label htmlFor="password-confirm">Password Confirm</label>
-        <input autoComplete="off" type="password" id="password-confirm" name="passwordConfirm" />
-        */}
+          <label htmlFor="password-confirm">Password Confirm</label>
+          <input autoComplete="off" type="password" id="password-confirm" name="passwordConfirm" />
+          */}
 
-        <button className="button is-info" type="submit">
+        <button
+          className="button is-fullwidth tropical-indigo mt-4 mb-4"
+          type="submit"
+        >
           Sign Up Now!
         </button>
+        <div>
+          <span className="label has-text-centered mt-2">
+            Already have an account with us?{" "}
+            <NavLink to="/login">Log in!</NavLink>
+          </span>
+        </div>
       </form>
       {!!errorText && <p>{errorText}</p>}
-      <span>
-        Already have an account with us?{" "}
-        <NavLink to="/login" style={{ marginLeft: "4px" }}>
-          Log in!
-        </NavLink>
-      </span>
-    </div>
+    </>
   );
 }

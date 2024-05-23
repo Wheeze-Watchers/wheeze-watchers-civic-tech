@@ -3,10 +3,10 @@ import { useNavigate, useParams } from "react-router-dom";
 import CurrentUserContext from "../contexts/current-user-context";
 import { getUser } from "../adapters/user-adapter";
 import UpdateUsernameForm from "../components/UpdateUsernameForm";
-import UpdatePasswordForm from "../components/UpdatePasswordForm";
-import UpdateProfilePictureForm from "../components/UpdateProfilePictureForm";
 import UpdateEmailForm from "../components/UpdateEmailForm";
-import UserProfile from "../components/UserProfile";
+import UpdateProfilePictureForm from "../components/UpdateProfilePictureForm";
+import UpdateFirstNameForm from "../components/UpdateFirstNameForm";
+import UpdateLastNameForm from "../components/UpdateLastName";
 
 export default function UserPage() {
   const { currentUser, setCurrentUser } = useContext(CurrentUserContext);
@@ -29,41 +29,54 @@ export default function UserPage() {
 
   console.log(currentUser);
 
-  // What parts of state would change if we altered our currentUser context?
-  // Ideally, this would update if we mutated it
-  // But we also have to consider that we may NOT be on the current users page
   const profileUsername = isCurrentUserProfile
     ? currentUser.username
     : userProfile.username;
 
   return (
-    <>
-      <h1 className="title is-1">Account</h1>
-      <div className="subtitle">Update your account information here</div>
+    <div className="champagne-pink">
+      <div className="m-6 has-text-centered">
+        <h1 className="title is-1 mb-2">Account</h1>
+        <h2 className="subtitle">Update your account information here</h2>
+      </div>
       {!!isCurrentUserProfile && (
-        <div id="">
-          <UserProfile
-            currentUser={currentUser}
-            setCurrentUser={setCurrentUser}
-          />
-          {/* <UpdateProfilePictureForm
-            currentUser={currentUser}
-            setCurrentUser={setCurrentUser}
-          /> */}
-          {/* <UpdateEmailForm
-            currentUser={currentUser}
-            setCurrentUser={setCurrentUser}
-          /> */}
-          <UpdateUsernameForm
-            currentUser={currentUser}
-            setCurrentUser={setCurrentUser}
-          />
-          {/* <UpdatePasswordForm
-            currentUser={currentUser}
-            setCurrentUser={setCurrentUser}
-          /> */}
+        <div>
+          <div className="columns is-vcentered">
+            <div className="column">
+              <div className="box has-text-centered is-size-4 account-type is-align-content-center">
+                <strong className="medium-blue-slate-text">
+                  {" "}
+                  {currentUser.expert ? "Expert Account" : "User Account"}
+                </strong>
+              </div>
+              <UpdateProfilePictureForm
+                currentUser={currentUser}
+                setCurrentUser={setCurrentUser}
+              />
+            </div>
+            <div className="column">
+              <UpdateFirstNameForm
+                currentUser={currentUser}
+                setCurrentUser={setCurrentUser}
+              />
+              <UpdateLastNameForm
+                currentUser={currentUser}
+                setCurrentUser={setCurrentUser}
+              />
+            </div>
+            <div className="column">
+              <UpdateUsernameForm
+                currentUser={currentUser}
+                setCurrentUser={setCurrentUser}
+              />
+              <UpdateEmailForm
+                currentUser={currentUser}
+                setCurrentUser={setCurrentUser}
+              />
+            </div>
+          </div>
         </div>
       )}
-    </>
+    </div>
   );
 }

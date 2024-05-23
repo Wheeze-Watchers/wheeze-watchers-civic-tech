@@ -13,12 +13,12 @@ export default function SiteHeadingAndNav() {
     logUserOut();
     setCurrentUser(null);
   };
-// import { NavLink, Link } from 'react-router-dom';
-// import { useContext } from 'react';
-// import CurrentUserContext from '../contexts/current-user-context';
+  // import { NavLink, Link } from 'react-router-dom';
+  // import { useContext } from 'react';
+  // import CurrentUserContext from '../contexts/current-user-context';
 
-// export default function SiteHeadingAndNav() {
-// 	const { currentUser } = useContext(CurrentUserContext);
+  // export default function SiteHeadingAndNav() {
+  // 	const { currentUser } = useContext(CurrentUserContext);
 
   return (
     <header
@@ -39,14 +39,14 @@ export default function SiteHeadingAndNav() {
       <nav>
         <div>
           {currentUser ? (
-            <ul className="navbar-start">
-              <li className="navbar-item">
+            <div className="navbar-start">
+              <div className="navbar-item">
                 <NavLink to={"/discussion"}>Discussions</NavLink>
-              </li>
-              <li className="navbar-item">
+              </div>
+              <div className="navbar-item">
                 <NavLink to="/resources">Resources</NavLink>
-              </li>
-              <li className="navbar-item">
+              </div>
+              <div className="navbar-item">
                 <div className="dropdown is-hoverable is-right">
                   <div className="dropdown-trigger">
                     <button
@@ -54,7 +54,7 @@ export default function SiteHeadingAndNav() {
                       aria-haspopup="true"
                       aria-controls="dropdown-menu"
                     >
-                      <strong style={{ color: "#1088c0" }}>
+                      <strong style={{ color: "#736ced" }}>
                         {currentUser.username}
                       </strong>
                     </button>
@@ -64,7 +64,7 @@ export default function SiteHeadingAndNav() {
                       <NavLink
                         className="dropdown-item"
                         to={`/users/${currentUser.id}`}
-                        style={{ color: "#1088c0" }}
+                        style={{ color: "#736ced" }}
                       >
                         <strong>Account</strong>
                       </NavLink>
@@ -73,24 +73,24 @@ export default function SiteHeadingAndNav() {
                         className="dropdown-item"
                         to={`/`}
                         onClick={handleLogout}
-                        style={{ color: "#1088c0" }}
+                        style={{ color: "#736ced" }}
                       >
                         <strong>Logout</strong>
                       </NavLink>
                     </div>
                   </div>
                 </div>
-              </li>
-            </ul>
+              </div>
+            </div>
           ) : (
-            <ul className="navbar-start">
-              <li className="navbar-item">
+            <div className="navbar-start">
+              <div className="navbar-item">
                 <NavLink to={"/discussion"}>Discussions</NavLink>
-              </li>
-              <li className="navbar-item">
+              </div>
+              <div className="navbar-item">
                 <NavLink to="/resources">Resources</NavLink>
-              </li>
-              <li className="navbar-end">
+              </div>
+              <div className="navbar-end">
                 <div className="navbar-item">
                   <NavLink to="/login">Login</NavLink>
                 </div>
@@ -101,8 +101,8 @@ export default function SiteHeadingAndNav() {
                     </NavLink>
                   </div>
                 </div>
-              </li>
-            </ul>
+              </div>
+            </div>
           )}
         </div>
       </nav>
