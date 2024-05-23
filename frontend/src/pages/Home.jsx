@@ -6,17 +6,19 @@ import sectionImage2 from "../assets/people-reading-books.svg";
 export default function HomePage() {
   return (
     <>
-      <section className="hero is-medium" id="hero">
-        <h2 className="title is-1 has-text-dark is-spaced mt-6 ml-6 mr-6 mb-0">
+      <section className="hero is-medium mb-1" id="hero">
+        <h1 className="title is-1 has-text-dark is-spaced mt-6 ml-6 mr-6 mb-0">
           Community, Connections & Change.
-        </h2>
+        </h1>
         <div className="columns">
           <div className="column">
-            <div className="subtitle is-3 has-text-dark is-large block mb-6 ml-6 mr-4 mt-6">
-              <strong>Struggling with asthma?</strong> Contact healthcare
-              experts in our forum base app with Eaze. Ask any asthma-related
-              questions. Connect with other people dealing with asthma. You are
-              not alone.
+            <div className="title is-2 has-text-dark is-large mb-2 ml-6 mr-4 mt-6">
+              Struggling with Asthma?
+            </div>
+            <div className="subtitle is-3 mb-6 ml-6 mr-4 mt-2">
+              Contact healthcare experts in our forum base app with Eaze. Ask
+              any asthma-related questions. Connect with other people dealing
+              with asthma. You are not alone.
             </div>
             <div id="home-buttons-container" className="m-6 has-text-centered">
               <NavLink to="sign-up">
@@ -35,7 +37,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="column" id="hero-image-div">
-            <div className="image">
+            <div className="image mb-1">
               <img
                 src={heroImage}
                 alt="Group of Friends Talking"
@@ -46,8 +48,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section is-medium white">
-        <div className="columns">
+      <section className="section white">
+        <div className="columns is-vcentered">
           <div className="column">
             <div className="image">
               <img src={sectionImage} alt="Man Shrugging" id="section-image" />
@@ -70,8 +72,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section is-medium thisle">
-        <div className="columns">
+      <section className="section thisle">
+        <div className="columns is-vcentered">
           <div className="column">
             <h2 className="title is-2 mb-2">Need Resources?</h2>
             <h3 className="subtitle is-3">
@@ -84,7 +86,7 @@ export default function HomePage() {
             </NavLink>
           </div>
           <div className="column">
-            <div className="image ">
+            <div className="image">
               <img
                 src={sectionImage2}
                 alt="People Reading Books"

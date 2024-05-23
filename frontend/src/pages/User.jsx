@@ -41,14 +41,12 @@ export default function UserPage() {
       </div>
       {!!isCurrentUserProfile && (
         <div>
-          <div className="columns">
+          <div className="columns is-vcentered">
             <div className="column">
-              <div className="box has-text-centered is-size-4 account-type ">
+              <div className="box has-text-centered is-size-4 account-type is-align-content-center">
                 <strong className="medium-blue-slate-text">
                   {" "}
-                  {currentUser.expert
-                    ? "Verified Expert Account"
-                    : "User Account"}
+                  {currentUser.expert ? "Expert Account" : "User Account"}
                 </strong>
               </div>
               <UpdateProfilePictureForm
