@@ -114,7 +114,7 @@ export default function () {
           value={postBody}
           onChange={(e) => setPostBody(e.target.value)}
         />
-        <button className="button is-info">Add</button>
+        <button className="button medium-blue-slate has-text-white">Add</button>
       </form>
       <div className="topic-container">
         {post &&
