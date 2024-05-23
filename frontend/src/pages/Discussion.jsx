@@ -144,7 +144,7 @@ export default function () {
                   </button>
                   <button
                     type="button"
-                    className="button is-info has-text-weight-semibold"
+                    className="button purple has-text-weight-semibold"
                     onClick={() => openEditModal(val.id, val.title, val.body)}
                   >
                     Edit
