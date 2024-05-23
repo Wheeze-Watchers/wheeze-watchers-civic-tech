@@ -34,7 +34,7 @@ export default function UserPage() {
     : userProfile.username;
 
   return (
-    <div className="champagne-pink">
+    <div>
       <div className="m-6 has-text-centered">
         <h1 className="title is-1 mb-2">Account</h1>
         <h2 className="subtitle">Update your account information here</h2>
@@ -47,7 +47,7 @@ export default function UserPage() {
                 <strong className="medium-blue-slate-text is-underlined">
                   {"Account Type:"}
                 </strong>
-                  {currentUser.expert ? " Expert" : " Member"}
+                {currentUser.expert ? " Expert" : " Member"}
               </div>
               <UpdateProfilePictureForm
                 currentUser={currentUser}
