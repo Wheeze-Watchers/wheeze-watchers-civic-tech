@@ -89,7 +89,7 @@ export default function () {
   return (
     <>
       <form
-        className="box"
+        className="box mt-6"
         onSubmit={handleSubmit}
         aria-labelledby="comment-heading"
       >
@@ -178,7 +178,7 @@ export default function () {
           Cancel
         </button>
       </dialog>
-      
+
       <dialog className="edit" ref={editModalRef}>
         <div>
           <h3>Title</h3>

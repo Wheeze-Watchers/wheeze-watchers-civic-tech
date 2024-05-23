@@ -21,48 +21,46 @@ export default function LoginPage() {
   if (currentUser) return <Navigate to="/" />;
 
   return (
-    <div className="form-div">
+    <>
       <form
-        className="box field"
+        className="box field mt-6"
         onSubmit={handleSubmit}
         aria-labelledby="login-heading"
       >
-        <div id="login-box">
-          <h2 className="title" id="login-heading">
-            Welcome Back!
-          </h2>
+        <div>
+          <h2 className="title mt-4 mb-4">Welcome Back!</h2>
 
-          <label class="label">Username</label>
-          <div className="control">
+          <div className="control mt-4 mb-4">
             <input
               className="input"
               type="text"
               autoComplete="username"
               id="username"
               name="username"
+              placeholder="Username"
             />
           </div>
 
-          <label className="label" htmlFor="password">
-            Password
-          </label>
-          <input
-            className="input"
-            type="password"
-            autoComplete="current-password"
-            id="password"
-            name="password"
-          />
+          <div className="control mt-4 mb-4">
+            <input
+              className="input"
+              type="password"
+              autoComplete="current-password"
+              id="password"
+              name="password"
+              placeholder="Password"
+            />
+          </div>
 
-          <button className="button is-info" style={{ marginTop: "4px" }}>
+          <button className="button is-fullwidth tropical-indigo mt-4 mb-4">
             Log in!
           </button>
         </div>
-        <span className="label">
+        <span className="label has-text-centered mt-2">
           Don't have an account with us? <Link to="/sign-up">Sign Up!</Link>
         </span>
       </form>
       {!!errorText && <p>{errorText}</p>}
-    </div>
+    </>
   );
 }

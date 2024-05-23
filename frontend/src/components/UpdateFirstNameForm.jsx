@@ -29,12 +29,19 @@ export default function UpdateFirstNameForm({ currentUser, setCurrentUser }) {
       <h2 className="title is-4" id="update-first-name-heading">
         Change Your First Name
       </h2>
-      <div className="label">Current First Name: {currentUser.first_name}</div>
-      <label className="label" htmlFor="first_name">
-        New First Name
-      </label>
 
-      <input className="input" type="text" id="first_name" name="first_name" />
+      <div className="label">Current First Name: {currentUser.first_name}</div>
+
+      {/* <label className="label" htmlFor="first_name">
+        New First Name
+      </label> */}
+      <input
+        className="input"
+        type="text"
+        id="first_name"
+        name="first_name"
+        placeholder='"New Last Name"'
+      />
 
       <input className="input" type="hidden" name="id" value={currentUser.id} />
 

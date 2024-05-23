@@ -1,25 +1,69 @@
 import { useNavigate, NavLink } from "react-router-dom";
+import heroImage from "../assets/hero-image.svg";
+import sectionImage from "../assets/dude_shrugging.svg";
 
 export default function HomePage() {
   return (
     <>
-      <section className="hero is-info is-medium">
-        <div className="hero-body">
-          <h2 className="title is-2 has-text-light is-spaced">
-            Community, Connections & Change.
-          </h2>
-          <div className="subtitle is-4 has-text-light is-large block">
-            <strong className="is-light" style={{ color: "#ffffff" }}>
-              EAZE
-            </strong>{" "}
-            is a forum for users in NYC suffering from asthma, parents of
-            asthmatic children, and asthma healthcare professionals to interact
-            with one another, provide vital resources in order to help better
-            manage the effects of asthma.
+      <section className="hero is-medium" id="hero">
+        <h2 className="title is-1 has-text-dark is-spaced mt-6 ml-6 mr-6 mb-0">
+          Community, Connections & Change.
+        </h2>
+        <div className="columns">
+          <div className="column">
+            <div className="subtitle is-3 has-text-dark is-large block mb-6 ml-6 mr-4 mt-6">
+              <strong>Struggling with asthma?</strong> Contact healthcare
+              experts in our forum base app with Eaze. Ask any asthma-related
+              questions. Connect with other people dealing with asthma. You are
+              not alone.
+            </div>
+            <div id="home-buttons-container" className="m-6 has-text-centered">
+              <NavLink to="sign-up">
+                <button
+                  id="home-sign-in-button"
+                  className="button is-rounded has-text-light is-large is-responsive medium-blue-slate "
+                >
+                  Try Eaze
+                </button>
+              </NavLink>
+              <NavLink to="login">
+                <button className="button is-rounded is-large is-responsive">
+                  Already have an Account?
+                </button>
+              </NavLink>
+            </div>
+          </div>
+          <div className="column" id="hero-image-div">
+            <img
+              src={heroImage}
+              alt="Group of Friends Talking"
+              id="hero-image"
+            />
           </div>
         </div>
       </section>
-      <section className="section is-medium" id="resources-home-card">
+
+      <section className="section is-medium white">
+        <div className="columns">
+          <div className="column">
+            <img src={sectionImage} alt="Man Shrugging" id="section-image" />
+          </div>
+          <div className="column">
+            <div className="title is-2 mb-2">Got Questions About Asthma?</div>
+            <div className="subtitle is-3">
+              Ask all your asthma related questions, and speak all your asthma
+              related thoughts on our discussions forum.
+            </div>
+            <NavLink to="discussion">
+              <button className="button is-rounded is-large has-text-white medium-blue-slate">
+                Start Chatting
+              </button>
+            </NavLink>
+          </div>
+        </div>
+      </section>
+
+      <section className="section is-medium thisle" id="resources-home-card">
         <NavLink to="/resources">
           <div className="title">
             <h2>Resource Page</h2>
@@ -29,7 +73,7 @@ export default function HomePage() {
           </div>
         </NavLink>
       </section>
-      <section className="section is-medium" id="discussion-home-card">
+      <section className="section is-medium champagne-pink">
         <NavLink to="/discussion">
           <div className="title">
             <h2>Discussion Board</h2>
@@ -39,12 +83,11 @@ export default function HomePage() {
           </div>
         </NavLink>
       </section>
-      <section className></section>
-      <footer className="footer">
+      <footer className="footer medium-blue-slate">
         <div className="content has-text-centered">
-          <div className="block">
-            <strong>EAZE</strong> was developed by Aaron Castillo, Dominic Tuzo
-            & Maya Ramkishun.
+          <div className="block has-text-light">
+            <strong className="has-text-light">EAZE</strong> was developed by
+            Aaron Castillo, Dominic Tuzo & Maya Ramkishun.
           </div>
         </div>
       </footer>
