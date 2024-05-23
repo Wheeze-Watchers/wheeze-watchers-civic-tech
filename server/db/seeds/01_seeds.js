@@ -4,10 +4,10 @@
  */
 exports.seed = async function (knex) {
   // Deletes ALL existing entries
-  await knex("user").del();
   await knex("post").del();
   await knex("resource").del();
-  await knex("comment").del();
+  await knex("user").del();
+  // await knex("comment").del();
 
   await knex("user").insert([
     {
@@ -17,6 +17,8 @@ exports.seed = async function (knex) {
       username: "JSmith",
       password_hash: "hashed_password_1",
       expert: true,
+      profile_picture:
+        "https://i.ibb.co/gTqXSr9/ayo-ogunseinde-sib-Vw-ORYqs0-unsplash.jpg",
     },
     {
       first_name: "Bob",
@@ -63,9 +65,5 @@ exports.seed = async function (knex) {
       user_id: 2,
       url: "https://news.weill.cornell.edu/news/2013/05/researchers-find-common-childhood-asthma-unconnected-to-allergens-or-inflammation",
     },
-    // {
-    //   user_id: 3,
-    //   url: "https://www.who.int/news-room/fact-sheets/detail/asthma"
-    // },
   ]);
 };
