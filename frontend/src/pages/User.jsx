@@ -41,7 +41,7 @@ export default function UserPage() {
       </div>
       {!!isCurrentUserProfile && (
         <div>
-          <div className="columns is-vcentered">
+          <div className="columns is-centered">
             <div className="column">
               <div className="box has-text-centered is-size-4 account-type is-align-content-center">
                 <strong className="medium-blue-slate-text">

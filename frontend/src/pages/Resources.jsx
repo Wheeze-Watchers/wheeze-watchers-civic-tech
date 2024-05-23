@@ -71,7 +71,7 @@ export default function () {
 
 	return (
 		<>
-			<h1 className="title is-1 has-text-weight-bold has-text-centered mx-4 my-4 px-4 py-4">
+			<h1 className="title is-1 has-text-weight-bold has-text-centered my-5">
 				Resources
 			</h1>
 
@@ -79,7 +79,7 @@ export default function () {
 				<>
 					<div className="buttons is-centered">
 						<button
-							className="button is-info"
+							className="button medium-blue-slate has-text-white has-text-weight-semibold"
 							onClick={toggleModal}
 						>
 							Add Link
@@ -101,7 +101,7 @@ export default function () {
 						{currentUser && currentUser.expert && 
 						<button
 							type="button"
-							className="button is-danger"
+							className="button is-danger has-text-weight-semibold"
 							onClick={() => handleDelete(val.id)}
 						>
 							Delete

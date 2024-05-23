@@ -49,7 +49,7 @@ export default function UpdatePasswordForm({ currentUser, setCurrentUser }) {
       />
       <input type="hidden" name="id" value={currentUser.id} />
 
-      <button className="button is-info">Save</button>
+      <button className="button is-info has-text-weight-semibold">Save</button>
     </form>
   );
 }

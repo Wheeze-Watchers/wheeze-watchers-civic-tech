@@ -103,7 +103,7 @@ export default function UpdateProfilePictureForm({
           value={currentUser.id}
         />
 
-        <button className="button medium-blue-slate has-text-white">
+        <button className="button medium-blue-slate has-text-white has-text-weight-semibold">
           Save
         </button>
       </form>
