@@ -54,7 +54,7 @@ export default function SiteHeadingAndNav() {
                       aria-haspopup="true"
                       aria-controls="dropdown-menu"
                     >
-                      <strong style={{ color: "#1088c0" }}>
+                      <strong style={{ color: "#736ced" }}>
                         {currentUser.username}
                       </strong>
                     </button>
@@ -64,7 +64,7 @@ export default function SiteHeadingAndNav() {
                       <NavLink
                         className="dropdown-item"
                         to={`/users/${currentUser.id}`}
-                        style={{ color: "#1088c0" }}
+                        style={{ color: "#736ced" }}
                       >
                         <strong>Account</strong>
                       </NavLink>
@@ -73,7 +73,7 @@ export default function SiteHeadingAndNav() {
                         className="dropdown-item"
                         to={`/`}
                         onClick={handleLogout}
-                        style={{ color: "#1088c0" }}
+                        style={{ color: "#736ced" }}
                       >
                         <strong>Logout</strong>
                       </NavLink>

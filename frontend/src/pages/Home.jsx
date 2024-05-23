@@ -1,6 +1,7 @@
 import { useNavigate, NavLink } from "react-router-dom";
 import heroImage from "../assets/hero-image.svg";
 import sectionImage from "../assets/dude_shrugging.svg";
+import sectionImage2 from "../assets/people-reading-books.svg";
 
 export default function HomePage() {
   return (
@@ -21,24 +22,26 @@ export default function HomePage() {
               <NavLink to="sign-up">
                 <button
                   id="home-sign-in-button"
-                  className="button is-rounded has-text-light is-large is-responsive medium-blue-slate "
+                  className="button is-rounded has-text-light is-large is-responsive medium-blue-slate mr-2 mt-3"
                 >
-                  Try Eaze
+                  Sign up with Eaze
                 </button>
               </NavLink>
               <NavLink to="login">
-                <button className="button is-rounded is-large is-responsive">
+                <button className="button is-rounded is-large is-responsive ml-2 mt-3">
                   Already have an Account?
                 </button>
               </NavLink>
             </div>
           </div>
           <div className="column" id="hero-image-div">
-            <img
-              src={heroImage}
-              alt="Group of Friends Talking"
-              id="hero-image"
-            />
+            <div className="image">
+              <img
+                src={heroImage}
+                alt="Group of Friends Talking"
+                id="hero-image"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -46,43 +49,52 @@ export default function HomePage() {
       <section className="section is-medium white">
         <div className="columns">
           <div className="column">
-            <img src={sectionImage} alt="Man Shrugging" id="section-image" />
+            <div className="image">
+              <img src={sectionImage} alt="Man Shrugging" id="section-image" />
+            </div>
           </div>
           <div className="column">
-            <div className="title is-2 mb-2">Got Questions About Asthma?</div>
-            <div className="subtitle is-3">
-              Ask all your asthma related questions, and speak all your asthma
-              related thoughts on our discussions forum.
+            <div className="has-centered-text">
+              <h2 className="title is-2 mb-2">Got Questions About Asthma?</h2>
+              <h3 className="subtitle is-3">
+                Ask all your asthma related questions, and speak all your asthma
+                related thoughts on our discussions forum.
+              </h3>
+              <NavLink to="/discussion">
+                <button className="button is-rounded is-large has-text-white medium-blue-slate">
+                  Start Chatting
+                </button>
+              </NavLink>
             </div>
-            <NavLink to="discussion">
-              <button className="button is-rounded is-large has-text-white medium-blue-slate">
-                Start Chatting
-              </button>
-            </NavLink>
           </div>
         </div>
       </section>
 
-      <section className="section is-medium thisle" id="resources-home-card">
-        <NavLink to="/resources">
-          <div className="title">
-            <h2>Resource Page</h2>
+      <section className="section is-medium thisle">
+        <div className="columns">
+          <div className="column">
+            <h2 className="title is-2 mb-2">Need Resources?</h2>
+            <h3 className="subtitle is-3">
+              Here are our expert provided resources selected just for you.
+            </h3>
+            <NavLink to="/resources">
+              <button className="button is-rounded is-large medium-blue-slate has-text-light">
+                Check Out Expert Resources
+              </button>
+            </NavLink>
           </div>
-          <div className="subtitle">
-            <h2>Connect with others with the same struggle here</h2>
+          <div className="column">
+            <div className="image ">
+              <img
+                src={sectionImage2}
+                alt="People Reading Books"
+                id="section-image-2"
+              />
+            </div>
           </div>
-        </NavLink>
+        </div>
       </section>
-      <section className="section is-medium champagne-pink">
-        <NavLink to="/discussion">
-          <div className="title">
-            <h2>Discussion Board</h2>
-          </div>
-          <div className="subtitle">
-            <h2>Connect with others with the same struggle here</h2>
-          </div>
-        </NavLink>
-      </section>
+
       <footer className="footer medium-blue-slate">
         <div className="content has-text-centered">
           <div className="block has-text-light">

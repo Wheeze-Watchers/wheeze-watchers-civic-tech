@@ -45,8 +45,8 @@ export default function UpdateProfilePictureForm({
         onSubmit={handleSubmit}
         aria-labelledby="update-profile-picture-heading"
       >
-        <h2 className="title is-4" id="update-profile-picture-heading">
-          Change Profile Picture
+        <h2 className="title is-4 mb-4" id="update-profile-picture-heading">
+          Change Your Profile Picture
         </h2>
 
         <div className="field">
@@ -58,15 +58,12 @@ export default function UpdateProfilePictureForm({
             />
           </figure>
 
-          <label className="label" htmlFor="label">
-            Enter Picture URL below
-          </label>
           <input
-            className="input"
+            className="input mt-4 mb-2"
             type="text"
             id="profile_picture"
             name="profile_picture"
-            placeholder={currentUser.profile_picture}
+            placeholder="Enter a Picture URL"
           />
         </div>
 
@@ -106,7 +103,9 @@ export default function UpdateProfilePictureForm({
           value={currentUser.id}
         />
 
-        <button className="button is-info">Save</button>
+        <button className="button medium-blue-slate has-text-white">
+          Save
+        </button>
       </form>
     </>
   );

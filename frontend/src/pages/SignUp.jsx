@@ -3,8 +3,6 @@ import { useNavigate, Navigate, NavLink } from "react-router-dom";
 import CurrentUserContext from "../contexts/current-user-context";
 import { createUser } from "../adapters/user-adapter";
 
-// Controlling the sign up form is a good idea because we want to add (eventually)
-// more validation and provide real time feedback to the user about usernames and passwords
 export default function SignUpPage() {
   const navigate = useNavigate();
   const { currentUser, setCurrentUser } = useContext(CurrentUserContext);
@@ -65,16 +63,18 @@ export default function SignUpPage() {
         onChange={handleChange}
         aria-labelledby="create-heading"
       >
-        <h2 className="title mt-3 mb-3">Sign Up</h2>
+        <h2 className="title has-text-centered mt-4 mb-4">Sign Up</h2>
 
-        <label className="label checkbox">
-          Are you an Expert? (Check if you are)
-        </label>
-        <input
-          type="checkbox"
-          value={expert}
-          onChange={() => setExpert(!expert)}
-        />
+        <div className="">
+          <label className="label has-text-centered">
+            Are you an Expert? (Check if you are)
+          </label>
+          <input
+            type="checkbox"
+            value={expert}
+            onChange={() => setExpert(!expert)}
+          />
+        </div>
 
         <input
           className="input mt-4"

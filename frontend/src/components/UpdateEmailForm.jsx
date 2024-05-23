@@ -24,17 +24,23 @@ export default function UpdateEmailForm({ currentUser, setCurrentUser }) {
       aria-labelledby="email-heading"
     >
       <h2 className="title is-4" id="email-heading">
-        Change Email
+        Change Your Email
       </h2>
       <div className="label">Current Email: {currentUser.email}</div>
-      <label className="label" htmlFor="username">
-        New Email
-      </label>
-      <input className="input" type="email" id="email" name="email" />
+
+      <input
+        className="input"
+        type="email"
+        id="email"
+        name="email"
+        placeholder="New Email"
+      />
 
       <input className="input" type="hidden" name="id" value={currentUser.id} />
 
-      <button className="button is-info">Save</button>
+      <button className="button medium-blue-slate mt-4 mb-2 has-text-white">
+        Save
+      </button>
     </form>
   );
 }

@@ -28,7 +28,7 @@ export default function LoginPage() {
         aria-labelledby="login-heading"
       >
         <div>
-          <h2 className="title mt-4 mb-4">Welcome Back!</h2>
+          <h2 className="title has-text-centered mt-4 mb-4">Welcome Back!</h2>
 
           <div className="control mt-4 mb-4">
             <input

@@ -28,6 +28,10 @@ body {
   background-color: white;
 }
 
+.medium-blue-slate-text {
+  color: #736ced;
+}
+
 #home-buttons-container {
   justify-content: center;
   align-items: center;
@@ -40,6 +44,14 @@ body {
 #hero-image,
 #section-image {
   width: 100%;
+  height: auto;
+  padding: 0px;
+}
+
+#section-image-2 {
+  justify-content: center;
+  align-items: center;
+  width: 70%;
   height: auto;
   padding: 0px;
 }
@@ -107,14 +119,15 @@ nav a {
   color: #fff;
 }
 
-form {
+form,
+.account-type {
   padding: 15px;
   border: 1px solid #ccc;
   margin: 1px auto;
   min-width: 100px;
   max-width: 400px;
   min-height: 100px;
-  /* max-height: 400px; */
+  max-height: 400px;
 }
 
 form #comment {

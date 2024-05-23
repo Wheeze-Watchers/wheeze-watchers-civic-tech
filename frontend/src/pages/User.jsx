@@ -34,32 +34,48 @@ export default function UserPage() {
     : userProfile.username;
 
   return (
-    <div className="box">
-      <h1 className="title is-1">Account</h1>
-      <h2 className="subtitle">Update your account information here</h2>
+    <div className="champagne-pink">
+      <div className="m-6 has-text-centered">
+        <h1 className="title is-1 mb-2">Account</h1>
+        <h2 className="subtitle">Update your account information here</h2>
+      </div>
       {!!isCurrentUserProfile && (
         <div>
-          <div>
-            <UpdateFirstNameForm
-              currentUser={currentUser}
-              setCurrentUser={setCurrentUser}
-            />
-            <UpdateLastNameForm
-              currentUser={currentUser}
-              setCurrentUser={setCurrentUser}
-            />
-            <UpdateProfilePictureForm
-              currentUser={currentUser}
-              setCurrentUser={setCurrentUser}
-            />
-            <UpdateUsernameForm
-              currentUser={currentUser}
-              setCurrentUser={setCurrentUser}
-            />
-            <UpdateEmailForm
-              currentUser={currentUser}
-              setCurrentUser={setCurrentUser}
-            />
+          <div className="columns">
+            <div className="column">
+              <div className="box has-text-centered is-size-4 account-type ">
+                <strong className="medium-blue-slate-text">
+                  {" "}
+                  {currentUser.expert
+                    ? "Verified Expert Account"
+                    : "User Account"}
+                </strong>
+              </div>
+              <UpdateProfilePictureForm
+                currentUser={currentUser}
+                setCurrentUser={setCurrentUser}
+              />
+            </div>
+            <div className="column">
+              <UpdateFirstNameForm
+                currentUser={currentUser}
+                setCurrentUser={setCurrentUser}
+              />
+              <UpdateLastNameForm
+                currentUser={currentUser}
+                setCurrentUser={setCurrentUser}
+              />
+            </div>
+            <div className="column">
+              <UpdateUsernameForm
+                currentUser={currentUser}
+                setCurrentUser={setCurrentUser}
+              />
+              <UpdateEmailForm
+                currentUser={currentUser}
+                setCurrentUser={setCurrentUser}
+              />
+            </div>
           </div>
         </div>
       )}

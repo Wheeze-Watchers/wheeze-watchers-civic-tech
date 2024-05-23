@@ -27,18 +27,23 @@ export default function UpdateLastNameForm({ currentUser, setCurrentUser }) {
       aria-labelledby="update-last-name-heading"
     >
       <h2 className="title is-4" id="update-last-name-heading">
-        Change Last Name
+        Change Your Last Name
       </h2>
       <div className="label">Current Last Name: {currentUser.last_name}</div>
-      <label className="label" htmlFor="username">
-        New Last Name
-      </label>
 
-      <input className="input" type="text" id="last_name" name="last_name" />
+      <input
+        className="input"
+        type="text"
+        id="last_name"
+        name="last_name"
+        placeholder="New Last Name"
+      />
 
       <input className="input" type="hidden" name="id" value={currentUser.id} />
 
-      <button className="button is-info">Save</button>
+      <button className="button medium-blue-slate mt-4 mb-2 has-text-white">
+        Save
+      </button>
     </form>
   );
 }
