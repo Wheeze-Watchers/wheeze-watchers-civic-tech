@@ -20,13 +20,13 @@ export default function HomePage() {
               any asthma-related questions. Connect with other people dealing
               with asthma. You are not alone.
             </div>
-            <div id="home-buttons-container" className="m-6 has-text-centered">
+            <div id="home-buttons-container" className="m-5 has-text-centered">
               <NavLink to="sign-up">
                 <button
                   id="home-sign-in-button"
                   className="button is-rounded has-text-light is-large is-responsive medium-blue-slate mr-2 mt-3"
                 >
-                  Sign up with Eaze
+                  Try Eaze
                 </button>
               </NavLink>
               <NavLink to="login">
