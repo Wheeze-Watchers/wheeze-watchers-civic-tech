@@ -44,7 +44,7 @@ export default function () {
             }
 			setRenderToggle(renderToggle + 1)
 			
-			
+			newUrl=useState('')
 		}
 	};
 
@@ -90,7 +90,7 @@ export default function () {
 			<div className="columns is-multiline is-half is-justify-content-center">
 			{resource && resource.map((val) => (
 				<div className="p-5 m-4" key={val.id}>
-					<div className="box is-justify-content-center" style={{"width": 540}} >
+					<div className="box is-justify-content-center">
 						<div className="content has-text-centered">
 							{val.url && typeof val.url === 'string' && (
 							<Microlink id={val.id} url={val.url} />
@@ -114,8 +114,8 @@ export default function () {
 				<div className="modal-content">
 					<div className="box">
 						<form aria-labelledby="resource-form">
-							<label htmlFor="resource" value="">Add Link Below:</label>
-							<input className="input" type="text" id="resource-link" name="resource-link" value={newUrl} onChange={(e) => setNewUrl(e.target.value)} />
+							<label htmlFor="resource">Add Link Below:</label>
+							<input className="input" value={newUrl} type="text" id="resource-link" name="resource-link" onChange={(e) => setNewUrl(e.target.value)} />
 							<button className="button medium-blue-slate has-text-weight-semibold has-text-white" onClick={handleSubmit}>Add</button>
 						</form>
 					</div>

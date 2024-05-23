@@ -92,7 +92,7 @@ export default function () {
 				Discussions
 			</h1>
       <form
-        className="box mt-6"
+        className="box mt-6" style={{"width": 640}}
         onSubmit={handleSubmit}
         aria-labelledby="comment-heading"
       >
