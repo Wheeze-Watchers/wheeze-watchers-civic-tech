@@ -139,7 +139,7 @@ export default function SignUpPage() {
           */}
 
         <button
-          className="button is-fullwidth tropical-indigo mt-4 mb-4"
+          className="button is-fullwidth medium-blue-slate has-text-white has-text-weight-semibold mt-3 mb-4"
           type="submit"
         >
           Sign Up Now!

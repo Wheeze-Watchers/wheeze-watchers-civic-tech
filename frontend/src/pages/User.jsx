@@ -43,11 +43,11 @@ export default function UserPage() {
         <div>
           <div className="columns is-centered">
             <div className="column">
-              <div className="box has-text-centered is-size-4 account-type is-align-content-center">
-                <strong className="medium-blue-slate-text">
-                  {" "}
-                  {currentUser.expert ? "Expert Account" : "User Account"}
+              <div className="box has-text-centered is-size-4 account-type is-align-content-center medium-blue-slate-text has-text-weight-medium">
+                <strong className="medium-blue-slate-text is-underlined">
+                  {"Account Type:"}
                 </strong>
+                  {currentUser.expert ? " Expert" : " Member"}
               </div>
               <UpdateProfilePictureForm
                 currentUser={currentUser}

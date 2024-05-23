@@ -52,7 +52,7 @@ export default function LoginPage() {
             />
           </div>
 
-          <button className="button is-fullwidth tropical-indigo mt-5 mb-4">
+          <button className="button is-fullwidth medium-blue-slate has-text-white has-text-weight-semibold mt-5 mb-4">
             Log in!
           </button>
         </div>

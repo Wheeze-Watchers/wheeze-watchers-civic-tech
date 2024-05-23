@@ -19,9 +19,7 @@ export default function () {
 			const urls = validResources[0].map(resource => resource.url);
 			const uniqueUrls = new Set(urls);
 			setUsedUrl(uniqueUrls);
-			
-			setResource(validResources[0]);		
-			
+			setResource(validResources[0]);
 		};
 		fetchResources()
 	}, [toggle, renderToggle])
@@ -71,13 +69,13 @@ export default function () {
 
 	return (
 		<>
-			<h1 className="title is-1 has-text-weight-bold has-text-centered my-5">
+			<h1 className="title is-1 has-text-weight-bold has-text-centered my-6">
 				Resources
 			</h1>
 
 			{currentUser && currentUser.expert && (
 				<>
-					<div className="buttons is-centered">
+					<div className="buttons is-centered mb-6">
 						<button
 							className="button medium-blue-slate has-text-white has-text-weight-semibold"
 							onClick={toggleModal}
@@ -89,10 +87,10 @@ export default function () {
 				</>
 			)}
 
-			<div className="columns is-multiline">
+			<div className="columns is-multiline is-half is-justify-content-center">
 			{resource && resource.map((val) => (
-				<div className="column is-half is-flex is-justify-content-center is-align-items-center" key={val.id}>
-					<div className="box" style={{"width": 540}} >
+				<div className="p-5 m-4" key={val.id}>
+					<div className="box is-justify-content-center" style={{"width": 540}} >
 						<div className="content has-text-centered">
 							{val.url && typeof val.url === 'string' && (
 							<Microlink id={val.id} url={val.url} />
@@ -116,9 +114,9 @@ export default function () {
 				<div className="modal-content">
 					<div className="box">
 						<form aria-labelledby="resource-form">
-							<label htmlFor="resource">Add Link Below:</label>
-							<input type="text" id="resource-link" name="resource-link" value={newUrl} onChange={(e) => setNewUrl(e.target.value)} />
-							<button className="button is-info" onClick={handleSubmit}>Add</button>
+							<label htmlFor="resource" value="">Add Link Below:</label>
+							<input className="input" type="text" id="resource-link" name="resource-link" value={newUrl} onChange={(e) => setNewUrl(e.target.value)} />
+							<button className="button medium-blue-slate has-text-weight-semibold has-text-white" onClick={handleSubmit}>Add</button>
 						</form>
 					</div>
 				</div>

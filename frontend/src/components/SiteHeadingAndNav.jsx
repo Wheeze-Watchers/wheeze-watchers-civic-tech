@@ -92,12 +92,9 @@ export default function SiteHeadingAndNav() {
               </div>
               <div className="navbar-end">
                 <div className="navbar-item">
-                  <NavLink to="/login">Login</NavLink>
-                </div>
-                <div className="navbar-item">
                   <div className="button is-light">
-                    <NavLink to="/sign-up">
-                      <strong id="sign-up-color">Sign Up</strong>
+                    <NavLink to="/login">
+                      <strong id="sign-up-color">Login</strong>
                     </NavLink>
                   </div>
                 </div>

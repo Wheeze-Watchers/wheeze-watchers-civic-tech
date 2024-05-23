@@ -26,7 +26,7 @@ export default function UpdateLastNameForm({ currentUser, setCurrentUser }) {
       onSubmit={handleSubmit}
       aria-labelledby="update-last-name-heading"
     >
-      <h2 className="title is-4" id="update-last-name-heading">
+      <h2 className="title is-4 mb-4" id="update-last-name-heading">
         Change Your Last Name
       </h2>
       <div className="label">Current Last Name: {currentUser.last_name}</div>

@@ -88,6 +88,9 @@ export default function () {
 
   return (
     <>
+      <h1 className="title is-1 has-text-weight-bold has-text-centered my-6">
+				Discussion
+			</h1>
       <form
         className="box mt-6"
         onSubmit={handleSubmit}

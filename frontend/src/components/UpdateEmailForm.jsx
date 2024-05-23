@@ -23,7 +23,7 @@ export default function UpdateEmailForm({ currentUser, setCurrentUser }) {
       onSubmit={handleSubmit}
       aria-labelledby="email-heading"
     >
-      <h2 className="title is-4" id="email-heading">
+      <h2 className="title is-4 mb-4" id="email-heading">
         Change Your Email
       </h2>
       <div className="label">Current Email: {currentUser.email}</div>
