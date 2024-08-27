@@ -37,7 +37,7 @@ From within the root directory:
 
 ```sh
 cd frontend && npm i
-cd ../server && npm i
+cd server && npm i
 ```
 
 ### Roadmap
